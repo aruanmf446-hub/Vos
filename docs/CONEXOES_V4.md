@@ -1,3 +1,5 @@
+> **Experimento rejeitado pelo usuário.** Preservado para histórico; a base retomada é a v2. As alterações abaixo não foram aceitas como melhoria visual.
+
 # Revisão das conexões v4
 
 A versão v3 continua preservada no commit `3836fe2` e em seu MP4 original. Esta revisão trabalha especificamente nas passagens entre quadros.

@@ -1,6 +1,6 @@
 # Restaurar o trabalho
 
-**Revisão atual: conexões v4.** Os ZIPs em partes são o snapshot v2. Usar o repositório atual junto com o checkpoint para recuperar os arquivos novos; a versão v2 também é entrada da v3. Ver [conexões v4](CONEXOES_V4.md) e [revisão v3](REVISAO_V3.md).
+**Base atual retomada: v2. V3/v4 são experimentos rejeitados e continuam preservados.** Os ZIPs em partes são o snapshot v2. Usar o repositório atual junto com o checkpoint para recuperar os arquivos novos; a versão v2 também é entrada da v3. Ver [conexões v4](CONEXOES_V4.md) e [revisão v3](REVISAO_V3.md).
 
 O Git guarda código, referências, entregas e quadros aprovados. A pasta `backups/` preserva os seguintes pacotes, divididos em partes menores:
 

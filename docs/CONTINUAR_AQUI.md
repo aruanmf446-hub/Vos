@@ -1,10 +1,14 @@
-## Atualização: conexões v4
+# Estado após a avaliação do usuário
 
-A entrega atual é `media/videos/video-marvel-conexoes-v4-60fps.mp4`. Ler [CONEXOES_V4.md](CONEXOES_V4.md). Usar `render_connections_v4.py --full` e `finalize_connections_v4.py`. Os arquivos novos estão no Git; os ZIPs continuam preservando o snapshot v2. V2 e v3 são entradas de trabalho e permanecem disponíveis.
+**Retomar a v2:** `media/videos/video-marvel-continuidade-v2-60fps.mp4`. Foi o rascunho avaliado pelo usuário em cerca de 75%; não é uma entrega final aprovada.
 
-## Atualização: revisão v3
+O usuário considerou as revisões seguintes mal feitas e cada vez piores. V3/v4, seus scripts e dados estão preservados como experimentos rejeitados. Não usar `render_continuity_v3.py` ou `render_connections_v4.py` para substituir automaticamente a base por outra deformação das mesmas poses.
 
-A entrega atual é `media/videos/video-marvel-continuidade-v3-60fps.mp4`. Ler [REVISAO_V3.md](REVISAO_V3.md) antes de continuar. A v2 abaixo permanece como histórico e como entrada do renderizador v3. Os backups ZIP arquivados preservam a v2; sobrepor os arquivos atuais do Git ao restaurar.
+A abordagem utilizada não resolveu a naturalidade das conexões. Contagens de quadros, ausência de erro de decodificação e jacobianos positivos verificam propriedades técnicas; não comprovam qualidade visual, continuidade de atuação ou fidelidade ao original. Uma próxima proposta deve primeiro demonstrar melhora visível em um trecho curto e comparar com esta base, sem promovê-la apenas por métricas.
+
+O usuário já recusou usar a tentativa gratuita do Higgsfield e preferiu manter a revisão local; não repetir a oferta como se estivesse pendente.
+
+Os registros das tentativas estão em [REVISAO_V3.md](REVISAO_V3.md) e [CONEXOES_V4.md](CONEXOES_V4.md). O histórico abaixo descreve a v2.
 
 # Continuar deste ponto
 

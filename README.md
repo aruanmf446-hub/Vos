@@ -2,20 +2,20 @@
 
 Registro do trabalho realizado nesta conversa, preservado em 16/11/2026.
 
-**Versão mais recente:** [baixar o MP4 com conexões v4](media/videos/video-marvel-conexoes-v4-60fps.mp4).
+**Base de trabalho retomada:** [continuidade v2](media/videos/video-marvel-continuidade-v2-60fps.mp4), o rascunho que o usuário avaliou em cerca de 75%.
 
-[Comparar v3 e v4](media/videos/comparacao-conexoes-v3-v4.mp4) · [O que mudou e limites da revisão](docs/CONEXOES_V4.md).
+**As revisões v3 e v4 foram consideradas piores pelo usuário.** Permanecem preservadas como experimentos; não devem ser apresentadas como melhorias aprovadas nem substituir a v2. Os testes de integridade e de geometria não demonstraram naturalidade visual.
 
 O vídeo tem **25,93 segundos, 1.556 quadros, 60 FPS, 720 × 1068 e nenhum áudio**.
 
 - [Comparação de trechos com câmera lenta](media/videos/comparacao-encaixe-v2-camera-lenta.mp4)
 - [Primeiro experimento: Doutor Estranho e Wanda](media/videos/doutor-estranho-wanda.mp4)
 - [Backup completo e checkpoint editável](backups/README.md)
-- [MP4: download direto](https://raw.githubusercontent.com/aruanmf446-hub/Vos/main/media/videos/video-marvel-conexoes-v4-60fps.mp4)
+- [MP4: download direto](https://raw.githubusercontent.com/aruanmf446-hub/Vos/main/media/videos/video-marvel-continuidade-v2-60fps.mp4)
 - [Por onde continuar](docs/CONTINUAR_AQUI.md)
 - [Como restaurar os arquivos](docs/RESTAURACAO.md)
 
-[Novo teste das conexões v4](media/videos/teste-conexoes-v4-60fps.mp4) · [Diagnóstico e alteração](docs/CONEXOES_V4.md).
+[Experimento v4 rejeitado](media/videos/teste-conexoes-v4-60fps.mp4) · [Diagnóstico e alteração](docs/CONEXOES_V4.md).
 
 ## Personagens
 
@@ -37,13 +37,13 @@ O vídeo tem **25,93 segundos, 1.556 quadros, 60 FPS, 720 × 1068 e nenhum áudi
 
 ## Estado real da versão
 
-A v4 corrige conexões com uma deformação contínua e uma interpolação compartilhada da cor e da máscara entre as poses da abertura. O fundo continua separado. Não há nova geração de imagens; gestos e superfícies não vistos permanecem aproximados. Veja [conexões v4](docs/CONEXOES_V4.md).
+A v4 tentou corrigir conexões com uma deformação contínua e uma interpolação compartilhada da cor e da máscara entre as poses da abertura. O resultado foi rejeitado pelo usuário e não é a base atual. O fundo continua separado. Não há nova geração de imagens; gestos e superfícies não vistos permanecem aproximados. Veja [conexões v4](docs/CONEXOES_V4.md).
 
-### Histórico v3
+### Experimento v3 — não usar como base
 
 A v3 refaz oito planos com textura de rosto persistente, movimentos medidos no original, braços do Doom articulados, camada independente do Hulk e malha de topologia fixa. A levantada e o retrato final mantêm a v2. Veja [revisão v3](docs/REVISAO_V3.md) para reprodução e limitações.
 
-### Histórico v2
+### V2 — base retomada
 
 A continuidade v2 refez o encaixe dos planos de diálogo: fundo contínuo por plano, posição e escala do personagem alinhadas ao original, recorte temporal com RVM e interpolação separada do personagem. O Hulk foi conservado numa camada própria atrás da Wanda.
 
@@ -61,7 +61,7 @@ No CapCut, manter **60 FPS** na exportação. O `.mov` de comparação enviado e
 | `strange-wanda/` | Scripts e quadros do primeiro experimento |
 | `generated_images/` | Saídas originais da geração de imagens |
 | `referencias/` | Fotos, vídeos originais e comparação enviada |
-| `media/videos/` | Entregas e testes; usar o arquivo `conexoes-v4` como referência atual |
+| `media/videos/` | Entregas e testes; usar o arquivo `continuidade-v2` como base atual |
 | `manifests/` | Integridade dos arquivos e versões dos modelos |
 | `scripts/` | Verificação e restauração do backup |
 

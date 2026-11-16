@@ -3,7 +3,7 @@
   "repository": "https://github.com/aruanmf446-hub/Vos",
   "original_workspace": "/workspace",
   "original_attachment_prefix": "/tmp/codex-remote-attachments/6afa7d92-0128-8191-adc5-72526702d031",
-  "current_video": "media/videos/video-marvel-conexoes-v4-60fps.mp4",
+  "current_video": "media/videos/video-marvel-continuidade-v2-60fps.mp4",
   "files": [
     {
       "path": "avenida-marvel/analysis-candidates.json",
@@ -2585,5 +2585,14 @@
       "bytes": 2315994,
       "sha256": "020302e9f6aaaf16d044b5127716c21042c1615077f0e834dd0b68376d532292"
     }
-  ]
+  ],
+  "editorial_status": {
+    "working_base": "v2",
+    "base_user_assessment": "rascunho em cerca de 75%; ainda precisa de correção",
+    "rejected_revisions": [
+      "v3",
+      "v4"
+    ],
+    "reason": "Usuário considerou as revisões cada vez piores; não promover com base apenas em validações técnicas."
+  }
 }

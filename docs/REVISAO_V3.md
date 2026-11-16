@@ -1,3 +1,5 @@
+> **Experimento rejeitado pelo usuário.** Preservado para histórico; a base retomada é a v2. As alterações abaixo não foram aceitas como melhoria visual.
+
 # Revisão de continuidade v3
 
 Entrega: `media/videos/video-marvel-continuidade-v3-60fps.mp4`.
