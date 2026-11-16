@@ -1,0 +1,82 @@
+[
+  {
+    "frame": 60,
+    "kind": "source",
+    "laplacian_variance": 56.399666069342516
+  },
+  {
+    "frame": 60,
+    "kind": "new",
+    "laplacian_variance": 22.906421571901518
+  },
+  {
+    "frame": 100,
+    "kind": "source",
+    "laplacian_variance": 399.61011873949093
+  },
+  {
+    "frame": 100,
+    "kind": "new",
+    "laplacian_variance": 441.04330021616965
+  },
+  {
+    "frame": 241,
+    "kind": "source",
+    "laplacian_variance": 208.1847728167753
+  },
+  {
+    "frame": 241,
+    "kind": "new",
+    "laplacian_variance": 334.9762928923448
+  },
+  {
+    "frame": 444,
+    "kind": "source",
+    "laplacian_variance": 179.40344182065218
+  },
+  {
+    "frame": 444,
+    "kind": "new",
+    "laplacian_variance": 43.56581620333853
+  },
+  {
+    "frame": 489,
+    "kind": "source",
+    "laplacian_variance": 189.8017576339472
+  },
+  {
+    "frame": 489,
+    "kind": "new",
+    "laplacian_variance": 42.37728587764141
+  },
+  {
+    "frame": 534,
+    "kind": "source",
+    "laplacian_variance": 182.78517754473265
+  },
+  {
+    "frame": 534,
+    "kind": "new",
+    "laplacian_variance": 32.238829477823536
+  },
+  {
+    "frame": 600,
+    "kind": "source",
+    "laplacian_variance": 184.75534950626727
+  },
+  {
+    "frame": 600,
+    "kind": "new",
+    "laplacian_variance": 29.094065575200567
+  },
+  {
+    "frame": 706,
+    "kind": "source",
+    "laplacian_variance": 276.5148484713593
+  },
+  {
+    "frame": 706,
+    "kind": "new",
+    "laplacian_variance": 246.04309983325786
+  }
+]

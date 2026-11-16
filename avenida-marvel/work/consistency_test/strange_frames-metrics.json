@@ -1,0 +1,503 @@
+{
+  "frames": 82,
+  "duration": 1.3666666666666667,
+  "runtime": 17.87666127600005,
+  "mean_original_background_error": 11.65468920730963,
+  "mean_fixed_background_error": 0.0,
+  "comparison": "/workspace/avenida-marvel/work/consistency_test/strange_frames-comparison.mp4",
+  "fixed": "/workspace/avenida-marvel/work/consistency_test/strange_frames-fixed.mp4",
+  "frames_metrics": [
+    {
+      "index": 718,
+      "coverage": 0.49886961996337,
+      "old_background_mae": 7.646666526794434,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 719,
+      "coverage": 0.4944816468253968,
+      "old_background_mae": 7.658816814422607,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 720,
+      "coverage": 0.4943576388888889,
+      "old_background_mae": 7.6318254470825195,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 721,
+      "coverage": 0.4941763965201465,
+      "old_background_mae": 7.642546653747559,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 722,
+      "coverage": 0.49443395146520147,
+      "old_background_mae": 7.748337268829346,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 723,
+      "coverage": 0.49490613553113555,
+      "old_background_mae": 7.883106708526611,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 724,
+      "coverage": 0.4957837301587302,
+      "old_background_mae": 7.861440181732178,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 725,
+      "coverage": 0.49583619505494503,
+      "old_background_mae": 7.964546203613281,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 726,
+      "coverage": 0.49599358974358976,
+      "old_background_mae": 8.259403228759766,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 727,
+      "coverage": 0.49606513278388276,
+      "old_background_mae": 8.33342170715332,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 728,
+      "coverage": 0.4961986797924298,
+      "old_background_mae": 8.34988784790039,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 729,
+      "coverage": 0.49615575396825395,
+      "old_background_mae": 8.351536750793457,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 730,
+      "coverage": 0.49599358974358976,
+      "old_background_mae": 8.330556869506836,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 731,
+      "coverage": 0.4960078983516483,
+      "old_background_mae": 8.177295684814453,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 732,
+      "coverage": 0.49628930097680096,
+      "old_background_mae": 8.348925590515137,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 733,
+      "coverage": 0.49668517246642246,
+      "old_background_mae": 8.13010311126709,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 734,
+      "coverage": 0.49795386904761907,
+      "old_background_mae": 9.390242576599121,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 735,
+      "coverage": 0.49802541208791207,
+      "old_background_mae": 9.266581535339355,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 736,
+      "coverage": 0.498077876984127,
+      "old_background_mae": 9.331964492797852,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 737,
+      "coverage": 0.49806356837606836,
+      "old_background_mae": 9.401046752929688,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 738,
+      "coverage": 0.4983974358974359,
+      "old_background_mae": 9.629104614257812,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 739,
+      "coverage": 0.4983068147130647,
+      "old_background_mae": 9.630207061767578,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 740,
+      "coverage": 0.49833543192918195,
+      "old_background_mae": 9.701796531677246,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 741,
+      "coverage": 0.49850236568986567,
+      "old_background_mae": 9.683036804199219,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 742,
+      "coverage": 0.49853575244200243,
+      "old_background_mae": 9.892333030700684,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 743,
+      "coverage": 0.4987313034188034,
+      "old_background_mae": 9.978619575500488,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 744,
+      "coverage": 0.4988600808913309,
+      "old_background_mae": 10.470002174377441,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 745,
+      "coverage": 0.4988648504273504,
+      "old_background_mae": 10.55080795288086,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 746,
+      "coverage": 0.4990079365079365,
+      "old_background_mae": 11.010074615478516,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 747,
+      "coverage": 0.49909378815628813,
+      "old_background_mae": 11.07010555267334,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 748,
+      "coverage": 0.5001049297924298,
+      "old_background_mae": 11.1408109664917,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 749,
+      "coverage": 0.5000953907203908,
+      "old_background_mae": 11.142449378967285,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 750,
+      "coverage": 0.5000381562881563,
+      "old_background_mae": 11.355592727661133,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 751,
+      "coverage": 0.49997138278388276,
+      "old_background_mae": 11.281584739685059,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 752,
+      "coverage": 0.5000953907203908,
+      "old_background_mae": 11.247904777526855,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 753,
+      "coverage": 0.5002623244810744,
+      "old_background_mae": 11.132414817810059,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 754,
+      "coverage": 0.4994705815018315,
+      "old_background_mae": 12.059257507324219,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 755,
+      "coverage": 0.499403807997558,
+      "old_background_mae": 11.999561309814453,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 756,
+      "coverage": 0.49892208485958484,
+      "old_background_mae": 11.962677955627441,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 757,
+      "coverage": 0.49876469017094016,
+      "old_background_mae": 12.057747840881348,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 758,
+      "coverage": 0.4991271749084249,
+      "old_background_mae": 12.180248260498047,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 759,
+      "coverage": 0.49907471001221,
+      "old_background_mae": 12.179917335510254,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 760,
+      "coverage": 0.49902701465201466,
+      "old_background_mae": 12.174530982971191,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 761,
+      "coverage": 0.49915102258852256,
+      "old_background_mae": 12.116082191467285,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 762,
+      "coverage": 0.4989697802197802,
+      "old_background_mae": 12.13291072845459,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 763,
+      "coverage": 0.4989268543956044,
+      "old_background_mae": 11.999931335449219,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 764,
+      "coverage": 0.49926549145299143,
+      "old_background_mae": 11.951033592224121,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 765,
+      "coverage": 0.4991271749084249,
+      "old_background_mae": 11.926572799682617,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 766,
+      "coverage": 0.4983163537851038,
+      "old_background_mae": 12.05793285369873,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 767,
+      "coverage": 0.49737675518925517,
+      "old_background_mae": 12.1210355758667,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 768,
+      "coverage": 0.4964037698412698,
+      "old_background_mae": 12.414976119995117,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 769,
+      "coverage": 0.49594589438339437,
+      "old_background_mae": 12.415240287780762,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 770,
+      "coverage": 0.4959125076312576,
+      "old_background_mae": 12.594889640808105,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 771,
+      "coverage": 0.4959363553113553,
+      "old_background_mae": 12.609962463378906,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 772,
+      "coverage": 0.49590296855921856,
+      "old_background_mae": 12.915766716003418,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 773,
+      "coverage": 0.49550232753357754,
+      "old_background_mae": 13.025777816772461,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 774,
+      "coverage": 0.49555956196581197,
+      "old_background_mae": 13.718805313110352,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 775,
+      "coverage": 0.4947010454822955,
+      "old_background_mae": 13.751976013183594,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 776,
+      "coverage": 0.4947392017704518,
+      "old_background_mae": 14.295662879943848,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 777,
+      "coverage": 0.49436717796092794,
+      "old_background_mae": 14.438393592834473,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 778,
+      "coverage": 0.4944148733211233,
+      "old_background_mae": 14.676786422729492,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 779,
+      "coverage": 0.4935277396214896,
+      "old_background_mae": 14.667579650878906,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 780,
+      "coverage": 0.49356112637362637,
+      "old_background_mae": 14.634693145751953,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 781,
+      "coverage": 0.49354681776556775,
+      "old_background_mae": 14.557185173034668,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 782,
+      "coverage": 0.49428609584859584,
+      "old_background_mae": 14.763443946838379,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 783,
+      "coverage": 0.49316525488400487,
+      "old_background_mae": 14.617826461791992,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 784,
+      "coverage": 0.49320818070818073,
+      "old_background_mae": 14.7759370803833,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 785,
+      "coverage": 0.4912765186202686,
+      "old_background_mae": 14.65871524810791,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 786,
+      "coverage": 0.4912860576923077,
+      "old_background_mae": 14.801011085510254,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 787,
+      "coverage": 0.49022245115995117,
+      "old_background_mae": 14.918045997619629,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 788,
+      "coverage": 0.49185363247863245,
+      "old_background_mae": 14.926765441894531,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 789,
+      "coverage": 0.49025106837606836,
+      "old_background_mae": 14.916183471679688,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 790,
+      "coverage": 0.4899887438949939,
+      "old_background_mae": 14.981343269348145,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 791,
+      "coverage": 0.4900555173992674,
+      "old_background_mae": 15.015891075134277,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 792,
+      "coverage": 0.4943480998168498,
+      "old_background_mae": 15.048332214355469,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 793,
+      "coverage": 0.49358497405372403,
+      "old_background_mae": 15.041091918945312,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 794,
+      "coverage": 0.4969665750915751,
+      "old_background_mae": 14.87897777557373,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 795,
+      "coverage": 0.4956072573260073,
+      "old_background_mae": 14.948017120361328,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 796,
+      "coverage": 0.4981208028083028,
+      "old_background_mae": 13.748634338378906,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 797,
+      "coverage": 0.49676148504273504,
+      "old_background_mae": 14.007648468017578,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 798,
+      "coverage": 0.5002432463369964,
+      "old_background_mae": 12.678976058959961,
+      "fixed_background_mae": 0.0
+    },
+    {
+      "index": 799,
+      "coverage": 0.49975675366300365,
+      "old_background_mae": 12.695441246032715,
+      "fixed_background_mae": 0.0
+    }
+  ]
+}

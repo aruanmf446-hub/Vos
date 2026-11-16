@@ -1,0 +1,33 @@
+{
+  "runtime": 1.459505558013916,
+  "frames": [
+    {
+      "source": 359,
+      "old_person_coverage": 0.4378052503052503,
+      "new_person_coverage": 0.44031402625152627,
+      "union_coverage": 0.49886961996337,
+      "original_background_mae": 0.0
+    },
+    {
+      "source": 369,
+      "old_person_coverage": 0.44198336385836384,
+      "new_person_coverage": 0.44155887515262515,
+      "union_coverage": 0.5027234050671551,
+      "original_background_mae": 0.0
+    },
+    {
+      "source": 389,
+      "old_person_coverage": 0.43753338675213677,
+      "new_person_coverage": 0.4452361874236874,
+      "union_coverage": 0.4975675366300366,
+      "original_background_mae": 0.0
+    },
+    {
+      "source": 444,
+      "old_person_coverage": 0.4369705815018315,
+      "new_person_coverage": 0.5160637973137974,
+      "union_coverage": 0.5542105463980463,
+      "original_background_mae": 0.0
+    }
+  ]
+}

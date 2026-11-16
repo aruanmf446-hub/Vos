@@ -1,0 +1,17 @@
+{
+  "source_frame": 302,
+  "source_frame_path": "/workspace/avenida-marvel/work/action/0302.png",
+  "reference_path": "/tmp/codex-remote-attachments/6afa7d92-0128-8191-adc5-72526702d031/1DD8388A-55D6-468E-9290-018A245A61C8/6-Foto-6.jpg",
+  "generated_image": "/workspace/generated_images/exec-bf3d6e55-f887-4ac8-a0c8-5b855eca5571.png",
+  "export": "/workspace/shared/downloads/doom-teste-cosplay-corredor.png",
+  "status": "single_frame_generation_succeeded",
+  "animation_tested": false,
+  "first_reference_test": {
+    "status": "moderation_blocked",
+    "stage": "output",
+    "categories": [
+      "other"
+    ],
+    "request_id": "4ef56c3c-427d-43ba-a609-84ef4eafcfef"
+  }
+}

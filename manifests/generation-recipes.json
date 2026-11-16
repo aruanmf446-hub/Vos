@@ -1,0 +1,26 @@
+{
+  "tool": "image_gen",
+  "model_version": null,
+  "note": "A versão exata do modelo não foi informada pela ferramenta. As imagens de saída foram preservadas; repetir um prompt não garante os mesmos pixels.",
+  "recipes": [
+    {
+      "name": "Doom: quadro aprovado com cosplay no corredor",
+      "source_native_frame": 302,
+      "source_active_crop": "576:364:0:230",
+      "reference": "referencias/1DD8388A-55D6-468E-9290-018A245A61C8/6-Foto-6.jpg",
+      "output": "generated_images/exec-bf3d6e55-f887-4ac8-a0c8-5b855eca5571.png",
+      "prompt": "Use the second image's Doctor Doom cosplay as the appearance reference to replace the black-shirted man in the FIRST film frame. Doctor Doom should stand at exactly the original man's position, facing left, with his hands following the original gesture at waist height. Match the first image's camera angle, framing, warm interior lighting and soft video texture. Keep the original room, window, bronze statue and furniture. The hallway in the cosplay photo is only a costume reference and should not appear. Output a single landscape frame matching the first image's aspect ratio."
+    },
+    {
+      "name": "Wanda: seis quadros consecutivos da piscada",
+      "source_native_frames": [575,576,577,578,579,580],
+      "source_frame_interval_seconds": 0.03333333333333333,
+      "layout": "2 colunas x 3 linhas, esquerda para direita e cima para baixo",
+      "source_grid": "avenida-marvel/work/continuity-v2/adjacent-575-580.png",
+      "reference": "avenida-marvel/work/anchors/0574.png",
+      "output": "generated_images/exec-b7a2188e-6717-4875-be89-7d37be6cedc0.png",
+      "prompt": "Edit the FIRST reference as a 2-column by 3-row contact sheet of SIX CONSECUTIVE video frames, read left to right then top to bottom. Replace the white-shirted foreground man in EACH panel with Wanda Maximoff / Scarlet Witch, matching her exact face, crown, hair, sleeveless burgundy outfit and softly focused appearance from the SECOND reference. Preserve the original frame-by-frame performance, head angle, size of the face, face center, shoulders, camera viewpoint and room background. These are consecutive frames at 30 FPS, not six unrelated portraits. CRITICAL BLINK: in panels 1, 2 and 3 her eyes are open as in the original; in panels 4, 5 and 6 her eyes close in the same natural blink as the original man. Match each panel's mouth opening and facial tension to its original, including the subtle changes between adjacent frames. Keep Wanda's identity and costume identical throughout. Preserve the first image's exact 2-by-3 layout with six equal landscape panels, no borders or text, no extra panels. Use the same soft video focus and warm room lighting; avoid sharpening or a glamorous posing expression.",
+      "continuation_status": "A tentativa de geração dos quadros 581 a 586 foi bloqueada com moderation_blocked, na etapa output, categoria other. Motivo específico não informado."
+    }
+  ]
+}

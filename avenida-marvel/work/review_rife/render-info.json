@@ -1,0 +1,33 @@
+{
+  "source_fps": 30,
+  "fps": 60,
+  "source_frames": 778,
+  "full_output_frames": 1556,
+  "rendered_this_run": 242,
+  "skipped_without_anchors": 0,
+  "cuts": [
+    39,
+    56,
+    76,
+    173,
+    198,
+    239,
+    241,
+    272,
+    349,
+    359,
+    400,
+    404,
+    444,
+    575,
+    624,
+    665,
+    666,
+    706,
+    747,
+    749
+  ],
+  "width": 576,
+  "height": 364,
+  "method": "rife"
+}

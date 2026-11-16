@@ -1,0 +1,35 @@
+{
+  "file": "/workspace/shared/downloads/teste-continuidade-enquadramento-60fps.mp4",
+  "frames": 120,
+  "fps": 60,
+  "audio": false,
+  "source_interval_per_native_frame": 0.03333333333333333,
+  "new_genuine_generated_frames": [
+    575,
+    576,
+    577,
+    578,
+    579,
+    580
+  ],
+  "held_pose_frames": [
+    581,
+    582
+  ],
+  "interpolated_reopening_frames": [
+    583,
+    584,
+    585
+  ],
+  "new_background_method": "One calibrated continuous empty background image per shot, projected with the same camera used for the character. No original/generated background patchwork or per-frame architecture deformation.",
+  "character_registration": "Source face position in scene coordinates and stable apparent head size; generated-frame crop/scale changes canceled before composition.",
+  "matting": "Robust Video Matting MobileNetV3 with recurrent temporal state; foreground color and alpha.",
+  "interpolation": "Foreground RGBA only, camera/background projected independently at the same sub-frame time.",
+  "unchanged_shots_if_full": [
+    0,
+    1,
+    5,
+    9
+  ],
+  "limitations": "Only six newly generated native frames were produced before the next image generation was blocked. Other character poses are reused or interpolated; acting remains approximate. The reconstructed background matches the reference scene approximately."
+}

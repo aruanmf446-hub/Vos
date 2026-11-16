@@ -1,0 +1,21 @@
+{
+  "source_fps": 30,
+  "fps": 60,
+  "source_frames": 778,
+  "full_output_frames": 1556,
+  "rendered_this_run": 78,
+  "skipped_without_anchors": 0,
+  "cuts": [
+    39,
+    76,
+    173,
+    241,
+    272,
+    349,
+    404,
+    666,
+    749
+  ],
+  "width": 576,
+  "height": 364
+}

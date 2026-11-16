@@ -1,0 +1,29 @@
+{
+  "models": [
+    {
+      "name": "rvm_mobilenetv3_fp32.torchscript",
+      "original_path": "/workspace/avenida-marvel/models/rvm/rvm_mobilenetv3_fp32.torchscript",
+      "bytes": 15501891,
+      "sha256": "f01e0c9338b9a6a31b881ea6d4360d70c1e549701b3792e14c9ed88d6196c5a1"
+    },
+    {
+      "name": "flownet.pkl",
+      "original_path": "/workspace/avenida-marvel/models/rife425/train_log/flownet.pkl",
+      "bytes": 24467405,
+      "sha256": "81cdba223fe72a120130cc8552e5d2ecac824259d406f0c15323b3decf96b8b1"
+    },
+    {
+      "name": "yunet.onnx",
+      "original_path": "/workspace/avenida-marvel/models/yunet.onnx",
+      "bytes": 232589,
+      "sha256": "8f2383e4dd3cfbb4553ea8718107fc0423210dc964f9f4280604804ed2552fa4"
+    },
+    {
+      "name": "lraspp_mobilenet_v3_large-d234d4ea.pth",
+      "original_path": "/home/agent/.cache/torch/hub/checkpoints/lraspp_mobilenet_v3_large-d234d4ea.pth",
+      "bytes": 13097061,
+      "sha256": "d234d4eae9d55d5f76de18b77cf0dc62c66fe5c5482758209d00f950c92bb280"
+    }
+  ],
+  "weights_included": false
+}

@@ -1,0 +1,28 @@
+{
+  "duration": 25.933333333333334,
+  "source_frames": 778,
+  "output_frames": 1556,
+  "output_fps": 60,
+  "audio": false,
+  "characters": [
+    "Doctor Strange",
+    "Wanda",
+    "Doctor Doom",
+    "Hulk",
+    "Sylvie"
+  ],
+  "original_actor_shots_pending": [],
+  "source_motion_single_image_ranges": {
+    "Doom": [
+      272,
+      349
+    ],
+    "Doctor Strange finale": [
+      749,
+      778
+    ]
+  },
+  "limitations": "Doom and the final portrait use motion transfer from single approved character images; gestures and facial acting remain approximate. Existing dense standing-motion and corrected-window-background patches retained.",
+  "Doom_tracking": "Source face positions, smoothed at native FPS; rigid costume layer; no deformation of helmet or armor.",
+  "Doom_motion_limits": "Single approved pose; hand gestures and body acting remain approximate."
+}

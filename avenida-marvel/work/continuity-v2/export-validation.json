@@ -1,0 +1,81 @@
+{
+  "file": "/workspace/shared/downloads/video-marvel-continuidade-v2-60fps.mp4",
+  "metadata": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 720,
+        "height": 1068,
+        "avg_frame_rate": "60/1",
+        "nb_frames": "1556"
+      }
+    ],
+    "format": {
+      "duration": "25.933333",
+      "size": "4742111"
+    }
+  },
+  "actual_decoded_frames": 1556,
+  "full_decode": "OK",
+  "all_nine_original_hard_cuts_preserved": [
+    {
+      "original_cut_frame": 39,
+      "hold_before_cut_MAE": 0.07024890618640618
+    },
+    {
+      "original_cut_frame": 76,
+      "hold_before_cut_MAE": 0.07673070563695564
+    },
+    {
+      "original_cut_frame": 173,
+      "hold_before_cut_MAE": 0.033036986161986165
+    },
+    {
+      "original_cut_frame": 241,
+      "hold_before_cut_MAE": 0.01483325702075702
+    },
+    {
+      "original_cut_frame": 272,
+      "hold_before_cut_MAE": 0.02235640516890517
+    },
+    {
+      "original_cut_frame": 349,
+      "hold_before_cut_MAE": 0.03777472527472527
+    },
+    {
+      "original_cut_frame": 404,
+      "hold_before_cut_MAE": 0.04226285866910867
+    },
+    {
+      "original_cut_frame": 666,
+      "hold_before_cut_MAE": 0.14882860195360195
+    },
+    {
+      "original_cut_frame": 749,
+      "hold_before_cut_MAE": 0.06545552248677249
+    }
+  ],
+  "hulk_patch_matches_final_MAE": 0.9666768416768416,
+  "sha256": "c2c7ca38a1ff7ec43a6b37328d1533b496c435c62006e4520a19909f22165faa",
+  "comparison": {
+    "file": "/workspace/shared/downloads/comparacao-encaixe-v2-camera-lenta.mp4",
+    "frames": 600,
+    "seconds": 10,
+    "normal_seconds": 2,
+    "slow_seconds": 8,
+    "source_intervals": [
+      [
+        94,
+        130
+      ],
+      [
+        570,
+        594
+      ]
+    ],
+    "all_source_frames_in_intervals_used": true
+  }
+}

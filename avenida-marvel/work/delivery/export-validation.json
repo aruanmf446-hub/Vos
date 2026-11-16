@@ -1,0 +1,72 @@
+{
+  "path": "/workspace/shared/downloads/video-marvel-completo-60fps.mp4",
+  "bytes": 5013833,
+  "sha256": "7731eb245e09ea581eb0253f29fbc4e01cc711c9fef441e9cb80bf4adc341641",
+  "metadata": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "codec_type": "video",
+        "width": 720,
+        "height": 1068,
+        "avg_frame_rate": "60/1",
+        "duration": "25.933333",
+        "nb_frames": "1556",
+        "nb_read_frames": "1556"
+      }
+    ]
+  },
+  "full_decode": "OK",
+  "source_frames": 778,
+  "output_frames": 1556,
+  "audio": false,
+  "all_nine_original_hard_cuts_preserved": [
+    {
+      "source_frame": 39,
+      "hold_before_cut_MAE": 0.032451923936605453,
+      "native_frame_MAE": 1.4785641431808472
+    },
+    {
+      "source_frame": 76,
+      "hold_before_cut_MAE": 0.030259527266025543,
+      "native_frame_MAE": 1.9688835144042969
+    },
+    {
+      "source_frame": 173,
+      "hold_before_cut_MAE": 0.03141852468252182,
+      "native_frame_MAE": 1.6154927015304565
+    },
+    {
+      "source_frame": 241,
+      "hold_before_cut_MAE": 0.04375731199979782,
+      "native_frame_MAE": 1.919232726097107
+    },
+    {
+      "source_frame": 272,
+      "hold_before_cut_MAE": 0.0357762910425663,
+      "native_frame_MAE": 1.8132551908493042
+    },
+    {
+      "source_frame": 349,
+      "hold_before_cut_MAE": 0.02085082232952118,
+      "native_frame_MAE": 1.8161026239395142
+    },
+    {
+      "source_frame": 404,
+      "hold_before_cut_MAE": 0.03355368599295616,
+      "native_frame_MAE": 1.5842968225479126
+    },
+    {
+      "source_frame": 666,
+      "hold_before_cut_MAE": 0.05084007605910301,
+      "native_frame_MAE": 1.8135555982589722
+    },
+    {
+      "source_frame": 749,
+      "hold_before_cut_MAE": 0.05088618025183678,
+      "native_frame_MAE": 1.6574821472167969
+    }
+  ]
+}

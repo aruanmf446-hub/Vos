@@ -1,0 +1,9 @@
+{
+  "frames": 97,
+  "fps": 30,
+  "duration": 3.2333333333333334,
+  "observed_original_background_fraction": 0.6751230540293041,
+  "foreground_x_shift_min": -4.942100524902344,
+  "foreground_x_shift_max": 91.95960235595703,
+  "no_generated_background_used_per_frame": true
+}

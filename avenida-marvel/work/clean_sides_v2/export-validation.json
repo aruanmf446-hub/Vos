@@ -1,0 +1,29 @@
+[
+  {
+    "file": "comparacao-fundo-e-bordas-60fps.mp4",
+    "frames": 194,
+    "fps": 60,
+    "seconds": "3.233333",
+    "audio": false,
+    "decode": "OK",
+    "bytes": 1179288
+  },
+  {
+    "file": "comparacao-fundo-e-bordas-vertical.mp4",
+    "frames": 194,
+    "fps": 60,
+    "seconds": "3.233333",
+    "audio": false,
+    "decode": "OK",
+    "bytes": 1162451
+  },
+  {
+    "file": "trecho-fundo-e-bordas-corrigidos.mp4",
+    "frames": 194,
+    "fps": 60,
+    "seconds": "3.233333",
+    "audio": false,
+    "decode": "OK",
+    "bytes": 509310
+  }
+]

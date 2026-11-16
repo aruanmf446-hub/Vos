@@ -1,0 +1,18 @@
+{
+  "frames": 194,
+  "fps": 60,
+  "seconds": 3.2333333333333334,
+  "audio": false,
+  "source_interval_frames": [
+    76,
+    173
+  ],
+  "background_plates": 1,
+  "camera_model": "source background feature tracking; translation and uniform scale; no rotation or shear",
+  "background_compositing": "original source pixels outside old actor; fixed cleanplate inside removal region",
+  "foreground_interpolation": "adjacent-frame RIFE 4.25 Lite",
+  "comparison_previous": "actual delivered 60FPS file; source frames 152 to 345",
+  "background_step_mean_MAE": 4.278258117008926,
+  "background_step_max_MAE": 16.357255736161985,
+  "limitations": "This is a 3.233s test. Acting is approximate. Does not replace the entire 25.933s video."
+}

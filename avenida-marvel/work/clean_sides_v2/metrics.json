@@ -1,0 +1,10 @@
+{
+  "frames": 194,
+  "fps": 60,
+  "seconds": 3.2333333333333334,
+  "background_plates": 1,
+  "foreground_interpolation": "RIFE 4.25 Lite, adjacent native frames",
+  "max_background_step_MAE": 11.042167467948717,
+  "average_background_step_MAE": 4.206762211923319,
+  "limitations": "Original acting remains approximate; only source frames 76 to 172 treated by this test."
+}

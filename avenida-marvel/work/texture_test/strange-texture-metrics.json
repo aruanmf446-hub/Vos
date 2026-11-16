@@ -1,0 +1,16 @@
+{
+  "input": "/workspace/shared/downloads/video-continuo-em-revisao-60fps.mp4",
+  "start_frame_60fps": 152,
+  "frames": 60,
+  "duration": 1.0,
+  "fps": 60,
+  "timing_poses_or_interpolation_changed": false,
+  "foreground_only": true,
+  "blur_sigma_output_pixels": 0.56,
+  "grain_sigma_luma": 0.65,
+  "outside_mask_mae": 0.0,
+  "foreground_change_mae": 1.0320743315739251,
+  "comparison": "/workspace/avenida-marvel/work/texture_test/strange-texture-comparison.mp4",
+  "standalone": "/workspace/avenida-marvel/work/texture_test/strange-texture-only.mp4",
+  "runtime": 10.060585679999349
+}

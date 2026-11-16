@@ -1,0 +1,719 @@
+{
+  "grid": [
+    3,
+    3
+  ],
+  "panel_size": [
+    576,
+    364
+  ],
+  "output_size": [
+    1728,
+    1092
+  ],
+  "contains_source_photo_pixels": false,
+  "poses": [
+    {
+      "panel": 1,
+      "source_frame": 272,
+      "source_time_seconds": 9.066666666666666,
+      "coordinate_canvas": [
+        576,
+        364
+      ],
+      "head_center": [
+        351,
+        85
+      ],
+      "head_bbox": [
+        296,
+        10,
+        410,
+        164
+      ],
+      "facing": "screen-left profile",
+      "yaw_degrees": -75,
+      "neck": [
+        380,
+        165
+      ],
+      "near_shoulder": [
+        443,
+        191
+      ],
+      "near_elbow": [
+        497,
+        308
+      ],
+      "near_wrist": [
+        460,
+        380
+      ],
+      "near_hand_center": [
+        445,
+        394
+      ],
+      "far_shoulder": [
+        361,
+        186
+      ],
+      "far_elbow": [
+        343,
+        293
+      ],
+      "far_wrist": [
+        332,
+        380
+      ],
+      "far_hand_center": [
+        324,
+        394
+      ],
+      "torso_polygon": [
+        [
+          353,
+          172
+        ],
+        [
+          451,
+          185
+        ],
+        [
+          528,
+          410
+        ],
+        [
+          343,
+          410
+        ]
+      ],
+      "crop": "waist-up; lower body outside image",
+      "estimate_method": "manual screen-space measurements; neutral geometry only",
+      "facial_identity_data": false
+    },
+    {
+      "panel": 2,
+      "source_frame": 282,
+      "source_time_seconds": 9.4,
+      "coordinate_canvas": [
+        576,
+        364
+      ],
+      "head_center": [
+        365,
+        85
+      ],
+      "head_bbox": [
+        307,
+        10,
+        424,
+        166
+      ],
+      "facing": "screen-left profile",
+      "yaw_degrees": -75,
+      "neck": [
+        389,
+        168
+      ],
+      "near_shoulder": [
+        452,
+        195
+      ],
+      "near_elbow": [
+        492,
+        306
+      ],
+      "near_wrist": [
+        430,
+        380
+      ],
+      "near_hand_center": [
+        412,
+        393
+      ],
+      "far_shoulder": [
+        370,
+        188
+      ],
+      "far_elbow": [
+        351,
+        293
+      ],
+      "far_wrist": [
+        345,
+        378
+      ],
+      "far_hand_center": [
+        333,
+        390
+      ],
+      "torso_polygon": [
+        [
+          362,
+          175
+        ],
+        [
+          460,
+          189
+        ],
+        [
+          537,
+          410
+        ],
+        [
+          352,
+          410
+        ]
+      ],
+      "crop": "waist-up; lower body outside image",
+      "estimate_method": "manual screen-space measurements; neutral geometry only",
+      "facial_identity_data": false
+    },
+    {
+      "panel": 3,
+      "source_frame": 292,
+      "source_time_seconds": 9.733333333333333,
+      "coordinate_canvas": [
+        576,
+        364
+      ],
+      "head_center": [
+        389,
+        99
+      ],
+      "head_bbox": [
+        332,
+        24,
+        448,
+        176
+      ],
+      "facing": "screen-left profile",
+      "yaw_degrees": -75,
+      "neck": [
+        410,
+        178
+      ],
+      "near_shoulder": [
+        473,
+        200
+      ],
+      "near_elbow": [
+        506,
+        303
+      ],
+      "near_wrist": [
+        455,
+        356
+      ],
+      "near_hand_center": [
+        435,
+        367
+      ],
+      "far_shoulder": [
+        389,
+        192
+      ],
+      "far_elbow": [
+        370,
+        292
+      ],
+      "far_wrist": [
+        385,
+        368
+      ],
+      "far_hand_center": [
+        372,
+        383
+      ],
+      "torso_polygon": [
+        [
+          383,
+          185
+        ],
+        [
+          481,
+          194
+        ],
+        [
+          558,
+          410
+        ],
+        [
+          373,
+          410
+        ]
+      ],
+      "crop": "waist-up; lower body outside image",
+      "estimate_method": "manual screen-space measurements; neutral geometry only",
+      "facial_identity_data": false
+    },
+    {
+      "panel": 4,
+      "source_frame": 302,
+      "source_time_seconds": 10.066666666666666,
+      "coordinate_canvas": [
+        576,
+        364
+      ],
+      "head_center": [
+        377,
+        105
+      ],
+      "head_bbox": [
+        320,
+        31,
+        437,
+        182
+      ],
+      "facing": "screen-left profile",
+      "yaw_degrees": -75,
+      "neck": [
+        402,
+        187
+      ],
+      "near_shoulder": [
+        460,
+        215
+      ],
+      "near_elbow": [
+        497,
+        303
+      ],
+      "near_wrist": [
+        405,
+        350
+      ],
+      "near_hand_center": [
+        375,
+        352
+      ],
+      "far_shoulder": [
+        382,
+        201
+      ],
+      "far_elbow": [
+        363,
+        299
+      ],
+      "far_wrist": [
+        357,
+        369
+      ],
+      "far_hand_center": [
+        341,
+        382
+      ],
+      "torso_polygon": [
+        [
+          375,
+          194
+        ],
+        [
+          468,
+          209
+        ],
+        [
+          545,
+          410
+        ],
+        [
+          365,
+          410
+        ]
+      ],
+      "crop": "waist-up; lower body outside image",
+      "estimate_method": "manual screen-space measurements; neutral geometry only",
+      "facial_identity_data": false
+    },
+    {
+      "panel": 5,
+      "source_frame": 312,
+      "source_time_seconds": 10.4,
+      "coordinate_canvas": [
+        576,
+        364
+      ],
+      "head_center": [
+        355,
+        113
+      ],
+      "head_bbox": [
+        296,
+        46,
+        414,
+        188
+      ],
+      "facing": "screen-left profile",
+      "yaw_degrees": -75,
+      "neck": [
+        385,
+        187
+      ],
+      "near_shoulder": [
+        437,
+        214
+      ],
+      "near_elbow": [
+        474,
+        309
+      ],
+      "near_wrist": [
+        390,
+        356
+      ],
+      "near_hand_center": [
+        362,
+        365
+      ],
+      "far_shoulder": [
+        366,
+        207
+      ],
+      "far_elbow": [
+        354,
+        303
+      ],
+      "far_wrist": [
+        355,
+        371
+      ],
+      "far_hand_center": [
+        339,
+        384
+      ],
+      "torso_polygon": [
+        [
+          358,
+          194
+        ],
+        [
+          445,
+          208
+        ],
+        [
+          522,
+          410
+        ],
+        [
+          348,
+          410
+        ]
+      ],
+      "crop": "waist-up; lower body outside image",
+      "estimate_method": "manual screen-space measurements; neutral geometry only",
+      "facial_identity_data": false
+    },
+    {
+      "panel": 6,
+      "source_frame": 322,
+      "source_time_seconds": 10.733333333333333,
+      "coordinate_canvas": [
+        576,
+        364
+      ],
+      "head_center": [
+        355,
+        100
+      ],
+      "head_bbox": [
+        297,
+        26,
+        415,
+        176
+      ],
+      "facing": "screen-left profile",
+      "yaw_degrees": -75,
+      "neck": [
+        380,
+        179
+      ],
+      "near_shoulder": [
+        432,
+        205
+      ],
+      "near_elbow": [
+        460,
+        286
+      ],
+      "near_wrist": [
+        370,
+        336
+      ],
+      "near_hand_center": [
+        337,
+        346
+      ],
+      "far_shoulder": [
+        364,
+        197
+      ],
+      "far_elbow": [
+        349,
+        286
+      ],
+      "far_wrist": [
+        356,
+        352
+      ],
+      "far_hand_center": [
+        338,
+        365
+      ],
+      "torso_polygon": [
+        [
+          353,
+          186
+        ],
+        [
+          440,
+          199
+        ],
+        [
+          517,
+          410
+        ],
+        [
+          343,
+          410
+        ]
+      ],
+      "crop": "waist-up; lower body outside image",
+      "estimate_method": "manual screen-space measurements; neutral geometry only",
+      "facial_identity_data": false
+    },
+    {
+      "panel": 7,
+      "source_frame": 332,
+      "source_time_seconds": 11.066666666666666,
+      "coordinate_canvas": [
+        576,
+        364
+      ],
+      "head_center": [
+        372,
+        113
+      ],
+      "head_bbox": [
+        313,
+        38,
+        431,
+        187
+      ],
+      "facing": "screen-left profile",
+      "yaw_degrees": -75,
+      "neck": [
+        401,
+        187
+      ],
+      "near_shoulder": [
+        464,
+        223
+      ],
+      "near_elbow": [
+        500,
+        294
+      ],
+      "near_wrist": [
+        427,
+        334
+      ],
+      "near_hand_center": [
+        395,
+        341
+      ],
+      "far_shoulder": [
+        381,
+        206
+      ],
+      "far_elbow": [
+        369,
+        302
+      ],
+      "far_wrist": [
+        376,
+        348
+      ],
+      "far_hand_center": [
+        359,
+        361
+      ],
+      "torso_polygon": [
+        [
+          374,
+          194
+        ],
+        [
+          472,
+          217
+        ],
+        [
+          549,
+          410
+        ],
+        [
+          364,
+          410
+        ]
+      ],
+      "crop": "waist-up; lower body outside image",
+      "estimate_method": "manual screen-space measurements; neutral geometry only",
+      "facial_identity_data": false
+    },
+    {
+      "panel": 8,
+      "source_frame": 342,
+      "source_time_seconds": 11.4,
+      "coordinate_canvas": [
+        576,
+        364
+      ],
+      "head_center": [
+        385,
+        115
+      ],
+      "head_bbox": [
+        327,
+        39,
+        443,
+        189
+      ],
+      "facing": "screen-left profile",
+      "yaw_degrees": -75,
+      "neck": [
+        413,
+        190
+      ],
+      "near_shoulder": [
+        466,
+        218
+      ],
+      "near_elbow": [
+        517,
+        281
+      ],
+      "near_wrist": [
+        486,
+        325
+      ],
+      "near_hand_center": [
+        480,
+        347
+      ],
+      "far_shoulder": [
+        392,
+        211
+      ],
+      "far_elbow": [
+        381,
+        302
+      ],
+      "far_wrist": [
+        387,
+        328
+      ],
+      "far_hand_center": [
+        367,
+        337
+      ],
+      "torso_polygon": [
+        [
+          386,
+          197
+        ],
+        [
+          474,
+          212
+        ],
+        [
+          551,
+          410
+        ],
+        [
+          376,
+          410
+        ]
+      ],
+      "crop": "waist-up; lower body outside image",
+      "estimate_method": "manual screen-space measurements; neutral geometry only",
+      "facial_identity_data": false
+    },
+    {
+      "panel": 9,
+      "source_frame": 348,
+      "source_time_seconds": 11.6,
+      "coordinate_canvas": [
+        576,
+        364
+      ],
+      "head_center": [
+        377,
+        108
+      ],
+      "head_bbox": [
+        318,
+        33,
+        438,
+        183
+      ],
+      "facing": "screen-left profile",
+      "yaw_degrees": -75,
+      "neck": [
+        401,
+        186
+      ],
+      "near_shoulder": [
+        468,
+        214
+      ],
+      "near_elbow": [
+        522,
+        282
+      ],
+      "near_wrist": [
+        487,
+        320
+      ],
+      "near_hand_center": [
+        482,
+        340
+      ],
+      "far_shoulder": [
+        383,
+        207
+      ],
+      "far_elbow": [
+        376,
+        294
+      ],
+      "far_wrist": [
+        398,
+        322
+      ],
+      "far_hand_center": [
+        376,
+        332
+      ],
+      "torso_polygon": [
+        [
+          374,
+          193
+        ],
+        [
+          476,
+          208
+        ],
+        [
+          553,
+          410
+        ],
+        [
+          364,
+          410
+        ]
+      ],
+      "crop": "waist-up; lower body outside image",
+      "estimate_method": "manual screen-space measurements; neutral geometry only",
+      "facial_identity_data": false
+    }
+  ]
+}

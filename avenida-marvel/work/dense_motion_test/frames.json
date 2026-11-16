@@ -1,0 +1,16 @@
+{
+  "source_frames": [
+    55,
+    59,
+    63,
+    67,
+    71,
+    75
+  ],
+  "source_fps": 30,
+  "duration_between_endpoints": 0.6666666666666666,
+  "layout": [
+    3,
+    2
+  ]
+}

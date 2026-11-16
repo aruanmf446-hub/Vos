@@ -1,0 +1,240 @@
+{
+  "source_frames": 778,
+  "duration": 25.933333333333334,
+  "no_cuts_removed": true,
+  "silent": true,
+  "output_fps": 60,
+  "shots": [
+    {
+      "start": 0,
+      "end": 39,
+      "keys": [
+        0,
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        38
+      ],
+      "edge_count": 0,
+      "replaced_count": 39
+    },
+    {
+      "start": 39,
+      "end": 76,
+      "keys": [
+        39,
+        41,
+        43,
+        45,
+        47,
+        49,
+        51,
+        53,
+        55,
+        57,
+        59,
+        61,
+        63,
+        65,
+        67,
+        69,
+        72,
+        75
+      ],
+      "edge_count": 0,
+      "replaced_count": 37
+    },
+    {
+      "start": 76,
+      "end": 173,
+      "keys": [
+        76,
+        88,
+        100,
+        112,
+        124,
+        136,
+        148,
+        160,
+        172
+      ],
+      "edge_count": 0,
+      "replaced_count": 97
+    },
+    {
+      "start": 173,
+      "end": 241,
+      "keys": [
+        198,
+        203,
+        208,
+        213,
+        218,
+        223,
+        228,
+        233,
+        238
+      ],
+      "edge_count": 27,
+      "replaced_count": 68
+    },
+    {
+      "start": 241,
+      "end": 272,
+      "keys": [
+        241,
+        245,
+        249,
+        253,
+        257,
+        261,
+        265,
+        269,
+        271
+      ],
+      "edge_count": 0,
+      "replaced_count": 31
+    },
+    {
+      "start": 272,
+      "end": 349,
+      "keys": [],
+      "edge_count": 0,
+      "replaced_count": 0
+    },
+    {
+      "start": 349,
+      "end": 404,
+      "keys": [
+        359,
+        364,
+        369,
+        374,
+        379,
+        384,
+        389,
+        394,
+        399
+      ],
+      "edge_count": 14,
+      "replaced_count": 55
+    },
+    {
+      "start": 404,
+      "end": 666,
+      "keys": [
+        444,
+        449,
+        454,
+        459,
+        464,
+        469,
+        474,
+        479,
+        484,
+        489,
+        494,
+        499,
+        504,
+        509,
+        514,
+        519,
+        524,
+        529,
+        534,
+        539,
+        544,
+        549,
+        554,
+        559,
+        564,
+        569,
+        574,
+        624,
+        629,
+        634,
+        639,
+        644,
+        649,
+        654,
+        659,
+        664
+      ],
+      "edge_count": 41,
+      "replaced_count": 262
+    },
+    {
+      "start": 666,
+      "end": 749,
+      "keys": [
+        706,
+        711,
+        716,
+        721,
+        726,
+        731,
+        736,
+        741,
+        746
+      ],
+      "edge_count": 42,
+      "replaced_count": 83
+    },
+    {
+      "start": 749,
+      "end": 778,
+      "keys": [],
+      "edge_count": 0,
+      "replaced_count": 0
+    }
+  ],
+  "final_adjustments": {
+    "stand_filtered_keys": [
+      57,
+      59,
+      61,
+      63
+    ],
+    "stand_fix_source_range": [
+      39,
+      76
+    ],
+    "flash_hold_source_range": [
+      747,
+      749
+    ],
+    "flash_hold_anchor": 746,
+    "pending_original_ranges": [
+      [
+        272,
+        349
+      ],
+      [
+        749,
+        778
+      ]
+    ],
+    "final_frames": 1556,
+    "final_fps": 60,
+    "final_metadata": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 720,
+          "height": 1068,
+          "r_frame_rate": "60/1",
+          "nb_frames": "1556"
+        }
+      ],
+      "format": {
+        "duration": "25.933333"
+      }
+    }
+  }
+}
