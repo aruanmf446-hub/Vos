@@ -8,7 +8,8 @@ O vídeo tem **25,93 segundos, 1.556 quadros, 60 FPS, 720 × 1068 e nenhum áudi
 
 - [Comparação de trechos com câmera lenta](media/videos/comparacao-encaixe-v2-camera-lenta.mp4)
 - [Primeiro experimento: Doutor Estranho e Wanda](media/videos/doutor-estranho-wanda.mp4)
-- [Backup completo e checkpoint editável](https://github.com/aruanmf446-hub/Vos/releases/tag/preservacao-2026-11-16)
+- [Backup completo e checkpoint editável](backups/README.md)
+- [MP4: download direto](https://raw.githubusercontent.com/aruanmf446-hub/Vos/main/media/videos/video-marvel-continuidade-v2-60fps.mp4)
 - [Por onde continuar](docs/CONTINUAR_AQUI.md)
 - [Como restaurar os arquivos](docs/RESTAURACAO.md)
 
@@ -27,7 +28,7 @@ O vídeo tem **25,93 segundos, 1.556 quadros, 60 FPS, 720 × 1068 e nenhum áudi
 - Scripts dos dois projetos, referências enviadas, vídeos originais e comparação feita no CapCut.
 - Imagens geradas e quadros aprovados, inclusive o quadro do Doom que funcionou e os seis quadros consecutivos da piscada da Wanda.
 - Vídeos entregues, versões de revisão, relatórios de validação e rastreamento da câmera.
-- Um checkpoint na release com os quadros gerados, recortes com transparência e estado editável que são grandes demais para manter no histórico Git.
+- Um checkpoint em partes na pasta `backups/` com os quadros gerados, recortes com transparência e estado editável que são grandes demais para manter no histórico Git.
 - Manifestos com tamanhos e SHA-256 para conferir a integridade dos arquivos.
 
 ## Estado real da versão

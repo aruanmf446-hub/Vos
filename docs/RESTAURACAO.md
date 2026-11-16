@@ -1,10 +1,12 @@
 # Restaurar o trabalho
 
-O Git guarda código, referências, entregas e quadros aprovados. A release também fornece:
+O Git guarda código, referências, entregas e quadros aprovados. A pasta `backups/` preserva os seguintes pacotes, divididos em partes menores:
 
 - `entrega-e-projeto.zip`: cópia organizada dos arquivos do repositório.
 - `checkpoint-editavel.zip`: os mesmos arquivos e o estado editável, incluindo os quadros gerados intermediários e recortes RGBA.
-- `SHA256SUMS.txt`: hashes dos arquivos distribuídos na release.
+- `SHA256SUMS.txt`: hashes dos arquivos dos pacotes.
+
+Primeiro, [reconstruir o ZIP a partir das partes](../backups/README.md). O utilitário `scripts/recuperar_zip.py` verifica os hashes e também permite baixar as partes ausentes.
 
 ## Verificar a cópia
 

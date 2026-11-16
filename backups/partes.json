@@ -1,0 +1,139 @@
+{
+  "part_size": 50331648,
+  "archives": [
+    {
+      "file": "entrega-e-projeto.zip",
+      "bytes": 143064178,
+      "sha256": "e359ee9539199e98b643f49c6ecb1df31e87fbdc7a5bddf28a01eba9bb65042c",
+      "parts": [
+        {
+          "file": "entrega-e-projeto.zip.part001",
+          "bytes": 50331648,
+          "sha256": "8293fc00e9703ba820ffc333c236a9ba1e327c731332588769d97c5504b9329b"
+        },
+        {
+          "file": "entrega-e-projeto.zip.part002",
+          "bytes": 50331648,
+          "sha256": "59ae1bbb93b67e0d92347383cd65316b7626ffd7a9561274a936aa28a41f61fd"
+        },
+        {
+          "file": "entrega-e-projeto.zip.part003",
+          "bytes": 42400882,
+          "sha256": "9268092361db56e366236afcd2924686026c4fa945fb607e5a250710b40495d5"
+        }
+      ]
+    },
+    {
+      "file": "checkpoint-editavel.zip",
+      "bytes": 1010177902,
+      "sha256": "c6c85dda30294aa6051282b0f83b74d44b89ab6658879290c79c71f66caa81ba",
+      "parts": [
+        {
+          "file": "checkpoint-editavel.zip.part001",
+          "bytes": 50331648,
+          "sha256": "5240472839668ff9ad34023eac0c4edec2c4e2ec484ffaa9fff2e9bc31c90069"
+        },
+        {
+          "file": "checkpoint-editavel.zip.part002",
+          "bytes": 50331648,
+          "sha256": "ae6d7edfc9c5b022f7588ea45aae0d3adc79f66ead3b1c3d33972c5117e56a93"
+        },
+        {
+          "file": "checkpoint-editavel.zip.part003",
+          "bytes": 50331648,
+          "sha256": "d8c92994094f3123812b1340ed32639bb54bfeea7cbbfb31105ef89156dff94a"
+        },
+        {
+          "file": "checkpoint-editavel.zip.part004",
+          "bytes": 50331648,
+          "sha256": "f4acba563eb94c277059bfcacac6c8e407aa3710c013defc2ac9ac352f89d0d1"
+        },
+        {
+          "file": "checkpoint-editavel.zip.part005",
+          "bytes": 50331648,
+          "sha256": "116f20c418f208c8f76cbfec044ce2de58c97533c476e93a93f7f3c4c29fefb0"
+        },
+        {
+          "file": "checkpoint-editavel.zip.part006",
+          "bytes": 50331648,
+          "sha256": "7203ef6c9bdb83f8e897a0bf69cee102cebdde94b9a6d0e30fc37680699721cb"
+        },
+        {
+          "file": "checkpoint-editavel.zip.part007",
+          "bytes": 50331648,
+          "sha256": "532c887789fda5f645543ffe737e652c8bc8e864203e5cbbfc6db127c75b756f"
+        },
+        {
+          "file": "checkpoint-editavel.zip.part008",
+          "bytes": 50331648,
+          "sha256": "01f58b5a1c0181785a2ccb9a25a27b9bd5c788b3b423467d0ef1582465f27d61"
+        },
+        {
+          "file": "checkpoint-editavel.zip.part009",
+          "bytes": 50331648,
+          "sha256": "515e041ae18ba764691c9f8b2fd0015a258a01e89c949285116d74d107625bdb"
+        },
+        {
+          "file": "checkpoint-editavel.zip.part010",
+          "bytes": 50331648,
+          "sha256": "aa4da1c19592701d85877a4e739de343d0e4ec7fd5349f5b634b7aef4c50c558"
+        },
+        {
+          "file": "checkpoint-editavel.zip.part011",
+          "bytes": 50331648,
+          "sha256": "3466a63278caf7a475b8f4221c4b500c02fe1e7a3b4a6c1afd73262d2e861336"
+        },
+        {
+          "file": "checkpoint-editavel.zip.part012",
+          "bytes": 50331648,
+          "sha256": "0e6caad29b83acc97defde8dabeb741fe5a40b03ba5202644488048283eea001"
+        },
+        {
+          "file": "checkpoint-editavel.zip.part013",
+          "bytes": 50331648,
+          "sha256": "f7f0ba0d455f31445bb43166afed246e3920d6f3371c1fd7c15239ee4e0118ba"
+        },
+        {
+          "file": "checkpoint-editavel.zip.part014",
+          "bytes": 50331648,
+          "sha256": "ef3840a00419a7f13c7496558f255795a2f916d8be57e06589e24ca37bfb5d3a"
+        },
+        {
+          "file": "checkpoint-editavel.zip.part015",
+          "bytes": 50331648,
+          "sha256": "1d982a16b544c9a4dd42baace63ea82b39a2e7a11cdd3442d489748f7d1498b6"
+        },
+        {
+          "file": "checkpoint-editavel.zip.part016",
+          "bytes": 50331648,
+          "sha256": "a7208f7f94fdadbee413389bcbaa6f527869b7841739ccba2dd506127779264e"
+        },
+        {
+          "file": "checkpoint-editavel.zip.part017",
+          "bytes": 50331648,
+          "sha256": "5211ef7e1067866adcef1ba99bff89b813061dd9f687563f1ca4a65eba1f2e11"
+        },
+        {
+          "file": "checkpoint-editavel.zip.part018",
+          "bytes": 50331648,
+          "sha256": "38058c26d6d49b9826f2c989122c84371f838390782be455b009bf54da4c3902"
+        },
+        {
+          "file": "checkpoint-editavel.zip.part019",
+          "bytes": 50331648,
+          "sha256": "e72ff1bfdc7fa97ba9ed4ce32f9e56a762c8bf6ab257df1f6e78b925c0451f72"
+        },
+        {
+          "file": "checkpoint-editavel.zip.part020",
+          "bytes": 50331648,
+          "sha256": "843234e16f0cb40ed797fe78ce3601632e2a3f7d10c98342a8aeec7c8de4adf8"
+        },
+        {
+          "file": "checkpoint-editavel.zip.part021",
+          "bytes": 3544942,
+          "sha256": "0c267a879cf8e7b6d4aa0ecfa69b39949ea1a3641d072d9e249fef74ec985335"
+        }
+      ]
+    }
+  ]
+}

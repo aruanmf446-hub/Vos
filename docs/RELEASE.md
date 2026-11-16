@@ -1,14 +1,13 @@
 Backup do trabalho de vídeo Marvel realizado nesta conversa.
 
-Entrega atual: `video-marvel-continuidade-v2-60fps.mp4` — 25,93 s, 1.556 quadros, 60 FPS, 720 × 1068, sem áudio.
+- [Repositório com scripts, referências e vídeos](https://github.com/aruanmf446-hub/Vos)
+- [Baixar MP4 atual — 25,93 s, 60 FPS, sem áudio](https://raw.githubusercontent.com/aruanmf446-hub/Vos/main/media/videos/video-marvel-continuidade-v2-60fps.mp4)
+- [Baixar comparação em câmera lenta](https://raw.githubusercontent.com/aruanmf446-hub/Vos/main/media/videos/comparacao-encaixe-v2-camera-lenta.mp4)
+- [Backups e checkpoint editável em partes](https://github.com/aruanmf446-hub/Vos/tree/main/backups)
+- [Como restaurar](https://github.com/aruanmf446-hub/Vos/blob/main/docs/RESTAURACAO.md)
 
-Arquivos da release:
+O servidor de anexos das Releases recusou a autenticação do ambiente. Para preservar o trabalho, os dois ZIPs foram guardados no próprio repositório em partes de até 48 MiB, com SHA-256. O script de recuperação reúne as partes e também pode baixar apenas as que faltarem.
 
-- **Vídeo e comparação:** downloads diretos dos dois arquivos mais recentes.
-- **entrega-e-projeto.zip:** código, documentação, referências, imagens geradas, quadros aprovados e vídeos entregues.
-- **checkpoint-editavel.zip:** os mesmos arquivos e os quadros intermediários, recortes RGBA, máscaras e dados de câmera para retomar a edição.
-- **SHA256SUMS.txt:** hashes para verificar os downloads.
+O checkpoint tem 4.229 arquivos, incluindo quadros gerados, recortes RGBA e os 900 quadros de trabalho do primeiro experimento. Modelos baixáveis e caches regeneráveis não estão incluídos; versões e hashes estão documentados.
 
-As revisões antigas e os testes foram preservados como histórico. A versão atual ainda usa poses reaproveitadas ou interpoladas em vários trechos; os gestos e expressões não reproduzem integralmente a atuação original.
-
-Os pesos baixáveis dos modelos, os quadros extraídos do segundo vídeo e caches regeneráveis de fluxo óptico não estão incluídos. Os 900 quadros de trabalho do primeiro experimento foram preservados no checkpoint. Fontes dos modelos, hashes e instruções estão no repositório, em `docs/RESTAURACAO.md` e `manifests/models.json`.
+As revisões antigas foram preservadas como histórico. A versão atual ainda usa poses reaproveitadas ou interpoladas em vários trechos; gestos e expressões não reproduzem integralmente a atuação original.

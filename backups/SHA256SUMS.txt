@@ -1,0 +1,4 @@
+e359ee9539199e98b643f49c6ecb1df31e87fbdc7a5bddf28a01eba9bb65042c  entrega-e-projeto.zip
+c6c85dda30294aa6051282b0f83b74d44b89ab6658879290c79c71f66caa81ba  checkpoint-editavel.zip
+c2c7ca38a1ff7ec43a6b37328d1533b496c435c62006e4520a19909f22165faa  video-marvel-continuidade-v2-60fps.mp4
+6fb5b1df35eac6c59481373d1d21af939c5f19cf5bf208463a2b7baa0edfc6b9  comparacao-encaixe-v2-camera-lenta.mp4
