@@ -2,14 +2,16 @@
 
 Registro do trabalho realizado nesta conversa, preservado em 16/11/2026.
 
-**Versão mais recente:** [baixar o MP4 com continuidade v2](media/videos/video-marvel-continuidade-v2-60fps.mp4).
+**Versão mais recente:** [baixar o MP4 com continuidade v3](media/videos/video-marvel-continuidade-v3-60fps.mp4).
+
+[Comparar v2 e v3](media/videos/comparacao-continuidade-v2-v3.mp4) · [O que mudou e limites da revisão](docs/REVISAO_V3.md).
 
 O vídeo tem **25,93 segundos, 1.556 quadros, 60 FPS, 720 × 1068 e nenhum áudio**.
 
 - [Comparação de trechos com câmera lenta](media/videos/comparacao-encaixe-v2-camera-lenta.mp4)
 - [Primeiro experimento: Doutor Estranho e Wanda](media/videos/doutor-estranho-wanda.mp4)
 - [Backup completo e checkpoint editável](backups/README.md)
-- [MP4: download direto](https://raw.githubusercontent.com/aruanmf446-hub/Vos/main/media/videos/video-marvel-continuidade-v2-60fps.mp4)
+- [MP4: download direto](https://raw.githubusercontent.com/aruanmf446-hub/Vos/main/media/videos/video-marvel-continuidade-v3-60fps.mp4)
 - [Por onde continuar](docs/CONTINUAR_AQUI.md)
 - [Como restaurar os arquivos](docs/RESTAURACAO.md)
 
@@ -33,6 +35,10 @@ O vídeo tem **25,93 segundos, 1.556 quadros, 60 FPS, 720 × 1068 e nenhum áudi
 
 ## Estado real da versão
 
+A v3 refaz oito planos com textura de rosto persistente, movimentos medidos no original, braços do Doom articulados, camada independente do Hulk e malha de topologia fixa. A levantada e o retrato final mantêm a v2. Veja [revisão v3](docs/REVISAO_V3.md) para reprodução e limitações.
+
+### Histórico v2
+
 A continuidade v2 refez o encaixe dos planos de diálogo: fundo contínuo por plano, posição e escala do personagem alinhadas ao original, recorte temporal com RVM e interpolação separada do personagem. O Hulk foi conservado numa camada própria atrás da Wanda.
 
 O início, a levantada, o plano do Doom e o encerramento mantêm as versões anteriores. Algumas reações e gestos continuam aproximados. O Doom usa uma pose aprovada, acompanhando a posição do ator. Apenas seis quadros novos foram gerados para a piscada; a continuação da geração foi bloqueada e outras poses são reaproveitadas ou interpoladas. Os fundos reconstruídos reproduzem o cenário de forma aproximada.
@@ -49,7 +55,7 @@ No CapCut, manter **60 FPS** na exportação. O `.mov` de comparação enviado e
 | `strange-wanda/` | Scripts e quadros do primeiro experimento |
 | `generated_images/` | Saídas originais da geração de imagens |
 | `referencias/` | Fotos, vídeos originais e comparação enviada |
-| `media/videos/` | Entregas e testes; usar o arquivo `continuidade-v2` como referência atual |
+| `media/videos/` | Entregas e testes; usar o arquivo `continuidade-v3` como referência atual |
 | `manifests/` | Integridade dos arquivos e versões dos modelos |
 | `scripts/` | Verificação e restauração do backup |
 

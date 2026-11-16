@@ -25,15 +25,15 @@ if args.checkpoint:
         if bad:raise SystemExit(f'Checkpoint inválido: {bad}')
         for info in z.infolist():mapped(info.filename)
 dest.mkdir(parents=True,exist_ok=True)
-for item in manifest['files']:
-    target=dest/item['restore_path'];target.parent.mkdir(parents=True,exist_ok=True)
-    shutil.copy2(ROOT/item['path'],target)
 if args.checkpoint:
     with zipfile.ZipFile(args.checkpoint) as z:
         for info in z.infolist():
             if info.is_dir():continue
             target=dest/mapped(info.filename);target.parent.mkdir(parents=True,exist_ok=True)
             with z.open(info) as source,target.open('wb') as out:shutil.copyfileobj(source,out)
+for item in manifest['files']:
+    target=dest/item['restore_path'];target.parent.mkdir(parents=True,exist_ok=True)
+    shutil.copy2(ROOT/item['path'],target)
 old_attachments=manifest['original_attachment_prefix']
 changed=0
 for folder in ['avenida-marvel','strange-wanda']:

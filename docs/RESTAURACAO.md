@@ -1,5 +1,7 @@
 # Restaurar o trabalho
 
+**Revisão atual: v3.** Os ZIPs em partes são o snapshot v2. Usar o repositório atual junto com o checkpoint para recuperar os arquivos novos; a versão v2 também é entrada da v3. Ver [revisão v3](REVISAO_V3.md).
+
 O Git guarda código, referências, entregas e quadros aprovados. A pasta `backups/` preserva os seguintes pacotes, divididos em partes menores:
 
 - `entrega-e-projeto.zip`: cópia organizada dos arquivos do repositório.

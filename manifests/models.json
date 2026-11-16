@@ -25,5 +25,19 @@
       "sha256": "d234d4eae9d55d5f76de18b77cf0dc62c66fe5c5482758209d00f950c92bb280"
     }
   ],
-  "weights_included": false
+  "weights_included": false,
+  "v3_mediapipe": [
+    {
+      "file": "avenida-marvel/models/mediapipe/face_landmarker.task",
+      "bytes": 3758596,
+      "sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff",
+      "included": false
+    },
+    {
+      "file": "avenida-marvel/models/mediapipe/pose_landmarker_lite.task",
+      "bytes": 5777746,
+      "sha256": "59929e1d1ee95287735ddd833b19cf4ac46d29bc7afddbbf6753c459690d574a",
+      "included": false
+    }
+  ]
 }

@@ -1,0 +1,9 @@
+{
+  "method": "Persistent approved identity texture per dialogue shot; dense original body motion and 3D face landmark expression retargeting. Articulated Doom arms. Independent persistent Hulk. Recovered fixed source background atlas for shots 0 and 5.",
+  "source_frames": 778,
+  "native_fps": 30,
+  "new_generated_images": 0,
+  "fixed_mesh_topology": true,
+  "fps60_method": "Interpolate source-measured vertex positions and camera transforms at half time; render original isolated texture once per output frame, without flow-warping the background.",
+  "limits": "2D texture retargeting cannot create unseen surfaces, new hand poses or exact mouth interiors. Opening retains nine approved views for the turn; standing and final portrait reuse v2."
+}

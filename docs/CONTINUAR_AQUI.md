@@ -1,3 +1,7 @@
+## Atualização: revisão v3
+
+A entrega atual é `media/videos/video-marvel-continuidade-v3-60fps.mp4`. Ler [REVISAO_V3.md](REVISAO_V3.md) antes de continuar. A v2 abaixo permanece como histórico e como entrada do renderizador v3. Os backups ZIP arquivados preservam a v2; sobrepor os arquivos atuais do Git ao restaurar.
+
 # Continuar deste ponto
 
 ## Entrega de referência

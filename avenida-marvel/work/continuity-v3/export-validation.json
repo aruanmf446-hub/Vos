@@ -1,0 +1,97 @@
+{
+  "file": "/workspace/shared/downloads/video-marvel-continuidade-v3-60fps.mp4",
+  "bytes": 4710579,
+  "sha256": "f4066b1fd1496b30f3e06eb21fba9e03c56fdfde14b8ac72d4fd4f4522e2f3c7",
+  "decoded_frames": 1556,
+  "fps": 60,
+  "duration_seconds": 25.933333333333334,
+  "resolution": [
+    720,
+    1068
+  ],
+  "audio": false,
+  "original_cuts_checked": [
+    {
+      "source_cut": 39,
+      "output_cut": 78,
+      "pre_cut_hold_mae": 0.3171011396011396,
+      "cut_mae": 112.01493691493691
+    },
+    {
+      "source_cut": 76,
+      "output_cut": 152,
+      "pre_cut_hold_mae": 0.09550569800569801,
+      "cut_mae": 89.70174908424909
+    },
+    {
+      "source_cut": 173,
+      "output_cut": 346,
+      "pre_cut_hold_mae": 0.01314916564916565,
+      "cut_mae": 101.86038868538868
+    },
+    {
+      "source_cut": 241,
+      "output_cut": 482,
+      "pre_cut_hold_mae": 0.01634920634920635,
+      "cut_mae": 91.82115893365894
+    },
+    {
+      "source_cut": 272,
+      "output_cut": 544,
+      "pre_cut_hold_mae": 0.5380870980870981,
+      "cut_mae": 104.65668192918193
+    },
+    {
+      "source_cut": 349,
+      "output_cut": 698,
+      "pre_cut_hold_mae": 0.013243793243793245,
+      "cut_mae": 107.77459096459097
+    },
+    {
+      "source_cut": 404,
+      "output_cut": 808,
+      "pre_cut_hold_mae": 0.03157814407814408,
+      "cut_mae": 85.10478428978429
+    },
+    {
+      "source_cut": 666,
+      "output_cut": 1332,
+      "pre_cut_hold_mae": 0.011541514041514041,
+      "cut_mae": 101.9402614977615
+    },
+    {
+      "source_cut": 749,
+      "output_cut": 1498,
+      "pre_cut_hold_mae": 0.1814916564916565,
+      "cut_mae": 131.05117216117216
+    }
+  ],
+  "comparison_file": "/workspace/shared/downloads/comparacao-continuidade-v2-v3.mp4",
+  "comparison_frames": 518,
+  "source_motion_measurements_per_second": 30,
+  "output_midpoints": "Vertex positions and background camera transform interpolated separately, then original textures sampled once. Fixed triangular topology.",
+  "new_image_generations": 0,
+  "reworked_shots": [
+    0,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "retained_shots": [
+    1,
+    9
+  ],
+  "retained_flash_frames": [
+    747,
+    748
+  ],
+  "limitations": [
+    "2D motion transfer; no new hand poses, hidden surfaces or physically simulated cloth.",
+    "Opening uses nine approved views; standing and final portrait retain v2.",
+    "Lip interiors and reactions are approximate; no claim of complete reconstruction of original acting."
+  ]
+}

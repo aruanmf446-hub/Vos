@@ -8,5 +8,11 @@
     "Pillow": "13.0.0",
     "opencv-python-headless": "5.0.0.93"
   },
-  "ffmpeg": "ffmpeg version 7.1.5-0+deb13u1 Copyright (c) 2000-2026 the FFmpeg developers"
+  "ffmpeg": "ffmpeg version 7.1.5-0+deb13u1 Copyright (c) 2000-2026 the FFmpeg developers",
+  "v3_additional_packages": {
+    "scipy": "1.17.0",
+    "mediapipe": "1.2.3",
+    "flatbuffers": "25.12.19",
+    "absl-py": "2.5.1"
+  }
 }
