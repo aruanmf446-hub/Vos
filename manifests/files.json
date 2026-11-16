@@ -3,7 +3,7 @@
   "repository": "https://github.com/aruanmf446-hub/Vos",
   "original_workspace": "/workspace",
   "original_attachment_prefix": "/tmp/codex-remote-attachments/6afa7d92-0128-8191-adc5-72526702d031",
-  "current_video": "media/videos/video-marvel-continuidade-v3-60fps.mp4",
+  "current_video": "media/videos/video-marvel-conexoes-v4-60fps.mp4",
   "files": [
     {
       "path": "avenida-marvel/analysis-candidates.json",
@@ -2374,6 +2374,216 @@
       "restore_path": "shared/downloads/comparacao-continuidade-v2-v3.mp4",
       "bytes": 2560947,
       "sha256": "43e8b61c794f2060a0be9a5928a3d6238c1978580f99a57f9a95d5e30bb6b91d"
+    },
+    {
+      "path": "avenida-marvel/audit_connections_v4.py",
+      "restore_path": "avenida-marvel/audit_connections_v4.py",
+      "bytes": 969,
+      "sha256": "365d4a0c2dbd133fc4f1a66a5929b07043ca3073b75acba4eb357ce44032f7b9"
+    },
+    {
+      "path": "avenida-marvel/connections_v4.py",
+      "restore_path": "avenida-marvel/connections_v4.py",
+      "bytes": 3568,
+      "sha256": "0d693e0851681b2d3ab79cb72c993bbace088114612feac870aefe9a8e6f762e"
+    },
+    {
+      "path": "avenida-marvel/continuous_warp_v4.py",
+      "restore_path": "avenida-marvel/continuous_warp_v4.py",
+      "bytes": 1391,
+      "sha256": "48f430315d2e01ae2faf79d43cf443fe116d4ec7c07140da4efe7f99e50024b2"
+    },
+    {
+      "path": "avenida-marvel/render_connections_v4.py",
+      "restore_path": "avenida-marvel/render_connections_v4.py",
+      "bytes": 8875,
+      "sha256": "a14ca7925dfedbb6cf05824710e2af901a927b007b6d0348ec781108a93512af"
+    },
+    {
+      "path": "avenida-marvel/finalize_connections_v4.py",
+      "restore_path": "avenida-marvel/finalize_connections_v4.py",
+      "bytes": 3854,
+      "sha256": "a165edf9eaf90c4b395cc955c2acd2a3825f34bb636334a31fd44a9074dd0255"
+    },
+    {
+      "path": "avenida-marvel/finish_opening_v4.py",
+      "restore_path": "avenida-marvel/finish_opening_v4.py",
+      "bytes": 1879,
+      "sha256": "8573fd7791cabb8d2b16f6c19c63b8f5bc4bac0ad72a505bb850c0268516e665"
+    },
+    {
+      "path": "avenida-marvel/work/continuity-v4/audit-v3.json",
+      "restore_path": "avenida-marvel/work/continuity-v4/audit-v3.json",
+      "bytes": 4242,
+      "sha256": "360e096b38f4692cfb846ed52891ff9773d5930c59f9bd36aa7dea22bd0a063f"
+    },
+    {
+      "path": "avenida-marvel/work/continuity-v4/pilot-report.json",
+      "restore_path": "avenida-marvel/work/continuity-v4/pilot-report.json",
+      "bytes": 32947,
+      "sha256": "df84b86490e0a4b1f3979ddff8d278806e409e9a563814e88c1aed107f6011f6"
+    },
+    {
+      "path": "avenida-marvel/work/continuity-v4/full-report.json",
+      "restore_path": "avenida-marvel/work/continuity-v4/full-report.json",
+      "bytes": 102480,
+      "sha256": "ac76428a2d42358af2370390a3173fb7aa04a867ab60aae2938c0608e1925508"
+    },
+    {
+      "path": "avenida-marvel/work/continuity-v4/export-validation.json",
+      "restore_path": "avenida-marvel/work/continuity-v4/export-validation.json",
+      "bytes": 2509,
+      "sha256": "705fa5934d30fa86a0984ab0df355c4f77af01351e2f4fac15e8f06142907387"
+    },
+    {
+      "path": "avenida-marvel/work/continuity-v4/final-overview.jpg",
+      "restore_path": "avenida-marvel/work/continuity-v4/final-overview.jpg",
+      "bytes": 104819,
+      "sha256": "ad62a187ca2abb5b7a0eff1184091b0209a1c7cf80a0a403829eba4c68b2248c"
+    },
+    {
+      "path": "avenida-marvel/work/continuity-v4/opening-consecutive.jpg",
+      "restore_path": "avenida-marvel/work/continuity-v4/opening-consecutive.jpg",
+      "bytes": 142036,
+      "sha256": "3b26d325b5f42499bd68c27ac43dab0ee48d40aa35de7bc78b45b624facd0114"
+    },
+    {
+      "path": "avenida-marvel/work/continuity-v4/opening-clean-plate.png",
+      "restore_path": "avenida-marvel/work/continuity-v4/opening-clean-plate.png",
+      "bytes": 365625,
+      "sha256": "56e34be365b76686ea33a5276bf64e1cf5e259c1245e1cef0d0a34a61df18550"
+    },
+    {
+      "path": "avenida-marvel/work/continuity-v4/opening-report.json",
+      "restore_path": "avenida-marvel/work/continuity-v4/opening-report.json",
+      "bytes": 12657,
+      "sha256": "1bd5dde31f8986da61739116c0f802ea059294a67df8ebf0c9ace4df8556061c"
+    },
+    {
+      "path": "avenida-marvel/work/continuity-v4/opening-finalization.json",
+      "restore_path": "avenida-marvel/work/continuity-v4/opening-finalization.json",
+      "bytes": 885,
+      "sha256": "688e9672a1f1b91106862f3d9efd7976715e66c2ce540873a8069760579cb76e"
+    },
+    {
+      "path": "avenida-marvel/work/continuity-v4/contour-before-after.jpg",
+      "restore_path": "avenida-marvel/work/continuity-v4/contour-before-after.jpg",
+      "bytes": 158468,
+      "sha256": "f7f5ed19412b2a6cef5d88aefa200ac0823247580eeef1a6109f3ea3580ac587"
+    },
+    {
+      "path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0000-0000-0006.npz",
+      "restore_path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0000-0000-0006.npz",
+      "bytes": 23605,
+      "sha256": "d2a946f85181d48f7ec7fed1b99b2d3c008a35011ae8f06f11fcc56ed2cbed3f"
+    },
+    {
+      "path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0005-0000-0011.npz",
+      "restore_path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0005-0000-0011.npz",
+      "bytes": 43382,
+      "sha256": "275153439d15b3a66e0493c75c542dc322607f082aa3a87622e6a5fba2e67227"
+    },
+    {
+      "path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0010-0005-0016.npz",
+      "restore_path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0010-0005-0016.npz",
+      "bytes": 43721,
+      "sha256": "28333ba4f082cd22f7584b5fd5a8a8016c251490425738f5188e0bfc2a716936"
+    },
+    {
+      "path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0015-0010-0021.npz",
+      "restore_path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0015-0010-0021.npz",
+      "bytes": 43410,
+      "sha256": "88fcdfeb7e2ab35eb1eb5e93554f0abbf8b2847d8a3ac9478185e3bfe11b1eb8"
+    },
+    {
+      "path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0020-0015-0026.npz",
+      "restore_path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0020-0015-0026.npz",
+      "bytes": 43494,
+      "sha256": "057a4d39e0adf4a5f8d6d808975b57a766ac577a1a9ddf5baef01bc0bbff22ff"
+    },
+    {
+      "path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0025-0020-0031.npz",
+      "restore_path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0025-0020-0031.npz",
+      "bytes": 43230,
+      "sha256": "036a06687a1d29fc4e9874e4c5b8c8caa402f88670c0d43ada625c5e564ef475"
+    },
+    {
+      "path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0030-0025-0036.npz",
+      "restore_path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0030-0025-0036.npz",
+      "bytes": 43607,
+      "sha256": "3288f745f3025eb3fe8c8827f1aea64179c824308f66c502a4665216b0587bd4"
+    },
+    {
+      "path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0035-0030-0039.npz",
+      "restore_path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0035-0030-0039.npz",
+      "bytes": 35715,
+      "sha256": "0e4a2e30a1263153956d9a71c19b7c4dc9b658fd32ce9dbbfdbb57771031dc97"
+    },
+    {
+      "path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0038-0035-0039.npz",
+      "restore_path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0038-0035-0039.npz",
+      "bytes": 15791,
+      "sha256": "3ba654879fbdc4e0a48b982a0830d8bccf5bdf53274de9df535b9762e847acc0"
+    },
+    {
+      "path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0100-0076-0173.npz",
+      "restore_path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0100-0076-0173.npz",
+      "bytes": 775343,
+      "sha256": "c5c55a551a0a9e1246046d19cdf8372b58169e927f17b56ef09e8fe8d6769606"
+    },
+    {
+      "path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0210-0173-0241.npz",
+      "restore_path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0210-0173-0241.npz",
+      "bytes": 534909,
+      "sha256": "1d0b2291268bc003c4e59bb40d5cd48d7e877626a36528be01710513ade65228"
+    },
+    {
+      "path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0253-0241-0272.npz",
+      "restore_path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0253-0241-0272.npz",
+      "bytes": 245241,
+      "sha256": "1b9508e25013df2f7927562f4cd9ee26f1ce4171cf21ab990748e32a8c7a612d"
+    },
+    {
+      "path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0302-0272-0349.npz",
+      "restore_path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0302-0272-0349.npz",
+      "bytes": 372651,
+      "sha256": "b28cdfc6bc1e5730a9b415c0d0a47d564b7407a3c5ecb05f6678bd809bb958c9"
+    },
+    {
+      "path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0379-0349-0404.npz",
+      "restore_path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0379-0349-0404.npz",
+      "bytes": 433431,
+      "sha256": "0bb1bbbd8fe5ea89be497e2a05d65ff577662e76bc7c344a1be667f7f9252fc4"
+    },
+    {
+      "path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0474-0404-0666.npz",
+      "restore_path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0474-0404-0666.npz",
+      "bytes": 2041578,
+      "sha256": "3495278161cd6a1687a42db515d0f1753e227cb857b484cd9b1b1753008bce6d"
+    },
+    {
+      "path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0706-0666-0747.npz",
+      "restore_path": "avenida-marvel/work/continuity-v4/trajectories/velocity-0706-0666-0747.npz",
+      "bytes": 629253,
+      "sha256": "57ba0d0c6353c4da4cefeddaaeac0a6e18aeda89984d5362f19e2c7016edd268"
+    },
+    {
+      "path": "media/videos/teste-conexoes-v4-60fps.mp4",
+      "restore_path": "shared/downloads/teste-conexoes-v4-60fps.mp4",
+      "bytes": 1381444,
+      "sha256": "f412e73c1db0a493631a36710fd8c37adc0d2a4f65a66a8e02f31a790d999cc3"
+    },
+    {
+      "path": "media/videos/video-marvel-conexoes-v4-60fps.mp4",
+      "restore_path": "shared/downloads/video-marvel-conexoes-v4-60fps.mp4",
+      "bytes": 4936371,
+      "sha256": "d77b52e145fb804f3a08dd9c69cef5d8308bae3767453625ba44ce7747de22a3"
+    },
+    {
+      "path": "media/videos/comparacao-conexoes-v3-v4.mp4",
+      "restore_path": "shared/downloads/comparacao-conexoes-v3-v4.mp4",
+      "bytes": 2315994,
+      "sha256": "020302e9f6aaaf16d044b5127716c21042c1615077f0e834dd0b68376d532292"
     }
   ]
 }

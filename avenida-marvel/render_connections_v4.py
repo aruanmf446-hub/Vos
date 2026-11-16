@@ -51,19 +51,36 @@ class StablePuppet(m.Puppet):
 class LayerTween:
  def __init__(self):self.rife=Rife(threads=2)
  def between(self,a,b,t):
+  if t<=1e-6:return a
+  if t>=1-1e-6:return b
   def tensor(layer):
    rgb,alpha=layer
    rgba=np.dstack([rgb[...,::-1]/255,alpha]).astype(np.float32)
    x=torch.from_numpy(np.ascontiguousarray(rgba)).permute(2,0,1)[None]
    return torch.nn.functional.pad(x,(0,(-576)%128,0,(-364)%128),mode='replicate')
   x=torch.cat([tensor(a),tensor(b)],1)
-  with torch.inference_mode():out=self.rife.net(x,float(t),[32,16,8,4,1])[-1][-1][0,:,:364,:576].permute(1,2,0).numpy()
-  alpha=np.clip(out[...,3],0,1);rgb=np.clip(out[...,:3][...,::-1]*255,0,alpha[...,None]*255)
+  from model.warplayer import warp
+  with torch.inference_mode():
+   flows,raw_mask,merged=self.rife.net(x,float(t),[32,16,8,4,1])
+   out=merged[-1][0,:,:364,:576].permute(1,2,0).numpy()
+   aa=warp(x[:,:4],flows[-1][:,:2])[0,3,:364,:576].numpy()
+   bb=warp(x[:,4:],flows[-1][:,2:])[0,3,:364,:576].numpy()
+   mask=torch.sigmoid(raw_mask)[0,0,:364,:576].numpy()
+  alpha=np.clip(out[...,3],0,1)
+  def distance(a):
+   binary=(a>.5).astype(np.uint8)
+   return cv2.distanceTransform(binary,cv2.DIST_L2,3)-cv2.distanceTransform(1-binary,cv2.DIST_L2,3)
+  signed=distance(aa)*mask+distance(bb)*(1-mask)
+  contour=np.clip(signed*.7+.5,0,1)
+  strength=4*t*(1-t);final_alpha=alpha*(1-strength)+contour*strength
+  color=np.clip(out[...,:3][...,::-1]/np.maximum(alpha[...,None],.0001),0,1)
+  alpha=final_alpha;rgb=color*alpha[...,None]*255
   return rgb,alpha
 
 def main():
- p=argparse.ArgumentParser();p.add_argument('--full',action='store_true');args=p.parse_args()
+ p=argparse.ArgumentParser();p.add_argument('--full',action='store_true');p.add_argument('--opening',action='store_true');args=p.parse_args()
  output=m.O/('video-marvel-conexoes-v4-60fps.mp4' if args.full else 'teste-conexoes-v4-60fps.mp4')
+ if args.opening:output=V/'opening-final-60fps.mp4'
  cap=cv2.VideoCapture(str(m.O/'video-marvel-continuidade-v3-60fps.mp4'));old_index=-1;old_frame=None
  def old(index):
   nonlocal old_index,old_frame
@@ -72,16 +89,20 @@ def main():
   elif index!=old_index+1:cap.set(cv2.CAP_PROP_POS_FRAMES,index)
   ok,im=cap.read();assert ok;old_index=index;old_frame=cv2.resize(im,(576,854),interpolation=cv2.INTER_AREA);return old_frame.copy()
  enc=m.encoder(output,fps=60,upscale=True);tween=LayerTween();report=[];frames=0
- segments=[(s,m.CUTS[s],m.CUTS[s+1]) for s in range(10)] if args.full else [(0,0,39),(5,272,349),(7,520,595)]
+ segments=[(0,0,39)] if args.opening else ([(s,m.CUTS[s],m.CUTS[s+1]) for s in range(10)] if args.full else [(0,0,39),(5,272,349),(7,520,595)])
  for shot,first,last in segments:
   if shot in [1,9]:
    for n in range(first*2,last*2):enc.stdin.write(old(n).tobytes());frames+=1
    continue
   refs=[0,5,10,15,20,25,30,35,38] if shot==0 else [m.REFS[shot]]
   puppets={};cam=m.camera(shot);atlas,off=m.atlas(shot,cam)
+  if shot==0:
+   plate=V/'opening-clean-plate.png'
+   if not plate.exists():cv2.imwrite(str(plate),m.clean(cv2.imread(str(m.D/'cleanplate-0000.png'))))
+   atlas=cv2.imread(str(plate));off=np.linalg.inv(cam[0])
   for j,ref in enumerate(refs):
    puppet=StablePuppet(ref);start=m.CUTS[shot] if len(refs)==1 else refs[max(0,j-1)];end=m.CUTS[shot+1] if len(refs)==1 else min(m.CUTS[shot+1],refs[min(len(refs)-1,j+1)]+1)
-   puppet.prepare(start,end,shot);puppets[ref]=puppet;report.append({'shot':shot,'reference':ref,**puppet.summary,'map_checks':puppet.map_stats});m.log(f'Regularized {ref}: {puppet.summary}')
+   end=min(end,m.CUTS[shot]+len(cam));puppet.prepare(start,end,shot);puppets[ref]=puppet;report.append({'shot':shot,'reference':ref,**puppet.summary,'map_checks':puppet.map_stats});m.log(f'Regularized {ref}: {puppet.summary}')
   hulk=m.hulk_layer(cam) if shot==3 else None
   for native in range(first,last):
    for half in range(2):
@@ -101,6 +122,7 @@ def main():
     enc.stdin.write(full.tobytes());frames+=1
     if half==0 and (native%15==0 or native in [533,534,535,536,580]):cv2.imwrite(str(V/'qa'/f'{native:04d}.jpg'),full)
    if native%30==0:m.log(f'v4 shot {shot} frame {native}')
- enc.stdin.close();assert enc.wait()==0;cap.release();expected=1556 if args.full else 382;assert frames==expected,(frames,expected)
- (V/('full-report.json' if args.full else 'pilot-report.json')).write_text(json.dumps({'file':str(output),'frames':frames,'fps':60,'audio':False,'source_intervals':segments,'continuous_warp_checks':report,'background':'v3 persistent atlases; never sent to RIFE','opening_connections':'One shared RIFE field for premultiplied RGB and alpha; no double exposure crossfade.','limits':'Still based on 2D approved images; it cannot create physically correct unseen surfaces or exact new performances. Standing and ending remain v3.'},ensure_ascii=False,indent=2));m.log(f'Complete: {output}')
+  (V/f'completed-shot-{shot}.json').write_text(json.dumps([r for r in report if r['shot']==shot],indent=2))
+ enc.stdin.close();assert enc.wait()==0;cap.release();expected=78 if args.opening else (1556 if args.full else 382);assert frames==expected,(frames,expected)
+ (V/('opening-report.json' if args.opening else ('full-report.json' if args.full else 'pilot-report.json'))).write_text(json.dumps({'file':str(output),'frames':frames,'fps':60,'audio':False,'source_intervals':segments,'continuous_warp_checks':report,'background':'v3 persistent atlases; never sent to RIFE','opening_connections':'One shared RIFE field for premultiplied RGB and alpha; no double exposure crossfade.','limits':'Still based on 2D approved images; it cannot create physically correct unseen surfaces or exact new performances. Standing and ending remain v3.'},ensure_ascii=False,indent=2));m.log(f'Complete: {output}')
 if __name__=='__main__':main()

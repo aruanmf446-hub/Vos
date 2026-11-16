@@ -1,3 +1,7 @@
+## Atualização: conexões v4
+
+A entrega atual é `media/videos/video-marvel-conexoes-v4-60fps.mp4`. Ler [CONEXOES_V4.md](CONEXOES_V4.md). Usar `render_connections_v4.py --full` e `finalize_connections_v4.py`. Os arquivos novos estão no Git; os ZIPs continuam preservando o snapshot v2. V2 e v3 são entradas de trabalho e permanecem disponíveis.
+
 ## Atualização: revisão v3
 
 A entrega atual é `media/videos/video-marvel-continuidade-v3-60fps.mp4`. Ler [REVISAO_V3.md](REVISAO_V3.md) antes de continuar. A v2 abaixo permanece como histórico e como entrada do renderizador v3. Os backups ZIP arquivados preservam a v2; sobrepor os arquivos atuais do Git ao restaurar.

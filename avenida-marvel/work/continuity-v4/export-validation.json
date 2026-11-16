@@ -1,0 +1,97 @@
+{
+  "file": "/workspace/shared/downloads/video-marvel-conexoes-v4-60fps.mp4",
+  "bytes": 4936371,
+  "sha256": "d77b52e145fb804f3a08dd9c69cef5d8308bae3767453625ba44ce7747de22a3",
+  "decoded_frames": 1556,
+  "fps": 60,
+  "duration_seconds": 25.933333333333334,
+  "resolution": [
+    720,
+    1068
+  ],
+  "audio": false,
+  "original_cuts_checked": [
+    {
+      "source_cut": 39,
+      "output_cut": 78,
+      "pre_cut_hold_mae": 0.02797008547008547,
+      "cut_mae": 113.58912393162393
+    },
+    {
+      "source_cut": 76,
+      "output_cut": 152,
+      "pre_cut_hold_mae": 0.14885836385836385,
+      "cut_mae": 90.38603072853073
+    },
+    {
+      "source_cut": 173,
+      "output_cut": 346,
+      "pre_cut_hold_mae": 0.03413003663003663,
+      "cut_mae": 101.80055657305657
+    },
+    {
+      "source_cut": 241,
+      "output_cut": 482,
+      "pre_cut_hold_mae": 0.008839031339031338,
+      "cut_mae": 91.82917684167684
+    },
+    {
+      "source_cut": 272,
+      "output_cut": 544,
+      "pre_cut_hold_mae": 0.03547415547415547,
+      "cut_mae": 104.104650997151
+    },
+    {
+      "source_cut": 349,
+      "output_cut": 698,
+      "pre_cut_hold_mae": 0.03575498575498576,
+      "cut_mae": 107.59352360602361
+    },
+    {
+      "source_cut": 404,
+      "output_cut": 808,
+      "pre_cut_hold_mae": 0.6987474562474563,
+      "cut_mae": 85.27548941798942
+    },
+    {
+      "source_cut": 666,
+      "output_cut": 1332,
+      "pre_cut_hold_mae": 0.010833333333333334,
+      "cut_mae": 101.80407712657713
+    },
+    {
+      "source_cut": 749,
+      "output_cut": 1498,
+      "pre_cut_hold_mae": 0.3433201058201058,
+      "cut_mae": 130.93609686609688
+    }
+  ],
+  "comparison_file": "/workspace/shared/downloads/comparacao-conexoes-v3-v4.mp4",
+  "comparison_frames": 518,
+  "source_motion_measurements_per_second": 30,
+  "output_midpoints": "Scene-space trajectories and separate camera interpolation; integrated inverse velocity field sampled once; shared RGB/alpha RIFE only for opening pose changes.",
+  "new_image_generations": 0,
+  "reworked_shots": [
+    0,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "retained_shots": [
+    1,
+    9
+  ],
+  "retained_flash_frames": [
+    747,
+    748
+  ],
+  "limitations": [
+    "2D motion transfer; no new hand poses, hidden surfaces or physically simulated cloth.",
+    "Opening uses nine approved views; standing and final portrait retain v2.",
+    "Lip interiors and reactions are approximate; no claim of complete reconstruction of original acting."
+  ]
+}

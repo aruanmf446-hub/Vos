@@ -1,0 +1,3980 @@
+{
+  "file": "/workspace/shared/downloads/video-marvel-conexoes-v4-60fps.mp4",
+  "frames": 1556,
+  "fps": 60,
+  "audio": false,
+  "source_intervals": [
+    [
+      0,
+      0,
+      39
+    ],
+    [
+      1,
+      39,
+      76
+    ],
+    [
+      2,
+      76,
+      173
+    ],
+    [
+      3,
+      173,
+      241
+    ],
+    [
+      4,
+      241,
+      272
+    ],
+    [
+      5,
+      272,
+      349
+    ],
+    [
+      6,
+      349,
+      404
+    ],
+    [
+      7,
+      404,
+      666
+    ],
+    [
+      8,
+      666,
+      749
+    ],
+    [
+      9,
+      749,
+      778
+    ]
+  ],
+  "continuous_warp_checks": [
+    {
+      "shot": 0,
+      "reference": 0,
+      "method": "scene-space temporal filtering plus integrated continuous deformation; no per-frame global fallback",
+      "frames": 6,
+      "map_checks": [
+        {
+          "frame": 0,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.9905931353569031
+        },
+        {
+          "frame": 1,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.9238454103469849
+        },
+        {
+          "frame": 2,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7352394461631775
+        },
+        {
+          "frame": 3,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5136811137199402
+        },
+        {
+          "frame": 4,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.36068907380104065
+        },
+        {
+          "frame": 5,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.31038936972618103
+        }
+      ]
+    },
+    {
+      "shot": 0,
+      "reference": 5,
+      "method": "scene-space temporal filtering plus integrated continuous deformation; no per-frame global fallback",
+      "frames": 11,
+      "map_checks": [
+        {
+          "frame": 1,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.40736398100852966
+        },
+        {
+          "frame": 2,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5423544645309448
+        },
+        {
+          "frame": 3,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7531773447990417
+        },
+        {
+          "frame": 4,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.936214804649353
+        },
+        {
+          "frame": 5,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.9374852776527405
+        },
+        {
+          "frame": 6,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.760330319404602
+        },
+        {
+          "frame": 7,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5953012108802795
+        },
+        {
+          "frame": 8,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.46645861864089966
+        },
+        {
+          "frame": 9,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4061853289604187
+        },
+        {
+          "frame": 10,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3278573751449585
+        }
+      ]
+    },
+    {
+      "shot": 0,
+      "reference": 10,
+      "method": "scene-space temporal filtering plus integrated continuous deformation; no per-frame global fallback",
+      "frames": 11,
+      "map_checks": [
+        {
+          "frame": 6,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.33207184076309204
+        },
+        {
+          "frame": 7,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.45075780153274536
+        },
+        {
+          "frame": 8,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.586007833480835
+        },
+        {
+          "frame": 9,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6796796321868896
+        },
+        {
+          "frame": 10,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8724418878555298
+        },
+        {
+          "frame": 11,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.9489149451255798
+        },
+        {
+          "frame": 12,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8429808616638184
+        },
+        {
+          "frame": 13,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7140644788742065
+        },
+        {
+          "frame": 14,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6209011077880859
+        },
+        {
+          "frame": 15,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4328043758869171
+        }
+      ]
+    },
+    {
+      "shot": 0,
+      "reference": 15,
+      "method": "scene-space temporal filtering plus integrated continuous deformation; no per-frame global fallback",
+      "frames": 11,
+      "map_checks": [
+        {
+          "frame": 11,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.30170848965644836
+        },
+        {
+          "frame": 12,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.36143890023231506
+        },
+        {
+          "frame": 13,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4793126583099365
+        },
+        {
+          "frame": 14,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6419700384140015
+        },
+        {
+          "frame": 15,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8399313688278198
+        },
+        {
+          "frame": 16,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.9033827781677246
+        },
+        {
+          "frame": 17,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7813864350318909
+        },
+        {
+          "frame": 18,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6019837260246277
+        },
+        {
+          "frame": 19,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.48426398634910583
+        },
+        {
+          "frame": 20,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.41339561343193054
+        }
+      ]
+    },
+    {
+      "shot": 0,
+      "reference": 20,
+      "method": "scene-space temporal filtering plus integrated continuous deformation; no per-frame global fallback",
+      "frames": 11,
+      "map_checks": [
+        {
+          "frame": 16,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.23163370788097382
+        },
+        {
+          "frame": 17,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.31166449189186096
+        },
+        {
+          "frame": 18,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4601038992404938
+        },
+        {
+          "frame": 19,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6575424075126648
+        },
+        {
+          "frame": 20,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8527156114578247
+        },
+        {
+          "frame": 21,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8632943630218506
+        },
+        {
+          "frame": 22,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6946524977684021
+        },
+        {
+          "frame": 23,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4993998408317566
+        },
+        {
+          "frame": 24,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.37159407138824463
+        },
+        {
+          "frame": 25,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.33445674180984497
+        }
+      ]
+    },
+    {
+      "shot": 0,
+      "reference": 25,
+      "method": "scene-space temporal filtering plus integrated continuous deformation; no per-frame global fallback",
+      "frames": 11,
+      "map_checks": [
+        {
+          "frame": 21,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4333980083465576
+        },
+        {
+          "frame": 22,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5251888036727905
+        },
+        {
+          "frame": 23,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6710389852523804
+        },
+        {
+          "frame": 24,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8176367282867432
+        },
+        {
+          "frame": 25,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.791659414768219
+        },
+        {
+          "frame": 26,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5770377516746521
+        },
+        {
+          "frame": 27,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4032973349094391
+        },
+        {
+          "frame": 28,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4004550576210022
+        },
+        {
+          "frame": 29,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4012663960456848
+        },
+        {
+          "frame": 30,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.31257331371307373
+        }
+      ]
+    },
+    {
+      "shot": 0,
+      "reference": 30,
+      "method": "scene-space temporal filtering plus integrated continuous deformation; no per-frame global fallback",
+      "frames": 11,
+      "map_checks": [
+        {
+          "frame": 26,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3312207758426666
+        },
+        {
+          "frame": 27,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4753093421459198
+        },
+        {
+          "frame": 28,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6441907286643982
+        },
+        {
+          "frame": 29,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8534355163574219
+        },
+        {
+          "frame": 30,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8410621285438538
+        },
+        {
+          "frame": 31,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6154069900512695
+        },
+        {
+          "frame": 32,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4438568651676178
+        },
+        {
+          "frame": 33,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3632577657699585
+        },
+        {
+          "frame": 34,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2949352562427521
+        },
+        {
+          "frame": 35,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.25083640217781067
+        }
+      ]
+    },
+    {
+      "shot": 0,
+      "reference": 35,
+      "method": "scene-space temporal filtering plus integrated continuous deformation; no per-frame global fallback",
+      "frames": 9,
+      "map_checks": [
+        {
+          "frame": 31,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3372223675251007
+        },
+        {
+          "frame": 32,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.45574089884757996
+        },
+        {
+          "frame": 33,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6516274809837341
+        },
+        {
+          "frame": 34,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8645241856575012
+        },
+        {
+          "frame": 35,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8684459328651428
+        },
+        {
+          "frame": 36,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6878697276115417
+        },
+        {
+          "frame": 37,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5169773101806641
+        },
+        {
+          "frame": 38,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4278438985347748
+        },
+        {
+          "frame": 38,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4278438985347748
+        }
+      ]
+    },
+    {
+      "shot": 0,
+      "reference": 38,
+      "method": "scene-space temporal filtering plus integrated continuous deformation; no per-frame global fallback",
+      "frames": 4,
+      "map_checks": [
+        {
+          "frame": 36,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5468788743019104
+        },
+        {
+          "frame": 37,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6992800831794739
+        },
+        {
+          "frame": 38,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8249913454055786
+        },
+        {
+          "frame": 38,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8249913454055786
+        }
+      ]
+    },
+    {
+      "shot": 2,
+      "reference": 100,
+      "method": "scene-space temporal filtering plus integrated continuous deformation; no per-frame global fallback",
+      "frames": 97,
+      "map_checks": [
+        {
+          "frame": 76,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.18005158007144928
+        },
+        {
+          "frame": 77,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.1835794448852539
+        },
+        {
+          "frame": 78,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.19105279445648193
+        },
+        {
+          "frame": 79,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.17130446434020996
+        },
+        {
+          "frame": 80,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.16677948832511902
+        },
+        {
+          "frame": 81,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.16826915740966797
+        },
+        {
+          "frame": 82,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.18268263339996338
+        },
+        {
+          "frame": 83,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.22411902248859406
+        },
+        {
+          "frame": 84,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.19592788815498352
+        },
+        {
+          "frame": 85,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.20908167958259583
+        },
+        {
+          "frame": 86,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.21894171833992004
+        },
+        {
+          "frame": 87,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.22234034538269043
+        },
+        {
+          "frame": 88,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.22494502365589142
+        },
+        {
+          "frame": 89,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.214005708694458
+        },
+        {
+          "frame": 90,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.22099535167217255
+        },
+        {
+          "frame": 91,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.23675160109996796
+        },
+        {
+          "frame": 92,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.24474290013313293
+        },
+        {
+          "frame": 93,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.26701799035072327
+        },
+        {
+          "frame": 94,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.282803475856781
+        },
+        {
+          "frame": 95,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.28479862213134766
+        },
+        {
+          "frame": 96,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3143012523651123
+        },
+        {
+          "frame": 97,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.28198304772377014
+        },
+        {
+          "frame": 98,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.29038169980049133
+        },
+        {
+          "frame": 99,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3398103415966034
+        },
+        {
+          "frame": 100,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.37320494651794434
+        },
+        {
+          "frame": 101,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.31206008791923523
+        },
+        {
+          "frame": 102,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.29879340529441833
+        },
+        {
+          "frame": 103,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3976479470729828
+        },
+        {
+          "frame": 104,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.38589218258857727
+        },
+        {
+          "frame": 105,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3149482011795044
+        },
+        {
+          "frame": 106,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3463614583015442
+        },
+        {
+          "frame": 107,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3371690809726715
+        },
+        {
+          "frame": 108,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.32931026816368103
+        },
+        {
+          "frame": 109,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.37440115213394165
+        },
+        {
+          "frame": 110,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3156491219997406
+        },
+        {
+          "frame": 111,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2787891626358032
+        },
+        {
+          "frame": 112,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3428564965724945
+        },
+        {
+          "frame": 113,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.41286367177963257
+        },
+        {
+          "frame": 114,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3478480577468872
+        },
+        {
+          "frame": 115,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3232586681842804
+        },
+        {
+          "frame": 116,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.32464632391929626
+        },
+        {
+          "frame": 117,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2962857484817505
+        },
+        {
+          "frame": 118,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2729056179523468
+        },
+        {
+          "frame": 119,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.298093318939209
+        },
+        {
+          "frame": 120,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.296670138835907
+        },
+        {
+          "frame": 121,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.30151891708374023
+        },
+        {
+          "frame": 122,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.31035444140434265
+        },
+        {
+          "frame": 123,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2727699875831604
+        },
+        {
+          "frame": 124,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.27060627937316895
+        },
+        {
+          "frame": 125,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2647496461868286
+        },
+        {
+          "frame": 126,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.29742130637168884
+        },
+        {
+          "frame": 127,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.28490370512008667
+        },
+        {
+          "frame": 128,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2526916563510895
+        },
+        {
+          "frame": 129,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.25069594383239746
+        },
+        {
+          "frame": 130,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2521154284477234
+        },
+        {
+          "frame": 131,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2548849880695343
+        },
+        {
+          "frame": 132,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2341146618127823
+        },
+        {
+          "frame": 133,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.24122929573059082
+        },
+        {
+          "frame": 134,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2549706995487213
+        },
+        {
+          "frame": 135,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2554554343223572
+        },
+        {
+          "frame": 136,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2571541965007782
+        },
+        {
+          "frame": 137,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2263544648885727
+        },
+        {
+          "frame": 138,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2403617650270462
+        },
+        {
+          "frame": 139,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2495540827512741
+        },
+        {
+          "frame": 140,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.24398303031921387
+        },
+        {
+          "frame": 141,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.23750872910022736
+        },
+        {
+          "frame": 142,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2540525794029236
+        },
+        {
+          "frame": 143,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2636997103691101
+        },
+        {
+          "frame": 144,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.27504321932792664
+        },
+        {
+          "frame": 145,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2787056267261505
+        },
+        {
+          "frame": 146,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.26538142561912537
+        },
+        {
+          "frame": 147,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2669330835342407
+        },
+        {
+          "frame": 148,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.26250407099723816
+        },
+        {
+          "frame": 149,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.270396888256073
+        },
+        {
+          "frame": 150,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.26069313287734985
+        },
+        {
+          "frame": 151,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.25270876288414
+        },
+        {
+          "frame": 152,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2567126750946045
+        },
+        {
+          "frame": 153,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.24846601486206055
+        },
+        {
+          "frame": 154,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.24552886188030243
+        },
+        {
+          "frame": 155,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2384703904390335
+        },
+        {
+          "frame": 156,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.23301471769809723
+        },
+        {
+          "frame": 157,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.23044821619987488
+        },
+        {
+          "frame": 158,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2315869927406311
+        },
+        {
+          "frame": 159,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.23589789867401123
+        },
+        {
+          "frame": 160,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.23617523908615112
+        },
+        {
+          "frame": 161,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.24005666375160217
+        },
+        {
+          "frame": 162,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.25281190872192383
+        },
+        {
+          "frame": 163,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2727649211883545
+        },
+        {
+          "frame": 164,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2839587330818176
+        },
+        {
+          "frame": 165,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2854049503803253
+        },
+        {
+          "frame": 166,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.28708019852638245
+        },
+        {
+          "frame": 167,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3051278591156006
+        },
+        {
+          "frame": 168,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3156460225582123
+        },
+        {
+          "frame": 169,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.31915414333343506
+        },
+        {
+          "frame": 170,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.30881351232528687
+        },
+        {
+          "frame": 171,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3028694689273834
+        },
+        {
+          "frame": 172,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.30966219305992126
+        },
+        {
+          "frame": 172,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.30966219305992126
+        }
+      ]
+    },
+    {
+      "shot": 3,
+      "reference": 210,
+      "method": "scene-space temporal filtering plus integrated continuous deformation; no per-frame global fallback",
+      "frames": 68,
+      "map_checks": [
+        {
+          "frame": 173,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.23982509970664978
+        },
+        {
+          "frame": 174,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.25355663895606995
+        },
+        {
+          "frame": 175,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2555156350135803
+        },
+        {
+          "frame": 176,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.24843616783618927
+        },
+        {
+          "frame": 177,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.25644350051879883
+        },
+        {
+          "frame": 178,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.26067009568214417
+        },
+        {
+          "frame": 179,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.26454824209213257
+        },
+        {
+          "frame": 180,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.26239877939224243
+        },
+        {
+          "frame": 181,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.26438239216804504
+        },
+        {
+          "frame": 182,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.26633405685424805
+        },
+        {
+          "frame": 183,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2764620780944824
+        },
+        {
+          "frame": 184,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2749108672142029
+        },
+        {
+          "frame": 185,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.27938008308410645
+        },
+        {
+          "frame": 186,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2793880105018616
+        },
+        {
+          "frame": 187,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2739947438240051
+        },
+        {
+          "frame": 188,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2695779800415039
+        },
+        {
+          "frame": 189,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2561114430427551
+        },
+        {
+          "frame": 190,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.24994459748268127
+        },
+        {
+          "frame": 191,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.24207130074501038
+        },
+        {
+          "frame": 192,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.24185681343078613
+        },
+        {
+          "frame": 193,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.22756314277648926
+        },
+        {
+          "frame": 194,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.23012775182724
+        },
+        {
+          "frame": 195,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.23453378677368164
+        },
+        {
+          "frame": 196,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.23513993620872498
+        },
+        {
+          "frame": 197,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.23295360803604126
+        },
+        {
+          "frame": 198,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.23173654079437256
+        },
+        {
+          "frame": 199,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.23005536198616028
+        },
+        {
+          "frame": 200,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.22360894083976746
+        },
+        {
+          "frame": 201,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.22597670555114746
+        },
+        {
+          "frame": 202,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2163291871547699
+        },
+        {
+          "frame": 203,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.21716010570526123
+        },
+        {
+          "frame": 204,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.21906787157058716
+        },
+        {
+          "frame": 205,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.22214296460151672
+        },
+        {
+          "frame": 206,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.20945961773395538
+        },
+        {
+          "frame": 207,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.21810463070869446
+        },
+        {
+          "frame": 208,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.21236911416053772
+        },
+        {
+          "frame": 209,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.21459227800369263
+        },
+        {
+          "frame": 210,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.20975950360298157
+        },
+        {
+          "frame": 211,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.23138654232025146
+        },
+        {
+          "frame": 212,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.23058104515075684
+        },
+        {
+          "frame": 213,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.23082321882247925
+        },
+        {
+          "frame": 214,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.23351368308067322
+        },
+        {
+          "frame": 215,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.23643210530281067
+        },
+        {
+          "frame": 216,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.24244940280914307
+        },
+        {
+          "frame": 217,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2532196342945099
+        },
+        {
+          "frame": 218,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.25064119696617126
+        },
+        {
+          "frame": 219,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2616710662841797
+        },
+        {
+          "frame": 220,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2689973711967468
+        },
+        {
+          "frame": 221,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2673640847206116
+        },
+        {
+          "frame": 222,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.26138150691986084
+        },
+        {
+          "frame": 223,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.25134149193763733
+        },
+        {
+          "frame": 224,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.25208720564842224
+        },
+        {
+          "frame": 225,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.259659081697464
+        },
+        {
+          "frame": 226,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.25989511609077454
+        },
+        {
+          "frame": 227,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.26389211416244507
+        },
+        {
+          "frame": 228,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2599315047264099
+        },
+        {
+          "frame": 229,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2590315341949463
+        },
+        {
+          "frame": 230,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.25852513313293457
+        },
+        {
+          "frame": 231,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2514241933822632
+        },
+        {
+          "frame": 232,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.23559720814228058
+        },
+        {
+          "frame": 233,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.23412901163101196
+        },
+        {
+          "frame": 234,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.23937459290027618
+        },
+        {
+          "frame": 235,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.23874948918819427
+        },
+        {
+          "frame": 236,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2436511218547821
+        },
+        {
+          "frame": 237,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.24084611237049103
+        },
+        {
+          "frame": 238,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.24083881080150604
+        },
+        {
+          "frame": 239,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.24530640244483948
+        },
+        {
+          "frame": 240,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.24148410558700562
+        },
+        {
+          "frame": 240,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.24148410558700562
+        }
+      ]
+    },
+    {
+      "shot": 4,
+      "reference": 253,
+      "method": "scene-space temporal filtering plus integrated continuous deformation; no per-frame global fallback",
+      "frames": 31,
+      "map_checks": [
+        {
+          "frame": 241,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2525565028190613
+        },
+        {
+          "frame": 242,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2526261508464813
+        },
+        {
+          "frame": 243,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.25029343366622925
+        },
+        {
+          "frame": 244,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.25183355808258057
+        },
+        {
+          "frame": 245,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.25291866064071655
+        },
+        {
+          "frame": 246,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.26080185174942017
+        },
+        {
+          "frame": 247,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.25955086946487427
+        },
+        {
+          "frame": 248,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2589398920536041
+        },
+        {
+          "frame": 249,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2538096010684967
+        },
+        {
+          "frame": 250,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.265746146440506
+        },
+        {
+          "frame": 251,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2509591281414032
+        },
+        {
+          "frame": 252,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2590732276439667
+        },
+        {
+          "frame": 253,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.27019190788269043
+        },
+        {
+          "frame": 254,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2589213252067566
+        },
+        {
+          "frame": 255,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2569236755371094
+        },
+        {
+          "frame": 256,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2512621283531189
+        },
+        {
+          "frame": 257,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2605869770050049
+        },
+        {
+          "frame": 258,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.26495158672332764
+        },
+        {
+          "frame": 259,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2578439712524414
+        },
+        {
+          "frame": 260,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2543480694293976
+        },
+        {
+          "frame": 261,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.26898494362831116
+        },
+        {
+          "frame": 262,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2758159935474396
+        },
+        {
+          "frame": 263,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.26772385835647583
+        },
+        {
+          "frame": 264,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2651982307434082
+        },
+        {
+          "frame": 265,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2636338174343109
+        },
+        {
+          "frame": 266,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.27421560883522034
+        },
+        {
+          "frame": 267,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2774190604686737
+        },
+        {
+          "frame": 268,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.26245805621147156
+        },
+        {
+          "frame": 269,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2551071047782898
+        },
+        {
+          "frame": 270,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2651309072971344
+        },
+        {
+          "frame": 271,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2592104375362396
+        },
+        {
+          "frame": 271,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2592104375362396
+        }
+      ]
+    },
+    {
+      "shot": 5,
+      "reference": 302,
+      "method": "scene-space temporal filtering plus integrated continuous deformation; no per-frame global fallback",
+      "frames": 77,
+      "map_checks": [
+        {
+          "frame": 272,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.0778353214263916
+        },
+        {
+          "frame": 273,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.1376194804906845
+        },
+        {
+          "frame": 274,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2423018515110016
+        },
+        {
+          "frame": 275,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2883579730987549
+        },
+        {
+          "frame": 276,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.23049193620681763
+        },
+        {
+          "frame": 277,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.20148694515228271
+        },
+        {
+          "frame": 278,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3835301995277405
+        },
+        {
+          "frame": 279,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5290033221244812
+        },
+        {
+          "frame": 280,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5245610475540161
+        },
+        {
+          "frame": 281,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6096258759498596
+        },
+        {
+          "frame": 282,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5741094350814819
+        },
+        {
+          "frame": 283,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5651318430900574
+        },
+        {
+          "frame": 284,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5227140188217163
+        },
+        {
+          "frame": 285,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5806678533554077
+        },
+        {
+          "frame": 286,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6111918091773987
+        },
+        {
+          "frame": 287,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5586037635803223
+        },
+        {
+          "frame": 288,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.44963976740837097
+        },
+        {
+          "frame": 289,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4042843282222748
+        },
+        {
+          "frame": 290,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4603811204433441
+        },
+        {
+          "frame": 291,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5910508036613464
+        },
+        {
+          "frame": 292,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6169903874397278
+        },
+        {
+          "frame": 293,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6100212931632996
+        },
+        {
+          "frame": 294,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6216197609901428
+        },
+        {
+          "frame": 295,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6571896076202393
+        },
+        {
+          "frame": 296,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6367723345756531
+        },
+        {
+          "frame": 297,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6189233064651489
+        },
+        {
+          "frame": 298,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6651116609573364
+        },
+        {
+          "frame": 299,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7496185898780823
+        },
+        {
+          "frame": 300,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7764329314231873
+        },
+        {
+          "frame": 301,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8237581253051758
+        },
+        {
+          "frame": 302,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.910209059715271
+        },
+        {
+          "frame": 303,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8712468147277832
+        },
+        {
+          "frame": 304,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8190842270851135
+        },
+        {
+          "frame": 305,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6763432025909424
+        },
+        {
+          "frame": 306,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3943522274494171
+        },
+        {
+          "frame": 307,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2437869757413864
+        },
+        {
+          "frame": 308,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.23826855421066284
+        },
+        {
+          "frame": 309,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.40824928879737854
+        },
+        {
+          "frame": 310,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5716601014137268
+        },
+        {
+          "frame": 311,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5998567342758179
+        },
+        {
+          "frame": 312,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5668818354606628
+        },
+        {
+          "frame": 313,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.506568968296051
+        },
+        {
+          "frame": 314,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.48282477259635925
+        },
+        {
+          "frame": 315,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3966119885444641
+        },
+        {
+          "frame": 316,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.34968364238739014
+        },
+        {
+          "frame": 317,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.37116172909736633
+        },
+        {
+          "frame": 318,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.37956058979034424
+        },
+        {
+          "frame": 319,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3595665693283081
+        },
+        {
+          "frame": 320,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.33670684695243835
+        },
+        {
+          "frame": 321,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3361542820930481
+        },
+        {
+          "frame": 322,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.36322805285453796
+        },
+        {
+          "frame": 323,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3958970904350281
+        },
+        {
+          "frame": 324,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4394473731517792
+        },
+        {
+          "frame": 325,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.48006516695022583
+        },
+        {
+          "frame": 326,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4715734124183655
+        },
+        {
+          "frame": 327,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4590553939342499
+        },
+        {
+          "frame": 328,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4517238438129425
+        },
+        {
+          "frame": 329,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4481978416442871
+        },
+        {
+          "frame": 330,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.45922356843948364
+        },
+        {
+          "frame": 331,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.43393629789352417
+        },
+        {
+          "frame": 332,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3920951187610626
+        },
+        {
+          "frame": 333,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.36300569772720337
+        },
+        {
+          "frame": 334,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3532671332359314
+        },
+        {
+          "frame": 335,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.35196995735168457
+        },
+        {
+          "frame": 336,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3489145338535309
+        },
+        {
+          "frame": 337,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3405052423477173
+        },
+        {
+          "frame": 338,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3306792080402374
+        },
+        {
+          "frame": 339,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3242020905017853
+        },
+        {
+          "frame": 340,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3015432059764862
+        },
+        {
+          "frame": 341,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2961585521697998
+        },
+        {
+          "frame": 342,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2808324098587036
+        },
+        {
+          "frame": 343,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.27929747104644775
+        },
+        {
+          "frame": 344,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2653762698173523
+        },
+        {
+          "frame": 345,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.25589653849601746
+        },
+        {
+          "frame": 346,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.27617156505584717
+        },
+        {
+          "frame": 347,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.32440677285194397
+        },
+        {
+          "frame": 348,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.38872870802879333
+        },
+        {
+          "frame": 348,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.38872870802879333
+        }
+      ]
+    },
+    {
+      "shot": 6,
+      "reference": 379,
+      "method": "scene-space temporal filtering plus integrated continuous deformation; no per-frame global fallback",
+      "frames": 55,
+      "map_checks": [
+        {
+          "frame": 349,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.37711891531944275
+        },
+        {
+          "frame": 350,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3926467001438141
+        },
+        {
+          "frame": 351,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3869234323501587
+        },
+        {
+          "frame": 352,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3890324831008911
+        },
+        {
+          "frame": 353,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3792392313480377
+        },
+        {
+          "frame": 354,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3905058205127716
+        },
+        {
+          "frame": 355,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.38887831568717957
+        },
+        {
+          "frame": 356,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.38368743658065796
+        },
+        {
+          "frame": 357,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3736344873905182
+        },
+        {
+          "frame": 358,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3834628760814667
+        },
+        {
+          "frame": 359,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.37959614396095276
+        },
+        {
+          "frame": 360,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3880542516708374
+        },
+        {
+          "frame": 361,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.38508105278015137
+        },
+        {
+          "frame": 362,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3749212920665741
+        },
+        {
+          "frame": 363,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3713049292564392
+        },
+        {
+          "frame": 364,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.37041184306144714
+        },
+        {
+          "frame": 365,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3754928708076477
+        },
+        {
+          "frame": 366,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.370433509349823
+        },
+        {
+          "frame": 367,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3729645609855652
+        },
+        {
+          "frame": 368,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3693414330482483
+        },
+        {
+          "frame": 369,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3697991669178009
+        },
+        {
+          "frame": 370,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.36296677589416504
+        },
+        {
+          "frame": 371,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.36594125628471375
+        },
+        {
+          "frame": 372,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3729802072048187
+        },
+        {
+          "frame": 373,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3725173771381378
+        },
+        {
+          "frame": 374,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.37397733330726624
+        },
+        {
+          "frame": 375,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3749600350856781
+        },
+        {
+          "frame": 376,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3812519609928131
+        },
+        {
+          "frame": 377,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3708690106868744
+        },
+        {
+          "frame": 378,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3816028833389282
+        },
+        {
+          "frame": 379,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.379710853099823
+        },
+        {
+          "frame": 380,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.37957945466041565
+        },
+        {
+          "frame": 381,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.37110570073127747
+        },
+        {
+          "frame": 382,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3728695809841156
+        },
+        {
+          "frame": 383,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.37230655550956726
+        },
+        {
+          "frame": 384,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.37064221501350403
+        },
+        {
+          "frame": 385,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.380858838558197
+        },
+        {
+          "frame": 386,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.38985344767570496
+        },
+        {
+          "frame": 387,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.35607630014419556
+        },
+        {
+          "frame": 388,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3716159164905548
+        },
+        {
+          "frame": 389,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.39241698384284973
+        },
+        {
+          "frame": 390,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3738001585006714
+        },
+        {
+          "frame": 391,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3604236841201782
+        },
+        {
+          "frame": 392,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3574209213256836
+        },
+        {
+          "frame": 393,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.37680763006210327
+        },
+        {
+          "frame": 394,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.37223756313323975
+        },
+        {
+          "frame": 395,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.36734646558761597
+        },
+        {
+          "frame": 396,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3337939381599426
+        },
+        {
+          "frame": 397,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2881087064743042
+        },
+        {
+          "frame": 398,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.24961593747138977
+        },
+        {
+          "frame": 399,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.21379989385604858
+        },
+        {
+          "frame": 400,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.18771444261074066
+        },
+        {
+          "frame": 401,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.17339584231376648
+        },
+        {
+          "frame": 402,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.15534426271915436
+        },
+        {
+          "frame": 403,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.13978634774684906
+        },
+        {
+          "frame": 403,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.13978634774684906
+        }
+      ]
+    },
+    {
+      "shot": 7,
+      "reference": 474,
+      "method": "scene-space temporal filtering plus integrated continuous deformation; no per-frame global fallback",
+      "frames": 262,
+      "map_checks": [
+        {
+          "frame": 404,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.368112176656723
+        },
+        {
+          "frame": 405,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.36579418182373047
+        },
+        {
+          "frame": 406,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.39413541555404663
+        },
+        {
+          "frame": 407,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.389053076505661
+        },
+        {
+          "frame": 408,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3840702772140503
+        },
+        {
+          "frame": 409,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3937142491340637
+        },
+        {
+          "frame": 410,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.38979923725128174
+        },
+        {
+          "frame": 411,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4066864550113678
+        },
+        {
+          "frame": 412,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.40111058950424194
+        },
+        {
+          "frame": 413,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4327864348888397
+        },
+        {
+          "frame": 414,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4240890145301819
+        },
+        {
+          "frame": 415,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.41356098651885986
+        },
+        {
+          "frame": 416,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.39783400297164917
+        },
+        {
+          "frame": 417,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.41017353534698486
+        },
+        {
+          "frame": 418,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3819071054458618
+        },
+        {
+          "frame": 419,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4429224729537964
+        },
+        {
+          "frame": 420,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.46345916390419006
+        },
+        {
+          "frame": 421,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.49968221783638
+        },
+        {
+          "frame": 422,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5218930244445801
+        },
+        {
+          "frame": 423,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5316838026046753
+        },
+        {
+          "frame": 424,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.499179869890213
+        },
+        {
+          "frame": 425,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4903101325035095
+        },
+        {
+          "frame": 426,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.43936866521835327
+        },
+        {
+          "frame": 427,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4400659203529358
+        },
+        {
+          "frame": 428,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4301284849643707
+        },
+        {
+          "frame": 429,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.40296146273612976
+        },
+        {
+          "frame": 430,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3992689251899719
+        },
+        {
+          "frame": 431,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3993673324584961
+        },
+        {
+          "frame": 432,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.41861259937286377
+        },
+        {
+          "frame": 433,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4418671727180481
+        },
+        {
+          "frame": 434,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4627569019794464
+        },
+        {
+          "frame": 435,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5257706046104431
+        },
+        {
+          "frame": 436,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5432373881340027
+        },
+        {
+          "frame": 437,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5396630764007568
+        },
+        {
+          "frame": 438,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5769755244255066
+        },
+        {
+          "frame": 439,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.56690514087677
+        },
+        {
+          "frame": 440,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.551141083240509
+        },
+        {
+          "frame": 441,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5451642870903015
+        },
+        {
+          "frame": 442,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5510629415512085
+        },
+        {
+          "frame": 443,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5624407529830933
+        },
+        {
+          "frame": 444,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.519879937171936
+        },
+        {
+          "frame": 445,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.493735671043396
+        },
+        {
+          "frame": 446,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4792860150337219
+        },
+        {
+          "frame": 447,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4701410233974457
+        },
+        {
+          "frame": 448,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4603439271450043
+        },
+        {
+          "frame": 449,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4026113748550415
+        },
+        {
+          "frame": 450,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3852219581604004
+        },
+        {
+          "frame": 451,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.37766945362091064
+        },
+        {
+          "frame": 452,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4495968222618103
+        },
+        {
+          "frame": 453,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5189409255981445
+        },
+        {
+          "frame": 454,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.623173177242279
+        },
+        {
+          "frame": 455,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6685531139373779
+        },
+        {
+          "frame": 456,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7016079425811768
+        },
+        {
+          "frame": 457,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6820952296257019
+        },
+        {
+          "frame": 458,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.776890754699707
+        },
+        {
+          "frame": 459,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7662671804428101
+        },
+        {
+          "frame": 460,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7751140594482422
+        },
+        {
+          "frame": 461,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.779686450958252
+        },
+        {
+          "frame": 462,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8017325401306152
+        },
+        {
+          "frame": 463,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7992725968360901
+        },
+        {
+          "frame": 464,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.694636344909668
+        },
+        {
+          "frame": 465,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5927460193634033
+        },
+        {
+          "frame": 466,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5983154773712158
+        },
+        {
+          "frame": 467,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6566241383552551
+        },
+        {
+          "frame": 468,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.669206976890564
+        },
+        {
+          "frame": 469,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7212734222412109
+        },
+        {
+          "frame": 470,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6736329197883606
+        },
+        {
+          "frame": 471,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6866507530212402
+        },
+        {
+          "frame": 472,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7560218572616577
+        },
+        {
+          "frame": 473,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7161992788314819
+        },
+        {
+          "frame": 474,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6375010013580322
+        },
+        {
+          "frame": 475,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6091357469558716
+        },
+        {
+          "frame": 476,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5770267248153687
+        },
+        {
+          "frame": 477,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.49699172377586365
+        },
+        {
+          "frame": 478,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.46165916323661804
+        },
+        {
+          "frame": 479,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4569408893585205
+        },
+        {
+          "frame": 480,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4613957405090332
+        },
+        {
+          "frame": 481,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.44335201382637024
+        },
+        {
+          "frame": 482,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.46076586842536926
+        },
+        {
+          "frame": 483,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6190289258956909
+        },
+        {
+          "frame": 484,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7054958939552307
+        },
+        {
+          "frame": 485,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7473342418670654
+        },
+        {
+          "frame": 486,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.731744647026062
+        },
+        {
+          "frame": 487,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7112159132957458
+        },
+        {
+          "frame": 488,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7113761901855469
+        },
+        {
+          "frame": 489,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7382701635360718
+        },
+        {
+          "frame": 490,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6845546364784241
+        },
+        {
+          "frame": 491,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7464460730552673
+        },
+        {
+          "frame": 492,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7456435561180115
+        },
+        {
+          "frame": 493,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7472639679908752
+        },
+        {
+          "frame": 494,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7518935799598694
+        },
+        {
+          "frame": 495,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7533696889877319
+        },
+        {
+          "frame": 496,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7490004897117615
+        },
+        {
+          "frame": 497,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.719933032989502
+        },
+        {
+          "frame": 498,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7336993217468262
+        },
+        {
+          "frame": 499,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.757387638092041
+        },
+        {
+          "frame": 500,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7125808596611023
+        },
+        {
+          "frame": 501,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.681958019733429
+        },
+        {
+          "frame": 502,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5598437786102295
+        },
+        {
+          "frame": 503,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5987680554389954
+        },
+        {
+          "frame": 504,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5874019265174866
+        },
+        {
+          "frame": 505,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5776763558387756
+        },
+        {
+          "frame": 506,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5123608112335205
+        },
+        {
+          "frame": 507,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.568696141242981
+        },
+        {
+          "frame": 508,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.44456982612609863
+        },
+        {
+          "frame": 509,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5790417194366455
+        },
+        {
+          "frame": 510,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5120248794555664
+        },
+        {
+          "frame": 511,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4987640976905823
+        },
+        {
+          "frame": 512,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5389686226844788
+        },
+        {
+          "frame": 513,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5221143960952759
+        },
+        {
+          "frame": 514,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.550868034362793
+        },
+        {
+          "frame": 515,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5493903756141663
+        },
+        {
+          "frame": 516,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5385253429412842
+        },
+        {
+          "frame": 517,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5415729880332947
+        },
+        {
+          "frame": 518,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5341069102287292
+        },
+        {
+          "frame": 519,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4646981954574585
+        },
+        {
+          "frame": 520,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4782862663269043
+        },
+        {
+          "frame": 521,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.46882063150405884
+        },
+        {
+          "frame": 522,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.49389511346817017
+        },
+        {
+          "frame": 523,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.49792271852493286
+        },
+        {
+          "frame": 524,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5403908491134644
+        },
+        {
+          "frame": 525,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.467720627784729
+        },
+        {
+          "frame": 526,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3511778712272644
+        },
+        {
+          "frame": 527,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.34332627058029175
+        },
+        {
+          "frame": 528,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.36396685242652893
+        },
+        {
+          "frame": 529,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3101128041744232
+        },
+        {
+          "frame": 530,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.36361151933670044
+        },
+        {
+          "frame": 531,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4192960262298584
+        },
+        {
+          "frame": 532,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5090938806533813
+        },
+        {
+          "frame": 533,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4206291735172272
+        },
+        {
+          "frame": 534,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4154208302497864
+        },
+        {
+          "frame": 535,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4101940989494324
+        },
+        {
+          "frame": 536,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4114144444465637
+        },
+        {
+          "frame": 537,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4529325067996979
+        },
+        {
+          "frame": 538,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5172913670539856
+        },
+        {
+          "frame": 539,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5536980032920837
+        },
+        {
+          "frame": 540,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5581087470054626
+        },
+        {
+          "frame": 541,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.49521538615226746
+        },
+        {
+          "frame": 542,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4471345841884613
+        },
+        {
+          "frame": 543,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.45684200525283813
+        },
+        {
+          "frame": 544,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.43904250860214233
+        },
+        {
+          "frame": 545,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4341684579849243
+        },
+        {
+          "frame": 546,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.46251195669174194
+        },
+        {
+          "frame": 547,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6048004627227783
+        },
+        {
+          "frame": 548,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5932468175888062
+        },
+        {
+          "frame": 549,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.584631621837616
+        },
+        {
+          "frame": 550,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.56638503074646
+        },
+        {
+          "frame": 551,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5968290567398071
+        },
+        {
+          "frame": 552,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3574024736881256
+        },
+        {
+          "frame": 553,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.37809982895851135
+        },
+        {
+          "frame": 554,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.44886115193367004
+        },
+        {
+          "frame": 555,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6500957012176514
+        },
+        {
+          "frame": 556,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6514435410499573
+        },
+        {
+          "frame": 557,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5452615022659302
+        },
+        {
+          "frame": 558,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5396120548248291
+        },
+        {
+          "frame": 559,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5131257772445679
+        },
+        {
+          "frame": 560,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.524227499961853
+        },
+        {
+          "frame": 561,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5600199103355408
+        },
+        {
+          "frame": 562,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.45123887062072754
+        },
+        {
+          "frame": 563,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.44043591618537903
+        },
+        {
+          "frame": 564,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4497891664505005
+        },
+        {
+          "frame": 565,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4644719064235687
+        },
+        {
+          "frame": 566,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5052995681762695
+        },
+        {
+          "frame": 567,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.529945433139801
+        },
+        {
+          "frame": 568,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4959486722946167
+        },
+        {
+          "frame": 569,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.49856889247894287
+        },
+        {
+          "frame": 570,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.48936063051223755
+        },
+        {
+          "frame": 571,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.48748794198036194
+        },
+        {
+          "frame": 572,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5647385120391846
+        },
+        {
+          "frame": 573,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5725893378257751
+        },
+        {
+          "frame": 574,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5043367147445679
+        },
+        {
+          "frame": 575,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.474676251411438
+        },
+        {
+          "frame": 576,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4114782214164734
+        },
+        {
+          "frame": 577,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.47175878286361694
+        },
+        {
+          "frame": 578,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3611040413379669
+        },
+        {
+          "frame": 579,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.34012550115585327
+        },
+        {
+          "frame": 580,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3508140742778778
+        },
+        {
+          "frame": 581,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.35898977518081665
+        },
+        {
+          "frame": 582,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5256593823432922
+        },
+        {
+          "frame": 583,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3688484728336334
+        },
+        {
+          "frame": 584,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3934739828109741
+        },
+        {
+          "frame": 585,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3818584084510803
+        },
+        {
+          "frame": 586,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3875713348388672
+        },
+        {
+          "frame": 587,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.345389187335968
+        },
+        {
+          "frame": 588,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4028858244419098
+        },
+        {
+          "frame": 589,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4015714228153229
+        },
+        {
+          "frame": 590,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.34807997941970825
+        },
+        {
+          "frame": 591,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3414594829082489
+        },
+        {
+          "frame": 592,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.44692912697792053
+        },
+        {
+          "frame": 593,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.270165354013443
+        },
+        {
+          "frame": 594,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.32273316383361816
+        },
+        {
+          "frame": 595,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3471154570579529
+        },
+        {
+          "frame": 596,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.33077573776245117
+        },
+        {
+          "frame": 597,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3587738871574402
+        },
+        {
+          "frame": 598,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3466867506504059
+        },
+        {
+          "frame": 599,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3563496470451355
+        },
+        {
+          "frame": 600,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.34979474544525146
+        },
+        {
+          "frame": 601,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3886622488498688
+        },
+        {
+          "frame": 602,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3727717399597168
+        },
+        {
+          "frame": 603,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.453723669052124
+        },
+        {
+          "frame": 604,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.44870778918266296
+        },
+        {
+          "frame": 605,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.42698389291763306
+        },
+        {
+          "frame": 606,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.46720418334007263
+        },
+        {
+          "frame": 607,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4917323589324951
+        },
+        {
+          "frame": 608,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.448395699262619
+        },
+        {
+          "frame": 609,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.39044761657714844
+        },
+        {
+          "frame": 610,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.36495184898376465
+        },
+        {
+          "frame": 611,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3805880546569824
+        },
+        {
+          "frame": 612,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3868701159954071
+        },
+        {
+          "frame": 613,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4041122496128082
+        },
+        {
+          "frame": 614,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3897255063056946
+        },
+        {
+          "frame": 615,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4035451412200928
+        },
+        {
+          "frame": 616,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.450358510017395
+        },
+        {
+          "frame": 617,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.47717615962028503
+        },
+        {
+          "frame": 618,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4208025336265564
+        },
+        {
+          "frame": 619,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.40604090690612793
+        },
+        {
+          "frame": 620,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.38830897212028503
+        },
+        {
+          "frame": 621,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.36473003029823303
+        },
+        {
+          "frame": 622,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3812389373779297
+        },
+        {
+          "frame": 623,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.42416414618492126
+        },
+        {
+          "frame": 624,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4781402349472046
+        },
+        {
+          "frame": 625,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4842579662799835
+        },
+        {
+          "frame": 626,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5039610862731934
+        },
+        {
+          "frame": 627,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.483791321516037
+        },
+        {
+          "frame": 628,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4555820822715759
+        },
+        {
+          "frame": 629,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.39612817764282227
+        },
+        {
+          "frame": 630,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4002327620983124
+        },
+        {
+          "frame": 631,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.40832212567329407
+        },
+        {
+          "frame": 632,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3973471522331238
+        },
+        {
+          "frame": 633,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.32577958703041077
+        },
+        {
+          "frame": 634,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.41891345381736755
+        },
+        {
+          "frame": 635,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.42673179507255554
+        },
+        {
+          "frame": 636,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3714383542537689
+        },
+        {
+          "frame": 637,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.48360908031463623
+        },
+        {
+          "frame": 638,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6464663743972778
+        },
+        {
+          "frame": 639,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6262734532356262
+        },
+        {
+          "frame": 640,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5462198853492737
+        },
+        {
+          "frame": 641,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4879079759120941
+        },
+        {
+          "frame": 642,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3723970055580139
+        },
+        {
+          "frame": 643,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.28185537457466125
+        },
+        {
+          "frame": 644,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.10449352860450745
+        },
+        {
+          "frame": 645,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.09147412329912186
+        },
+        {
+          "frame": 646,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.09238168597221375
+        },
+        {
+          "frame": 647,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.07778172194957733
+        },
+        {
+          "frame": 648,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.11155734211206436
+        },
+        {
+          "frame": 649,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.16623711585998535
+        },
+        {
+          "frame": 650,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.18727350234985352
+        },
+        {
+          "frame": 651,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.1961303949356079
+        },
+        {
+          "frame": 652,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2423582673072815
+        },
+        {
+          "frame": 653,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2512708008289337
+        },
+        {
+          "frame": 654,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.25559744238853455
+        },
+        {
+          "frame": 655,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.25712350010871887
+        },
+        {
+          "frame": 656,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2796083092689514
+        },
+        {
+          "frame": 657,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2853947579860687
+        },
+        {
+          "frame": 658,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2873830199241638
+        },
+        {
+          "frame": 659,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2820928692817688
+        },
+        {
+          "frame": 660,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2771035134792328
+        },
+        {
+          "frame": 661,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2685457468032837
+        },
+        {
+          "frame": 662,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2789657711982727
+        },
+        {
+          "frame": 663,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.28369536995887756
+        },
+        {
+          "frame": 664,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2872338891029358
+        },
+        {
+          "frame": 665,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2883078455924988
+        },
+        {
+          "frame": 665,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2883078455924988
+        }
+      ]
+    },
+    {
+      "shot": 8,
+      "reference": 706,
+      "method": "scene-space temporal filtering plus integrated continuous deformation; no per-frame global fallback",
+      "frames": 81,
+      "map_checks": [
+        {
+          "frame": 666,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4158426523208618
+        },
+        {
+          "frame": 667,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4352450668811798
+        },
+        {
+          "frame": 668,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.43855199217796326
+        },
+        {
+          "frame": 669,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4446275234222412
+        },
+        {
+          "frame": 670,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4471670687198639
+        },
+        {
+          "frame": 671,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.44988977909088135
+        },
+        {
+          "frame": 672,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4516207277774811
+        },
+        {
+          "frame": 673,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4526919424533844
+        },
+        {
+          "frame": 674,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4555043578147888
+        },
+        {
+          "frame": 675,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.45760518312454224
+        },
+        {
+          "frame": 676,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4578835964202881
+        },
+        {
+          "frame": 677,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.460107684135437
+        },
+        {
+          "frame": 678,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4726218581199646
+        },
+        {
+          "frame": 679,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4766184091567993
+        },
+        {
+          "frame": 680,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.48037731647491455
+        },
+        {
+          "frame": 681,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.48534905910491943
+        },
+        {
+          "frame": 682,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.49271848797798157
+        },
+        {
+          "frame": 683,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5084251761436462
+        },
+        {
+          "frame": 684,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5285154581069946
+        },
+        {
+          "frame": 685,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5448629856109619
+        },
+        {
+          "frame": 686,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.554904043674469
+        },
+        {
+          "frame": 687,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5687841176986694
+        },
+        {
+          "frame": 688,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5877266526222229
+        },
+        {
+          "frame": 689,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6197046041488647
+        },
+        {
+          "frame": 690,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6276036500930786
+        },
+        {
+          "frame": 691,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.658220648765564
+        },
+        {
+          "frame": 692,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6513966917991638
+        },
+        {
+          "frame": 693,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6480642557144165
+        },
+        {
+          "frame": 694,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6512138247489929
+        },
+        {
+          "frame": 695,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6320410370826721
+        },
+        {
+          "frame": 696,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6634199023246765
+        },
+        {
+          "frame": 697,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6517468094825745
+        },
+        {
+          "frame": 698,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6516519784927368
+        },
+        {
+          "frame": 699,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.657982587814331
+        },
+        {
+          "frame": 700,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6428231596946716
+        },
+        {
+          "frame": 701,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6448650360107422
+        },
+        {
+          "frame": 702,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6659178733825684
+        },
+        {
+          "frame": 703,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6679549813270569
+        },
+        {
+          "frame": 704,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6504544019699097
+        },
+        {
+          "frame": 705,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6314729452133179
+        },
+        {
+          "frame": 706,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6667920351028442
+        },
+        {
+          "frame": 707,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6378923058509827
+        },
+        {
+          "frame": 708,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6273343563079834
+        },
+        {
+          "frame": 709,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6412800550460815
+        },
+        {
+          "frame": 710,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6306342482566833
+        },
+        {
+          "frame": 711,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6495276689529419
+        },
+        {
+          "frame": 712,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6501436829566956
+        },
+        {
+          "frame": 713,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6438028216362
+        },
+        {
+          "frame": 714,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6363818049430847
+        },
+        {
+          "frame": 715,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6270883679389954
+        },
+        {
+          "frame": 716,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6266791820526123
+        },
+        {
+          "frame": 717,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6202546954154968
+        },
+        {
+          "frame": 718,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6241361498832703
+        },
+        {
+          "frame": 719,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6119953393936157
+        },
+        {
+          "frame": 720,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6094237565994263
+        },
+        {
+          "frame": 721,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6061524152755737
+        },
+        {
+          "frame": 722,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6110678911209106
+        },
+        {
+          "frame": 723,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6177923679351807
+        },
+        {
+          "frame": 724,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.613969087600708
+        },
+        {
+          "frame": 725,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6249457001686096
+        },
+        {
+          "frame": 726,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5988039374351501
+        },
+        {
+          "frame": 727,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6262862682342529
+        },
+        {
+          "frame": 728,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6217324733734131
+        },
+        {
+          "frame": 729,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6260532736778259
+        },
+        {
+          "frame": 730,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.626164972782135
+        },
+        {
+          "frame": 731,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6362732648849487
+        },
+        {
+          "frame": 732,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6312864422798157
+        },
+        {
+          "frame": 733,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5985785126686096
+        },
+        {
+          "frame": 734,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5879163146018982
+        },
+        {
+          "frame": 735,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6232665777206421
+        },
+        {
+          "frame": 736,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6002336740493774
+        },
+        {
+          "frame": 737,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6215620040893555
+        },
+        {
+          "frame": 738,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6211549043655396
+        },
+        {
+          "frame": 739,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6263404488563538
+        },
+        {
+          "frame": 740,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6132493615150452
+        },
+        {
+          "frame": 741,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6114253997802734
+        },
+        {
+          "frame": 742,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.528749942779541
+        },
+        {
+          "frame": 743,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.299898236989975
+        },
+        {
+          "frame": 744,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2759128510951996
+        },
+        {
+          "frame": 745,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.055807821452617645
+        },
+        {
+          "frame": 746,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.026369305327534676
+        }
+      ]
+    }
+  ],
+  "background": "v3 persistent atlases; never sent to RIFE",
+  "opening_connections": "One shared RIFE field for premultiplied RGB and alpha; no double exposure crossfade.",
+  "limits": "Still based on 2D approved images; it cannot create physically correct unseen surfaces or exact new performances. Standing and ending remain v3.",
+  "opening_refinement": {
+    "output_interval": [
+      0,
+      78
+    ],
+    "preserved_cut": 78,
+    "background": "One clean approved whole-frame plate for the whole opening. The mixed source-recovery atlas with visible scraps is no longer used.",
+    "silhouette": "Signed-distance interpolation of warped mattes near the middle of each pose transition; exact RGBA endpoints preserved."
+  }
+}

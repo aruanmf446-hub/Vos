@@ -1,0 +1,485 @@
+{
+  "file": "/workspace/avenida-marvel/work/continuity-v4/opening-final-60fps.mp4",
+  "frames": 78,
+  "fps": 60,
+  "audio": false,
+  "source_intervals": [
+    [
+      0,
+      0,
+      39
+    ]
+  ],
+  "continuous_warp_checks": [
+    {
+      "shot": 0,
+      "reference": 0,
+      "method": "scene-space temporal filtering plus integrated continuous deformation; no per-frame global fallback",
+      "frames": 6,
+      "map_checks": [
+        {
+          "frame": 0,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.9905931353569031
+        },
+        {
+          "frame": 1,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.9238454103469849
+        },
+        {
+          "frame": 2,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7352394461631775
+        },
+        {
+          "frame": 3,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5136811137199402
+        },
+        {
+          "frame": 4,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.36068907380104065
+        },
+        {
+          "frame": 5,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.31038936972618103
+        }
+      ]
+    },
+    {
+      "shot": 0,
+      "reference": 5,
+      "method": "scene-space temporal filtering plus integrated continuous deformation; no per-frame global fallback",
+      "frames": 11,
+      "map_checks": [
+        {
+          "frame": 1,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.40736398100852966
+        },
+        {
+          "frame": 2,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5423544645309448
+        },
+        {
+          "frame": 3,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7531773447990417
+        },
+        {
+          "frame": 4,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.936214804649353
+        },
+        {
+          "frame": 5,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.9374852776527405
+        },
+        {
+          "frame": 6,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.760330319404602
+        },
+        {
+          "frame": 7,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5953012108802795
+        },
+        {
+          "frame": 8,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.46645861864089966
+        },
+        {
+          "frame": 9,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4061853289604187
+        },
+        {
+          "frame": 10,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3278573751449585
+        }
+      ]
+    },
+    {
+      "shot": 0,
+      "reference": 10,
+      "method": "scene-space temporal filtering plus integrated continuous deformation; no per-frame global fallback",
+      "frames": 11,
+      "map_checks": [
+        {
+          "frame": 6,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.33207184076309204
+        },
+        {
+          "frame": 7,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.45075780153274536
+        },
+        {
+          "frame": 8,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.586007833480835
+        },
+        {
+          "frame": 9,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6796796321868896
+        },
+        {
+          "frame": 10,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8724418878555298
+        },
+        {
+          "frame": 11,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.9489149451255798
+        },
+        {
+          "frame": 12,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8429808616638184
+        },
+        {
+          "frame": 13,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7140644788742065
+        },
+        {
+          "frame": 14,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6209011077880859
+        },
+        {
+          "frame": 15,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4328043758869171
+        }
+      ]
+    },
+    {
+      "shot": 0,
+      "reference": 15,
+      "method": "scene-space temporal filtering plus integrated continuous deformation; no per-frame global fallback",
+      "frames": 11,
+      "map_checks": [
+        {
+          "frame": 11,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.30170848965644836
+        },
+        {
+          "frame": 12,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.36143890023231506
+        },
+        {
+          "frame": 13,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4793126583099365
+        },
+        {
+          "frame": 14,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6419700384140015
+        },
+        {
+          "frame": 15,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8399313688278198
+        },
+        {
+          "frame": 16,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.9033827781677246
+        },
+        {
+          "frame": 17,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.7813864350318909
+        },
+        {
+          "frame": 18,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6019837260246277
+        },
+        {
+          "frame": 19,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.48426398634910583
+        },
+        {
+          "frame": 20,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.41339561343193054
+        }
+      ]
+    },
+    {
+      "shot": 0,
+      "reference": 20,
+      "method": "scene-space temporal filtering plus integrated continuous deformation; no per-frame global fallback",
+      "frames": 11,
+      "map_checks": [
+        {
+          "frame": 16,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.23163370788097382
+        },
+        {
+          "frame": 17,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.31166449189186096
+        },
+        {
+          "frame": 18,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4601038992404938
+        },
+        {
+          "frame": 19,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6575424075126648
+        },
+        {
+          "frame": 20,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8527156114578247
+        },
+        {
+          "frame": 21,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8632943630218506
+        },
+        {
+          "frame": 22,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6946524977684021
+        },
+        {
+          "frame": 23,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4993998408317566
+        },
+        {
+          "frame": 24,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.37159407138824463
+        },
+        {
+          "frame": 25,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.33445674180984497
+        }
+      ]
+    },
+    {
+      "shot": 0,
+      "reference": 25,
+      "method": "scene-space temporal filtering plus integrated continuous deformation; no per-frame global fallback",
+      "frames": 11,
+      "map_checks": [
+        {
+          "frame": 21,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4333980083465576
+        },
+        {
+          "frame": 22,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5251888036727905
+        },
+        {
+          "frame": 23,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6710389852523804
+        },
+        {
+          "frame": 24,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8176367282867432
+        },
+        {
+          "frame": 25,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.791659414768219
+        },
+        {
+          "frame": 26,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5770377516746521
+        },
+        {
+          "frame": 27,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4032973349094391
+        },
+        {
+          "frame": 28,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4004550576210022
+        },
+        {
+          "frame": 29,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4012663960456848
+        },
+        {
+          "frame": 30,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.31257331371307373
+        }
+      ]
+    },
+    {
+      "shot": 0,
+      "reference": 30,
+      "method": "scene-space temporal filtering plus integrated continuous deformation; no per-frame global fallback",
+      "frames": 11,
+      "map_checks": [
+        {
+          "frame": 26,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3312207758426666
+        },
+        {
+          "frame": 27,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4753093421459198
+        },
+        {
+          "frame": 28,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6441907286643982
+        },
+        {
+          "frame": 29,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8534355163574219
+        },
+        {
+          "frame": 30,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8410621285438538
+        },
+        {
+          "frame": 31,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6154069900512695
+        },
+        {
+          "frame": 32,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4438568651676178
+        },
+        {
+          "frame": 33,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3632577657699585
+        },
+        {
+          "frame": 34,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.2949352562427521
+        },
+        {
+          "frame": 35,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.25083640217781067
+        }
+      ]
+    },
+    {
+      "shot": 0,
+      "reference": 35,
+      "method": "scene-space temporal filtering plus integrated continuous deformation; no per-frame global fallback",
+      "frames": 9,
+      "map_checks": [
+        {
+          "frame": 31,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.3372223675251007
+        },
+        {
+          "frame": 32,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.45574089884757996
+        },
+        {
+          "frame": 33,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6516274809837341
+        },
+        {
+          "frame": 34,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8645241856575012
+        },
+        {
+          "frame": 35,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8684459328651428
+        },
+        {
+          "frame": 36,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6878697276115417
+        },
+        {
+          "frame": 37,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5169773101806641
+        },
+        {
+          "frame": 38,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4278438985347748
+        },
+        {
+          "frame": 38,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.4278438985347748
+        }
+      ]
+    },
+    {
+      "shot": 0,
+      "reference": 38,
+      "method": "scene-space temporal filtering plus integrated continuous deformation; no per-frame global fallback",
+      "frames": 4,
+      "map_checks": [
+        {
+          "frame": 36,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.5468788743019104
+        },
+        {
+          "frame": 37,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.6992800831794739
+        },
+        {
+          "frame": 38,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8249913454055786
+        },
+        {
+          "frame": 38,
+          "nonpositive_pixels": 0,
+          "minimum_jacobian": 0.8249913454055786
+        }
+      ]
+    }
+  ],
+  "background": "v3 persistent atlases; never sent to RIFE",
+  "opening_connections": "One shared RIFE field for premultiplied RGB and alpha; no double exposure crossfade.",
+  "limits": "Still based on 2D approved images; it cannot create physically correct unseen surfaces or exact new performances. Standing and ending remain v3."
+}

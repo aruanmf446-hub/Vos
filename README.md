@@ -2,16 +2,16 @@
 
 Registro do trabalho realizado nesta conversa, preservado em 16/11/2026.
 
-**Versão mais recente:** [baixar o MP4 com continuidade v3](media/videos/video-marvel-continuidade-v3-60fps.mp4).
+**Versão mais recente:** [baixar o MP4 com conexões v4](media/videos/video-marvel-conexoes-v4-60fps.mp4).
 
-[Comparar v2 e v3](media/videos/comparacao-continuidade-v2-v3.mp4) · [O que mudou e limites da revisão](docs/REVISAO_V3.md).
+[Comparar v3 e v4](media/videos/comparacao-conexoes-v3-v4.mp4) · [O que mudou e limites da revisão](docs/CONEXOES_V4.md).
 
 O vídeo tem **25,93 segundos, 1.556 quadros, 60 FPS, 720 × 1068 e nenhum áudio**.
 
 - [Comparação de trechos com câmera lenta](media/videos/comparacao-encaixe-v2-camera-lenta.mp4)
 - [Primeiro experimento: Doutor Estranho e Wanda](media/videos/doutor-estranho-wanda.mp4)
 - [Backup completo e checkpoint editável](backups/README.md)
-- [MP4: download direto](https://raw.githubusercontent.com/aruanmf446-hub/Vos/main/media/videos/video-marvel-continuidade-v3-60fps.mp4)
+- [MP4: download direto](https://raw.githubusercontent.com/aruanmf446-hub/Vos/main/media/videos/video-marvel-conexoes-v4-60fps.mp4)
 - [Por onde continuar](docs/CONTINUAR_AQUI.md)
 - [Como restaurar os arquivos](docs/RESTAURACAO.md)
 
@@ -37,6 +37,10 @@ O vídeo tem **25,93 segundos, 1.556 quadros, 60 FPS, 720 × 1068 e nenhum áudi
 
 ## Estado real da versão
 
+A v4 corrige conexões com uma deformação contínua e uma interpolação compartilhada da cor e da máscara entre as poses da abertura. O fundo continua separado. Não há nova geração de imagens; gestos e superfícies não vistos permanecem aproximados. Veja [conexões v4](docs/CONEXOES_V4.md).
+
+### Histórico v3
+
 A v3 refaz oito planos com textura de rosto persistente, movimentos medidos no original, braços do Doom articulados, camada independente do Hulk e malha de topologia fixa. A levantada e o retrato final mantêm a v2. Veja [revisão v3](docs/REVISAO_V3.md) para reprodução e limitações.
 
 ### Histórico v2
@@ -57,7 +61,7 @@ No CapCut, manter **60 FPS** na exportação. O `.mov` de comparação enviado e
 | `strange-wanda/` | Scripts e quadros do primeiro experimento |
 | `generated_images/` | Saídas originais da geração de imagens |
 | `referencias/` | Fotos, vídeos originais e comparação enviada |
-| `media/videos/` | Entregas e testes; usar o arquivo `continuidade-v3` como referência atual |
+| `media/videos/` | Entregas e testes; usar o arquivo `conexoes-v4` como referência atual |
 | `manifests/` | Integridade dos arquivos e versões dos modelos |
 | `scripts/` | Verificação e restauração do backup |
 

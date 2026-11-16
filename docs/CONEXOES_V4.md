@@ -35,3 +35,17 @@ python avenida-marvel/render_connections_v4.py --full   # montagem inteira
 As coordenadas filtradas usadas pelo novo renderizador são os arquivos `velocity-*.npz` em `work/continuity-v4/trajectories/`. Os outros arquivos de trajetória pertencem ao experimento descartado e não são entradas desta montagem.
 
 O resultado continua sendo uma adaptação em 2D, com gestos e superfícies não vistos aproximados. A correção das conexões não transforma as imagens aprovadas em uma atuação nova filmada.
+
+## Entrega completa validada
+
+[MP4 completo](../media/videos/video-marvel-conexoes-v4-60fps.mp4) · [Comparação v3/v4](../media/videos/comparacao-conexoes-v3-v4.mp4).
+
+São 1.556 quadros, 25,9333 s, 60 FPS, 720 × 1068, sem áudio. Os nove cortes e a decodificação completa foram verificados. A comparação tem 518 quadros, em velocidade normal, com trechos da abertura, Wanda/Hulk, Doom e diálogo da Wanda.
+
+O relatório completo registra 756 amostras de mapas das camadas, 0 pixels com jacobiano não positivo na região opaca medida e mínimo de 0.026369. Essa medida é feita antes da mistura RIFE da abertura; não é uma garantia de naturalidade do resultado.
+
+As poses exatas de entrada são preservadas nos extremos da interpolação RIFE. Os dois quadros de transição 747/748 são copiados da v3, sem extrapolar o rastreamento do plano anterior. As coordenadas em cache devem ser recalculadas se as referências ou o rastreamento forem alterados.
+
+A finalização também substitui todo o fundo da abertura por uma única base limpa aprovada. O atlas anterior continha retalhos visíveis da reconstrução, mostrados em `work/continuity-v4/contour-before-after.jpg`. A geometria e os detalhes desse cenário continuam aproximados, mas não há alternância entre retalhos durante o plano.
+
+As silhuetas intermediárias usam distância ao contorno, com intensidade que diminui até zero nos extremos da troca de pose. Isso reduz o contorno semitransparente da capa sem mudar os quadros de entrada. O script `finish_opening_v4.py` registra a união no corte original, quadro 78; `opening-finalization.json` guarda o comando exato usado nesta entrega. Uma nova renderização completa com o código atual já inclui essas alterações.
