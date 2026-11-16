@@ -1,0 +1,191 @@
+[
+  {
+    "ref": 15,
+    "frame": 10,
+    "visible_triangles": 228,
+    "inverted": 0,
+    "nearly_collapsed": 0,
+    "max_area_ratio": 2.593276262283325,
+    "min_area_ratio": 0.06193548068404198
+  },
+  {
+    "ref": 15,
+    "frame": 14,
+    "visible_triangles": 228,
+    "inverted": 0,
+    "nearly_collapsed": 0,
+    "max_area_ratio": 1.521418809890747,
+    "min_area_ratio": 0.780266284942627
+  },
+  {
+    "ref": 15,
+    "frame": 15,
+    "visible_triangles": 228,
+    "inverted": 0,
+    "nearly_collapsed": 0,
+    "max_area_ratio": 1.589206337928772,
+    "min_area_ratio": 1.0
+  },
+  {
+    "ref": 15,
+    "frame": 16,
+    "visible_triangles": 228,
+    "inverted": 0,
+    "nearly_collapsed": 0,
+    "max_area_ratio": 1.589206337928772,
+    "min_area_ratio": 0.9969003796577454
+  },
+  {
+    "ref": 15,
+    "frame": 19,
+    "visible_triangles": 228,
+    "inverted": 1,
+    "nearly_collapsed": 1,
+    "max_area_ratio": 2.413658618927002,
+    "min_area_ratio": -0.4809184670448303
+  },
+  {
+    "ref": 15,
+    "frame": 20,
+    "visible_triangles": 228,
+    "inverted": 8,
+    "nearly_collapsed": 8,
+    "max_area_ratio": 1.9965882301330566,
+    "min_area_ratio": -0.9374943375587463
+  },
+  {
+    "ref": 302,
+    "frame": 272,
+    "visible_triangles": 220,
+    "inverted": 4,
+    "nearly_collapsed": 4,
+    "max_area_ratio": 7.138047695159912,
+    "min_area_ratio": -0.5181174874305725
+  },
+  {
+    "ref": 302,
+    "frame": 284,
+    "visible_triangles": 220,
+    "inverted": 0,
+    "nearly_collapsed": 0,
+    "max_area_ratio": 1.9929722547531128,
+    "min_area_ratio": 0.06664077192544937
+  },
+  {
+    "ref": 302,
+    "frame": 302,
+    "visible_triangles": 220,
+    "inverted": 0,
+    "nearly_collapsed": 0,
+    "max_area_ratio": 1.0000094175338745,
+    "min_area_ratio": 0.9999929666519165
+  },
+  {
+    "ref": 302,
+    "frame": 320,
+    "visible_triangles": 220,
+    "inverted": 0,
+    "nearly_collapsed": 0,
+    "max_area_ratio": 2.558967113494873,
+    "min_area_ratio": 0.6371718049049377
+  },
+  {
+    "ref": 302,
+    "frame": 330,
+    "visible_triangles": 220,
+    "inverted": 0,
+    "nearly_collapsed": 0,
+    "max_area_ratio": 1.6889533996582031,
+    "min_area_ratio": 0.595616340637207
+  },
+  {
+    "ref": 302,
+    "frame": 348,
+    "visible_triangles": 220,
+    "inverted": 1,
+    "nearly_collapsed": 1,
+    "max_area_ratio": 1.6470301151275635,
+    "min_area_ratio": -0.3259706199169159
+  },
+  {
+    "ref": 474,
+    "frame": 404,
+    "visible_triangles": 1409,
+    "inverted": 43,
+    "nearly_collapsed": 47,
+    "max_area_ratio": 21.789770126342773,
+    "min_area_ratio": -47.72273254394531
+  },
+  {
+    "ref": 474,
+    "frame": 490,
+    "visible_triangles": 1409,
+    "inverted": 3,
+    "nearly_collapsed": 3,
+    "max_area_ratio": 9.189852714538574,
+    "min_area_ratio": -0.9781721830368042
+  },
+  {
+    "ref": 474,
+    "frame": 529,
+    "visible_triangles": 1409,
+    "inverted": 18,
+    "nearly_collapsed": 31,
+    "max_area_ratio": 6.319804668426514,
+    "min_area_ratio": -3.8711771965026855
+  },
+  {
+    "ref": 474,
+    "frame": 534,
+    "visible_triangles": 1409,
+    "inverted": 40,
+    "nearly_collapsed": 67,
+    "max_area_ratio": 10.153665542602539,
+    "min_area_ratio": -3.4054577350616455
+  },
+  {
+    "ref": 474,
+    "frame": 535,
+    "visible_triangles": 1409,
+    "inverted": 41,
+    "nearly_collapsed": 68,
+    "max_area_ratio": 10.272346496582031,
+    "min_area_ratio": -3.9646992683410645
+  },
+  {
+    "ref": 474,
+    "frame": 536,
+    "visible_triangles": 1409,
+    "inverted": 32,
+    "nearly_collapsed": 57,
+    "max_area_ratio": 11.153791427612305,
+    "min_area_ratio": -3.448509931564331
+  },
+  {
+    "ref": 474,
+    "frame": 580,
+    "visible_triangles": 1409,
+    "inverted": 12,
+    "nearly_collapsed": 31,
+    "max_area_ratio": 21.528093338012695,
+    "min_area_ratio": -6.751672744750977
+  },
+  {
+    "ref": 474,
+    "frame": 624,
+    "visible_triangles": 1409,
+    "inverted": 20,
+    "nearly_collapsed": 21,
+    "max_area_ratio": 11.385002136230469,
+    "min_area_ratio": -1.8944213390350342
+  },
+  {
+    "ref": 474,
+    "frame": 665,
+    "visible_triangles": 1409,
+    "inverted": 25,
+    "nearly_collapsed": 26,
+    "max_area_ratio": 19.439172744750977,
+    "min_area_ratio": -8.841042518615723
+  }
+]

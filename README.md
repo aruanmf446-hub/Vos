@@ -15,6 +15,8 @@ O vídeo tem **25,93 segundos, 1.556 quadros, 60 FPS, 720 × 1068 e nenhum áudi
 - [Por onde continuar](docs/CONTINUAR_AQUI.md)
 - [Como restaurar os arquivos](docs/RESTAURACAO.md)
 
+[Novo teste das conexões v4](media/videos/teste-conexoes-v4-60fps.mp4) · [Diagnóstico e alteração](docs/CONEXOES_V4.md).
+
 ## Personagens
 
 | Na cena original | Substituição |
