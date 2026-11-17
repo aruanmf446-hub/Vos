@@ -56,6 +56,41 @@ class BridgeTests(unittest.TestCase):
                     read_vos(z,self.root/("decoded-"+str(len(list(self.root.iterdir())))))
 
     @unittest.skipUnless(shutil.which("ffmpeg") and shutil.which("ffprobe"),"FFmpeg ausente")
+    def test_finish_preserves_every_outside_mask_pixel_and_manifest(self):
+        from PIL import ImageDraw
+        from frame_studio.wan_bridge import finish
+        z,raw=self.fixture()
+        ref=self.root/"reference.jpg"
+        Image.new("RGB",(32,32),(200,150,60)).save(ref)
+        work=self.root/"job";prepare(z,ref,work)
+        result_dir=work/"synthetic_generated";mask_dir=work/"synthetic_mask"
+        processed=work/"wan_processed"
+        for p in (result_dir,mask_dir,processed):p.mkdir(exist_ok=True)
+        for i in range(2):
+            Image.new("RGB",(32,32),(230,15+i*10,30)).save(result_dir/f"frame_{i:06d}.png")
+            mask=Image.new("RGB",(32,32),(0,0,0))
+            ImageDraw.Draw(mask).rectangle((10,10,20,20),fill=(255,255,255))
+            mask.save(mask_dir/f"frame_{i:06d}.png")
+        def encode(folder,dest):
+            subprocess.run(["ffmpeg","-v","error","-y","-framerate","30",
+                            "-i",str(folder/"frame_%06d.png"),"-c:v","libx264",
+                            "-pix_fmt","yuv420p",str(dest)],check=True)
+        encode(result_dir,work/"wan_generated.mp4")
+        encode(mask_dir,processed/"src_mask.mp4")
+        out=self.root/"edited.zip"
+        finish(work,out)
+        with zipfile.ZipFile(z) as original,zipfile.ZipFile(out) as edited:
+            self.assertEqual(edited.read("manifest.json"),raw)
+            self.assertEqual(set(edited.namelist()),set(original.namelist()))
+            for name in (n for n in original.namelist() if n.endswith(".png")):
+                with Image.open(io.BytesIO(original.read(name))) as a,Image.open(io.BytesIO(edited.read(name))) as b:
+                    self.assertEqual(a.size,b.size)
+                    self.assertEqual(a.getpixel((0,0)),b.getpixel((0,0)))
+                    self.assertEqual(a.getpixel((31,31)),b.getpixel((31,31)))
+                    self.assertNotEqual(a.getpixel((15,15)),b.getpixel((15,15)))
+        self.assertEqual(len(read_vos(out,self.root/"verified")[1]),2)
+
+    @unittest.skipUnless(shutil.which("ffmpeg") and shutil.which("ffprobe"),"FFmpeg ausente")
     def test_prepare_without_gpu(self):
         z,raw=self.fixture()
         reference=self.root/"reference.jpg"
