@@ -1,7 +1,7 @@
 """VOS native ZIP -> Wan2.2 Animate Replacement -> VOS native ZIP.
-No external inference API. Requires Pillow, FFmpeg, OpenCV, numpy for finalization.
+No external inference API. Requires Pillow and FFmpeg/FFprobe for finalization.
 """
-import argparse, bisect, hashlib, json, math, shutil, subprocess, sys, zipfile
+import argparse, bisect, hashlib, json, math, os, shutil, subprocess, sys, tempfile, zipfile
 from fractions import Fraction
 from io import BytesIO
 from pathlib import Path, PurePosixPath
@@ -9,7 +9,9 @@ from PIL import Image
 
 def cmd(args, cwd=None):
     print("+", " ".join(map(str,args)), flush=True)
-    subprocess.run(list(map(str,args)), cwd=cwd, check=True)
+    env = os.environ.copy()
+    env.update(HF_HUB_OFFLINE="1", TRANSFORMERS_OFFLINE="1", HF_DATASETS_OFFLINE="1")
+    subprocess.run(list(map(str,args)), cwd=cwd, check=True, env=env)
 
 def read_vos(zippath, work):
     work=Path(work);work.mkdir(parents=True, exist_ok=True)
@@ -66,9 +68,100 @@ def prepare(archive,reference,work):
     cmd(["ffmpeg","-v","error","-y","-framerate","30","-i",sampled/"frame_%06d.png","-an","-c:v","libx264","-pix_fmt","yuv420p" if w%2==0 and h%2==0 else "yuv444p",work/"driving.mp4"])
     with Image.open(reference) as im:im.convert("RGB").save(work/"reference.png")
     shutil.copyfile(archive,work/"original_vos.zip")
-    info={"frame_count":count,"fps":30,"width":w,"height":h,"manifest_sha256":hashlib.sha256((work/"manifest.json").read_bytes()).hexdigest(),"project_id":m["project_id"],"package_id":m["package_id"]}
+    info={"original_zip_sha256":file_hash(work/"original_vos.zip"),"frame_count":count,"fps":30,"width":w,"height":h,"manifest_sha256":hashlib.sha256((work/"manifest.json").read_bytes()).hexdigest(),"project_id":m["project_id"],"package_id":m["package_id"]}
     (work/"bridge.json").write_text(json.dumps(info,indent=2))
     print("Preparado:",info)
+
+STAGE_FILES = ("src_pose.mp4", "src_face.mp4", "src_bg.mp4", "src_mask.mp4", "src_ref.png")
+
+
+def file_hash(path):
+    with Path(path).open("rb") as source:
+        return hashlib.file_digest(source, "sha256").hexdigest()
+
+
+def stage_hashes(work):
+    return {name: file_hash(Path(work)/"wan_processed"/name) for name in STAGE_FILES}
+
+
+def verify_model_manifest(checkpoint, manifest):
+    ck = Path(checkpoint).resolve()
+    data = json.loads(Path(manifest).read_text())
+    for entry in data["files"]:
+        path = (ck/entry["path"]).resolve()
+        if not path.is_relative_to(ck) or not path.is_file() or path.stat().st_size != entry["size"]:
+            raise ValueError("Peso ausente/tamanho incorreto: " + entry["path"])
+        if file_hash(path) != entry["sha256"]:
+            raise ValueError("SHA-256 incorreto: " + entry["path"])
+    print("Pesos locais verificados por tamanho e SHA-256:", len(data["files"]))
+
+
+def check_checkpoints(checkpoint):
+    ck = Path(checkpoint)
+    required = ["models_t5_umt5-xxl-enc-bf16.pth", "models_clip_open-clip-xlm-roberta-large-vit-huge-14.pth",
+                "Wan2.1_VAE.pth", "relighting_lora.ckpt", "config.json",
+                "google/umt5-xxl/tokenizer_config.json", "xlm-roberta-large/tokenizer.json"]
+    index = ck/"diffusion_pytorch_model.safetensors.index.json"
+    if index.is_file():
+        required += sorted(set(json.loads(index.read_text())["weight_map"].values()))
+    else:
+        required += ["diffusion_pytorch_model.safetensors"]
+    for name in required:
+        part = ck/name
+        if not part.is_relative_to(ck) or ".." in Path(name).parts or not part.is_file() or part.stat().st_size == 0:
+            raise FileNotFoundError("Checkpoint incompleto: " + name)
+
+
+def mask_statistics(files):
+    """Detecta saltos grosseiros, nao identifica pessoas nem certifica rastreamento."""
+    report = []
+    previous = None
+    for i, path in enumerate(files):
+        with Image.open(path) as image:
+            mask = image.convert("L").point(lambda level:255 if level>=128 else 0)
+            coverage = mask.histogram()[255]/(mask.width*mask.height)
+            box = mask.getbbox()
+            if not box or not 0 < coverage <= 0.65:
+                raise ValueError(f"Mascara suspeita no quadro {i}: {coverage:.1%}")
+            center = ((box[0]+box[2])/2/mask.width, (box[1]+box[3])/2/mask.height)
+            if previous and math.dist(center, previous) > 0.35:
+                raise ValueError(f"Salto de rastreamento no quadro {i}; revise possivel troca de pessoa")
+            previous = center
+            report.append({"frame":i,"coverage":coverage,"box":box})
+    return report
+
+
+def review_mask(work):
+    """Registra a confirmacao visual explicita; nao decide quem foi segmentado."""
+    work = Path(work)
+    (work/"mask_review.json").unlink(missing_ok=True)
+    expected = json.loads((work/"bridge.json").read_text())["frame_count"]
+    for name in STAGE_FILES:
+        if name.endswith(".mp4"): video_info(work/"wan_processed"/name, expected)
+    hashes = stage_hashes(work)
+    preflight = work/"preprocess.json"
+    if not preflight.is_file() or json.loads(preflight.read_text()) != hashes:
+        raise ValueError("Execute preprocess com sucesso antes de revisar a mascara")
+    (work/"mask_review.json").write_text(json.dumps(hashes, indent=2))
+
+
+def video_info(path, expected):
+    result = subprocess.check_output([
+        "ffprobe", "-v", "error", "-select_streams", "v:0", "-count_frames",
+        "-show_entries", "stream=width,height,avg_frame_rate,nb_read_frames",
+        "-of", "json", str(path)], text=True)
+    streams = json.loads(result)["streams"]
+    if len(streams) != 1:
+        raise ValueError("Video sem stream: " + str(path))
+    stream = streams[0]
+    if int(stream.get("nb_read_frames", 0)) != expected or Fraction(stream["avg_frame_rate"]) != 30:
+        raise ValueError("Contagem/FPS divergente (esperado 30 FPS): " + str(path))
+    timing = json.loads(subprocess.check_output(["ffprobe", "-v", "error", "-select_streams", "v:0",
+        "-show_frames", "-show_entries", "frame=best_effort_timestamp_time", "-of", "json", str(path)], text=True))["frames"]
+    if len(timing) != expected or any(abs(Fraction(f["best_effort_timestamp_time"])-Fraction(i,30)) > Fraction(1,1000) for i,f in enumerate(timing)):
+        raise ValueError("Timestamps Wan fora da grade de 30 FPS: " + str(path))
+    return stream["width"], stream["height"]
+
 
 def paths_for_wan(work,wan,checkpoint):
     work=Path(work).resolve()
@@ -80,12 +173,18 @@ def paths_for_wan(work,wan,checkpoint):
 
 def preprocess(work,wan,checkpoint):
     """Roda apenas o preprocessamento oficial. Permite revisar mascara antes da IA."""
+    work=Path(work).resolve()
+    for name in ("preprocess.json", "mask_review.json", "generation.json", "wan_generated.mp4"):
+        (work/name).unlink(missing_ok=True)
     work,wan,ck=paths_for_wan(work,wan,checkpoint)
     for x in ("det/yolov10m.onnx","pose2d/vitpose_h_wholebody.onnx","sam2/sam2_hiera_large.pt"):
-        if not (ck/"process_checkpoint"/x).is_file():
+        model = ck/"process_checkpoint"/x
+        if model.is_dir(): model = model/"end2end.onnx"
+        if not model.is_file():
             raise FileNotFoundError("Checkpoint ausente: "+x)
     stage=work/"wan_processed"
-    stage.mkdir(exist_ok=True)
+    if stage.exists(): shutil.rmtree(stage)
+    stage.mkdir()
     cmd([sys.executable,wan/"wan/modules/animate/preprocess/preprocess_data.py",
          "--ckpt_path",ck/"process_checkpoint",
          "--video_path",work/"driving.mp4",
@@ -98,25 +197,30 @@ def preprocess(work,wan,checkpoint):
         if not (stage/name).is_file():
             raise RuntimeError("Preprocessamento incompleto: "+name)
     expected=json.loads((work/"bridge.json").read_text())["frame_count"]
+    sizes = {name: video_info(stage/name, expected) for name in STAGE_FILES if name.endswith(".mp4")}
+    if len({sizes[name] for name in ("src_pose.mp4", "src_bg.mp4", "src_mask.mp4")}) != 1:
+        raise ValueError("Dimensoes dos intermediarios divergentes")
     mask_files=extract_video_png(stage/"src_mask.mp4",work/"mask_preflight")
     if len(mask_files)!=expected:
         raise ValueError(f"Mask tem {len(mask_files)} quadros, esperados {expected}; nao iniciar IA")
-    # Guard-rail de dimensoes/mask para evitar edicao massiva de personagens alheios.
-    for i,mpath in enumerate(mask_files):
-        with Image.open(mpath) as im:
-            histogram=im.convert("L").point(lambda v:255 if v>=128 else 0).histogram()
-            coverage=histogram[255]/(im.width*im.height)
-        if coverage==0 or coverage>0.65:
-            raise ValueError(f"Mascara quadro {i} cobre {coverage:.1%}. Corrija a selecao antes da geracao")
+    report = mask_statistics(mask_files)
+    (work/"mask_report.json").write_text(json.dumps(report, indent=2))
+    (work/"preprocess.json").write_text(json.dumps(stage_hashes(work), indent=2))
     print("Preprocessamento validado estruturalmente; REVISE VISUALMENTE src_mask.mp4 e src_pose.mp4!")
 
 def infer(work,wan,checkpoint):
     """So gera depois de existirem os intermediarios e a mascara revisada."""
+    (Path(work)/"generation.json").unlink(missing_ok=True)
     work,wan,ck=paths_for_wan(work,wan,checkpoint)
     stage=work/"wan_processed"
     for name in ("src_pose.mp4","src_face.mp4","src_bg.mp4","src_mask.mp4","src_ref.png"):
         if not (stage/name).is_file():
             raise FileNotFoundError("Execute preprocess e revise a mascara antes: "+name)
+    review = work/"mask_review.json"
+    if not review.is_file() or json.loads(review.read_text()) != stage_hashes(work):
+        raise ValueError("Confirme a revisao visual da mascara atual com review-mask --confirm SIM")
+    (work/"wan_generated.mp4").unlink(missing_ok=True)
+    check_checkpoints(ck)
     cmd([sys.executable,wan/"generate.py","--task","animate-14B",
          "--ckpt_dir",ck,"--src_root_path",stage,"--refert_num","1",
          "--replace_flag","--use_relighting_lora",
@@ -124,10 +228,13 @@ def infer(work,wan,checkpoint):
          "--save_file",work/"wan_generated.mp4"],cwd=wan)
     if not (work/"wan_generated.mp4").is_file():
         raise RuntimeError("Sem MP4 gerado pelo Wan")
+    expected = json.loads((work/"bridge.json").read_text())["frame_count"]
+    video_info(work/"wan_generated.mp4", expected)
+    (work/"generation.json").write_text(json.dumps(generation_hashes(work), indent=2))
 
 def generate(work,wan,checkpoint):
     preprocess(work,wan,checkpoint)
-    infer(work,wan,checkpoint)
+    raise ValueError("Execute review-mask --confirm SIM apos revisar os videos e depois infer")
 
 def extract_video_png(path, directory):
     """Decodifica sequencialmente via FFmpeg: memoria constante, sem CV2 ou GPU."""
@@ -143,20 +250,38 @@ def extract_video_png(path, directory):
         raise ValueError("Sequencia incompleta ou incorreta em "+str(path))
     return found
 
+def generation_hashes(work):
+    work = Path(work)
+    return {"generated_sha256":file_hash(work/"wan_generated.mp4"),
+            "mask_sha256":file_hash(work/"wan_processed/src_mask.mp4"),
+            "manifest_sha256":file_hash(work/"manifest.json")}
+
+
 def finish(work,output):
     """Restaura todo quadro VOS e sobrescreve SOMENTE a regiao mascarada.
     Usa Pillow + FFmpeg com consumo de RAM constante, preservando manifesto.
     """
     work=Path(work).resolve()
     info=json.loads((work/"bridge.json").read_text())
+    if file_hash(work/"original_vos.zip") != info["original_zip_sha256"]:
+        raise ValueError("ZIP original modificado")
+    receipt = work/"generation.json"
+    if not receipt.is_file() or json.loads(receipt.read_text()) != generation_hashes(work):
+        raise ValueError("Geracao nao concluida ou arquivos alterados; execute infer com sucesso")
     m,frames,starts,durations=read_vos(work/"original_vos.zip",work)
     if hashlib.sha256((work/"manifest.json").read_bytes()).hexdigest()!=info["manifest_sha256"]:
         raise ValueError("Manifesto modificado")
+    count=info["frame_count"]
+    generated_size = video_info(work/"wan_generated.mp4", count)
+    mask_size = video_info(work/"wan_processed/src_mask.mp4", count)
+    if generated_size != mask_size:
+        raise ValueError("Dimensoes Wan/mascara divergentes; nao deformar")
     gen_files=extract_video_png(work/"wan_generated.mp4",work/"decoded_wan")
     mask_files=extract_video_png(work/"wan_processed/src_mask.mp4",work/"decoded_mask")
     count=info["frame_count"]
     if len(gen_files)!=count or len(mask_files)!=count:
         raise ValueError(f"Contagem Wan divergente: {len(gen_files)} gerados / {len(mask_files)} mascaras / {count} esperados")
+    mask_statistics(mask_files)
     w,h=info["width"],info["height"]
     for f,t,d in zip(frames,starts,durations):
         i=max(0,min(count-1,int((t+d/2)*30)))
@@ -177,14 +302,22 @@ def finish(work,output):
             base.save(path,format="PNG")
     output=Path(output)
     output.parent.mkdir(parents=True,exist_ok=True)
-    with zipfile.ZipFile(output,"w",allowZip64=True) as z:
-        z.write(work/"manifest.json","manifest.json",compress_type=zipfile.ZIP_DEFLATED)
-        if (work/"INSTRUCOES_EDICAO.md").is_file():
-            z.write(work/"INSTRUCOES_EDICAO.md","INSTRUCOES_EDICAO.md",compress_type=zipfile.ZIP_DEFLATED)
-        for f in frames:z.write(work/f["file"],f["file"],compress_type=zipfile.ZIP_STORED)
-    with zipfile.ZipFile(output) as z:
-        if z.read("manifest.json")!=(work/"manifest.json").read_bytes():
-            raise AssertionError("Manifesto mudou")
+    if output.resolve() == (work/"original_vos.zip").resolve():
+        raise ValueError("Nao sobrescreva o ZIP original")
+    handle, temporary = tempfile.mkstemp(prefix=output.name+".", suffix=".partial", dir=output.parent)
+    os.close(handle)
+    try:
+        with zipfile.ZipFile(temporary,"w",allowZip64=True) as z:
+            z.write(work/"manifest.json","manifest.json",compress_type=zipfile.ZIP_DEFLATED)
+            if (work/"INSTRUCOES_EDICAO.md").is_file():
+                z.write(work/"INSTRUCOES_EDICAO.md","INSTRUCOES_EDICAO.md",compress_type=zipfile.ZIP_DEFLATED)
+            for f in frames:z.write(work/f["file"],f["file"],compress_type=zipfile.ZIP_STORED)
+        with zipfile.ZipFile(temporary) as z:
+            if z.read("manifest.json")!=(work/"manifest.json").read_bytes():
+                raise AssertionError("Manifesto mudou")
+        os.replace(temporary, output)
+    finally:
+        Path(temporary).unlink(missing_ok=True)
     print("ZIP de retorno:",output)
 
 if __name__=="__main__":
@@ -193,6 +326,12 @@ if __name__=="__main__":
     p_prepare.add_argument("--zip",required=True)
     p_prepare.add_argument("--reference",required=True)
     p_prepare.add_argument("--work",required=True)
+    p_weights=sub.add_parser("verify-weights",help="Verificar pesos ModelScope locais por SHA-256")
+    p_weights.add_argument("--checkpoint",required=True)
+    p_weights.add_argument("--manifest",required=True)
+    p_review=sub.add_parser("review-mask",help="Confirmar revisao visual dos intermediarios atuais")
+    p_review.add_argument("--work",required=True)
+    p_review.add_argument("--confirm",required=True,choices=["SIM"])
     for action in ("run","preprocess","infer"):
         stage=sub.add_parser(action,help="Wan2.2 Animate Replacement: "+action)
         stage.add_argument("--work",required=True)
@@ -203,7 +342,9 @@ if __name__=="__main__":
     p_finish.add_argument("--output",required=True)
     a=p.parse_args()
     if a.action=="prepare":prepare(a.zip,a.reference,a.work)
+    elif a.action=="verify-weights":verify_model_manifest(a.checkpoint,a.manifest)
     elif a.action=="run":generate(a.work,a.wan,a.checkpoint)
+    elif a.action=="review-mask":review_mask(a.work)
     elif a.action=="preprocess":preprocess(a.work,a.wan,a.checkpoint)
     elif a.action=="infer":infer(a.work,a.wan,a.checkpoint)
     else:finish(a.work,a.output)
