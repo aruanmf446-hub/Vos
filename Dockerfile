@@ -14,6 +14,7 @@ HEALTHCHECK --interval=30s --timeout=5s --start-period=20s CMD python -c "import
 CMD ["sh", "-c", "exec uvicorn frame_studio.app:app --host 0.0.0.0 --port ${PORT:-10000} --workers 1 --limit-concurrency 16 --timeout-keep-alive 10"]
 
 FROM runtime AS test
+COPY --chown=10001:10001 colab /app/colab
 USER root
 RUN --mount=type=secret,id=build_ca \
     set -eu; if [ -f /run/secrets/build_ca ]; then export PIP_CERT=/run/secrets/build_ca; fi; \

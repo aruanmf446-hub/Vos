@@ -1,10 +1,14 @@
 name: Vos Frame Studio
 on:
   push:
-    branches: [main, codex/vos-frame-studio]
-    paths: [frame_studio/**, colab/**, docs/VOS_WAN22_COLAB.md, Dockerfile, .dockerignore, render.yaml, .github/workflows/frame-studio.yml]
+    branches: [main, "codex/**"]
+    paths: [frame_studio/**, colab/**, docs/VOS_WAN22_COLAB.md, docs/VOS_WAN22_VALIDATION.md, Dockerfile, .dockerignore, render.yaml, .github/workflows/frame-studio.yml]
+  workflow_dispatch:
   pull_request:
-    paths: [frame_studio/**, colab/**, docs/VOS_WAN22_COLAB.md, Dockerfile, .dockerignore, render.yaml, .github/workflows/frame-studio.yml]
+    paths: [frame_studio/**, colab/**, docs/VOS_WAN22_COLAB.md, docs/VOS_WAN22_VALIDATION.md, Dockerfile, .dockerignore, render.yaml, .github/workflows/frame-studio.yml]
+concurrency:
+  group: vos-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 permissions:
   contents: read
 jobs:
@@ -13,29 +17,12 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
-      - name: Validar notebook Colab e sintaxe Python (sem GPU)
-        run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          notebook=Path("colab/VOS_Wan22_Animate_Replacement.ipynb")
-          data=json.loads(notebook.read_text(encoding="utf-8"))
-          assert data["nbformat"]==4
-          code=[]
-          for i,cell in enumerate(data["cells"]):
-              if cell["cell_type"]=="code":
-                  source="".join(cell["source"])
-                  compile(source,str(notebook)+f":cell:{i}","exec")
-                  code.append(source)
-          combined="\n".join(code)
-          assert "'prepare'" in combined
-          assert "'preprocess'" in combined
-          assert "'infer'" in combined
-          assert "'finish'" in combined
-          assert "modelscope" in combined
-          assert "if vram<32 or ram<24 or disk<85" in combined
-          print("Notebook válido:",len(code),"células Python compiladas")
-          PY
+        with:
+          sparse-checkout: |
+            frame_studio
+            colab
+      - name: Validar notebook, manifesto de pesos e bloqueios sem GPU
+        run: python -m unittest frame_studio.tests.test_notebook -v
       - name: Testar o extrator, importador e montador no Docker
         run: docker build --target test -t vos-frame-studio:test .
       - name: Construir e verificar o serviço de produção
@@ -48,3 +35,8 @@ jobs:
           done
           docker logs vos-check
           exit 1
+      - name: Logs do serviço e limpeza
+        if: always()
+        run: |
+          docker logs vos-check || true
+          docker rm -f vos-check || true

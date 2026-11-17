@@ -8,3 +8,6 @@ frame_studio/**/*.mp4
 frame_studio/**/*.mov
 frame_studio/**/*.zip
 frame_studio/.env*
+
+!colab/
+!colab/**
