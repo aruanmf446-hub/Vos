@@ -1,0 +1,27 @@
+name: Vos Frame Studio
+on:
+  push:
+    branches: [main, codex/vos-frame-studio]
+    paths: [frame_studio/**, Dockerfile, .dockerignore, render.yaml, .github/workflows/frame-studio.yml]
+  pull_request:
+    paths: [frame_studio/**, Dockerfile, .dockerignore, render.yaml, .github/workflows/frame-studio.yml]
+permissions:
+  contents: read
+jobs:
+  docker-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Testar o extrator, importador e montador no Docker
+        run: docker build --target test -t vos-frame-studio:test .
+      - name: Construir e verificar o serviço de produção
+        run: |
+          docker build --target production -t vos-frame-studio .
+          docker run -d --name vos-check --memory=512m --cpus=1 -p 10000:10000 vos-frame-studio
+          for attempt in $(seq 1 30); do
+            if curl --fail http://localhost:10000/healthz; then exit 0; fi
+            sleep 1
+          done
+          docker logs vos-check
+          exit 1

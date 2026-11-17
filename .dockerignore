@@ -1,0 +1,10 @@
+**
+!Dockerfile
+!frame_studio/
+!frame_studio/**
+frame_studio/**/__pycache__/
+frame_studio/**/*.pyc
+frame_studio/**/*.mp4
+frame_studio/**/*.mov
+frame_studio/**/*.zip
+frame_studio/.env*
