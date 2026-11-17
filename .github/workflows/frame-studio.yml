@@ -2,10 +2,10 @@ name: Vos Frame Studio
 on:
   push:
     branches: [main, "codex/**"]
-    paths: [frame_studio/**, colab/**, docs/VOS_WAN22_COLAB.md, docs/VOS_WAN22_VALIDATION.md, docs/VOS_TARGET_SELECTION.md, Dockerfile, .dockerignore, render.yaml, .github/workflows/frame-studio.yml]
+    paths: [frame_studio/**, colab/**, docs/VOS_WAN22_COLAB.md, docs/VOS_WAN22_VALIDATION.md, docs/VOS_TARGET_SELECTION.md, docs/VOS_FIRST_REAL_TEST.md, Dockerfile, .dockerignore, render.yaml, .github/workflows/frame-studio.yml]
   workflow_dispatch:
   pull_request:
-    paths: [frame_studio/**, colab/**, docs/VOS_WAN22_COLAB.md, docs/VOS_WAN22_VALIDATION.md, docs/VOS_TARGET_SELECTION.md, Dockerfile, .dockerignore, render.yaml, .github/workflows/frame-studio.yml]
+    paths: [frame_studio/**, colab/**, docs/VOS_WAN22_COLAB.md, docs/VOS_WAN22_VALIDATION.md, docs/VOS_TARGET_SELECTION.md, docs/VOS_FIRST_REAL_TEST.md, Dockerfile, .dockerignore, render.yaml, .github/workflows/frame-studio.yml]
 concurrency:
   group: vos-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -30,6 +30,14 @@ jobs:
           NODE_PATH=/tmp/vos-browser/node_modules node frame_studio/tests/target_editor_browser.cjs
       - name: Testar o extrator, importador e montador no Docker
         run: docker build --target test -t vos-frame-studio:test .
+      - name: Auditar funcoes oficiais Wan em CPU e teste minimo sintetico
+        run: |
+          git clone --filter=blob:none --no-checkout https://github.com/Wan-Video/Wan2.2.git /tmp/vos-wan-audit
+          git -C /tmp/vos-wan-audit sparse-checkout init --cone
+          git -C /tmp/vos-wan-audit sparse-checkout set wan/modules/animate/preprocess
+          git -C /tmp/vos-wan-audit checkout --detach 1ea34ff48f87168174e12956e200b1d908b1c5ff
+          docker run --rm --mount type=bind,src=/tmp/vos-wan-audit,dst=/upstream,readonly --entrypoint python vos-frame-studio:test -m frame_studio.wan_audit --wan /upstream
+          docker run --rm --entrypoint python vos-frame-studio:test -m frame_studio.smoke_test --report /tmp/synthetic-smoke.json
       - name: Construir e verificar o serviço de produção
         run: |
           docker build --target production -t vos-frame-studio .

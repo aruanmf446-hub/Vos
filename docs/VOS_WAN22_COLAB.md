@@ -59,3 +59,7 @@ Veja o [relatório técnico e roteiro noturno](VOS_WAN22_VALIDATION.md) para evi
 ## Selecionar uma pessoa específica
 
 Há um modo opcional e experimental, desligado por padrão, para pontos positivos/negativos, SAM2 e correção/revisão de máscaras nativas. Veja [instruções, limites e roteiro atualizado](VOS_TARGET_SELECTION.md). O diagnóstico ainda vem antes de uploads/pesos. O fluxo automático anterior continua disponível.
+
+## Preparação final do primeiro teste real
+
+A ordem atual instala/audita e executa o smoke antes de uploads reais e usa referências imutáveis, controlador de etapas e recuperação de pontos/máscaras. As instruções atuais e três passos iniciais estão em [VOS_FIRST_REAL_TEST.md](VOS_FIRST_REAL_TEST.md); essa ordem substitui os roteiros anteriores de uploads antes da instalação.

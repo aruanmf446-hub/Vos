@@ -73,3 +73,7 @@ NODE_PATH=/tmp/vos-browser/node_modules node frame_studio/tests/target_editor_br
 ```
 
 Se houver Chromium de sistema, defina `VOS_CHROMIUM_PATH=/caminho/do/chromium` no último comando. O GitHub Actions executa os testes Python no Docker, o editor em Chromium e o healthcheck da imagem de produção. Testes SAM2 usam um preditor simulado explicitamente para verificar contrato/estado incompleto, não baixam pesos nem afirmam inferência real. O editor em Chromium local foi testado; integração do iframe com o notebook real do Colab continua sendo parte da validação manual.
+
+## Preparação final do primeiro teste real
+
+A ordem atual instala/audita e executa o smoke antes de uploads reais e usa referências imutáveis, controlador de etapas e recuperação de pontos/máscaras. As instruções atuais e três passos iniciais estão em [VOS_FIRST_REAL_TEST.md](VOS_FIRST_REAL_TEST.md); essa ordem substitui os roteiros anteriores de uploads antes da instalação.

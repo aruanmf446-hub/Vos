@@ -80,3 +80,7 @@ Preservação exata vale para os PNGs fora da máscara usada na composição. Em
 ## Continuação: alvo específico
 
 Os resultados de 55 testes acima pertencem à primeira revisão. A continuação preserva o diagnóstico antecipado adicionado depois e implementa seleção opcional, máscaras nativas, testes 24/30/60 FPS, logs e perfil experimental. Veja [seleção explícita e roteiro atualizado](VOS_TARGET_SELECTION.md). Os checks do commit atual do PR registram a suíte ampliada; nenhum teste simulado demonstra geração real.
+
+## Preparação final do primeiro teste real
+
+A ordem atual instala/audita e executa o smoke antes de uploads reais e usa referências imutáveis, controlador de etapas e recuperação de pontos/máscaras. As instruções atuais e três passos iniciais estão em [VOS_FIRST_REAL_TEST.md](VOS_FIRST_REAL_TEST.md); essa ordem substitui os roteiros anteriores de uploads antes da instalação.
