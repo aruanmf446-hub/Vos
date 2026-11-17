@@ -66,7 +66,7 @@ class SamContractTests(unittest.TestCase):
             bbox_xyxy_from_mask(np.zeros((90,160),dtype=bool))
         # Regression guard for the handoff to upstream ViTPose.
         code=(Path(__file__).resolve().parents[1]/'wan_target.py').read_text()
-        self.assertIn("pose.model.preprocess(isolated,bbox)",code)
+        self.assertIn("prepare_pose_tensor(pose.model,isolated,bbox)",code)
         self.assertNotIn("xx.max()-xx.min()+1",code)
 
     def test_memory_profile_only_changes_official_flags_when_opted_in(self):

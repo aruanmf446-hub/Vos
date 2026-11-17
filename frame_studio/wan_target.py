@@ -22,6 +22,20 @@ def upstream(wan):
     os.environ.update(HF_HUB_OFFLINE='1',TRANSFORMERS_OFFLINE='1',HF_DATASETS_OFFLINE='1')
 
 
+def sam_points(points,size):
+    """SAM2 normalize_coords=True expects absolute XY pixel coordinates."""
+    import numpy as np
+    xy=np.array([[x*size[0],y*size[1]] for x,y,_ in points],dtype=np.float32)
+    return np.clip(xy,[0,0],[size[0]-1,size[1]-1]).astype(np.float32)
+
+
+def sam_points(points,size):
+    import numpy as np
+    pixels=np.array([[x*size[0],y*size[1]] for x,y,_ in points],dtype=np.float32)
+    pixels=np.minimum(pixels,np.array([size[0]-1,size[1]-1],dtype=np.float32))
+    return pixels,np.array([p[2] for p in points],dtype=np.int32)
+
+
 def track(work,wan,checkpoint):
     work=Path(work).resolve();target.invalidate(work);cfg=target.config(work)
     _,frames,size=target.context(work)
@@ -38,9 +52,9 @@ def track(work,wan,checkpoint):
             predictor=build_sam2_video_predictor('sam2_hiera_l.yaml',str(Path(checkpoint)/'process_checkpoint/sam2/sam2_hiera_large.pt'))
             state=predictor.init_state(video_path=temporary,offload_video_to_cpu=True,offload_state_to_cpu=True)
             for key,entry in sorted(cfg['keyframes'].items(),key=lambda kv:int(kv[0])):
-                pts=np.array([[x*size[0],y*size[1]] for x,y,_ in entry['points']],dtype=np.float32)
+                pts=sam_points(entry['points'],size)
                 labels=np.array([p[2] for p in entry['points']],dtype=np.int32)
-                predictor.add_new_points(inference_state=state,frame_idx=int(key),obj_id=1,points=pts,labels=labels)
+                predictor.add_new_points(inference_state=state,frame_idx=int(key),obj_id=1,points=pts,labels=labels,normalize_coords=True)
             seeds=work/'target_seeds'
             if seeds.is_dir():
                 for path in sorted(seeds.glob('frame_*.png')):
@@ -69,6 +83,12 @@ def bbox_xyxy_from_mask(mask):
     if len(xx) == 0:
         raise ValueError("Mascara vazia para estimativa de pose")
     return np.array([xx.min(), yy.min(), xx.max()+1, yy.max()+1], dtype=np.float32)
+
+
+def prepare_pose_tensor(model,rgb,bbox):
+    """Match the actual official Pose2d.load_images -> ViTPose.preprocess handoff."""
+    import cv2
+    return model.preprocess(cv2.cvtColor(rgb,cv2.COLOR_RGB2BGR),bbox)
 
 
 def prepare_selected(work,wan,checkpoint):
@@ -102,7 +122,8 @@ def prepare_selected(work,wan,checkpoint):
             bbox=bbox_xyxy_from_mask(mask)
             # ViTPose.preprocess expects XYXY, not XYWH; use upstream
             # crop + normalization so pose follows the selected person.
-            tensor,center,scale=pose.model.preprocess(isolated,bbox)
+            # Match official Pose2d.load_images before ViTPose normalization.
+            tensor,center,scale=prepare_pose_tensor(pose.model,isolated,bbox)
             kps=pose.model(tensor[None],center[None],scale[None])
             meta=load_pose_metas_from_kp2ds_seq(kps,width=w,height=h)[0]
             x1,x2,y1,y2=get_face_bboxes(meta['keypoints_face'][:,:2],scale=1.3,image_shape=(h,w))
