@@ -53,16 +53,40 @@ def read_vos(zippath, work):
         if "INSTRUCOES_EDICAO.md" in names:(work/"INSTRUCOES_EDICAO.md").write_bytes(z.read("INSTRUCOES_EDICAO.md"))
     return m,fs,starts,durations
 
+def temporal_mapping(starts,durations,total):
+    """Explicit nearest-interval selection/repetition. No interpolation or new poses."""
+    count=math.ceil(total*30)
+    if not 1<=count<=6000:raise ValueError("Duracao invalida")
+    wan_to_native=[]
+    for n in range(count):
+        time=min(total,Fraction(2*n+1,60))
+        wan_to_native.append(max(0,min(len(starts)-1,bisect.bisect_right(starts,time)-1)))
+    native_to_wan=[min(count-1,int((t+d/2)*30)) for t,d in zip(starts,durations)]
+    errors=[abs(t+d/2-Fraction(2*n+1,60)) for t,d,n in zip(starts,durations,native_to_wan)]
+    return {"schema":"vos-temporal-map/1","fps":30,"duration":str(total),
+            "wan_to_native":wan_to_native,"native_to_wan":native_to_wan,
+            "native_midpoint_error_seconds":[str(e) for e in errors],
+            "method":"interval-center selection/repetition; no interpolation"}
+
+
+def target_module():
+    try:
+        from . import target_masks
+    except ImportError:
+        import target_masks
+    return target_masks
+
+
 def prepare(archive,reference,work):
     work=Path(work).resolve()
     if work.exists() and any(work.iterdir()):raise ValueError("Diretorio de trabalho deve estar vazio")
     m,fs,starts,ds=read_vos(archive,work)
     total=Fraction(m["selection"]["duration"]);count=math.ceil(total*30)
     if not (1<=count<=6000):raise ValueError("Duracao invalida")
+    temporal=temporal_mapping(starts,ds,total)
+    (work/"temporal_map.json").write_text(json.dumps(temporal,indent=2))
     sampled=work/"sampled";sampled.mkdir()
-    for n in range(count):
-        t=min(total-Fraction(1,1000000),Fraction(2*n+1,60))
-        index=max(0,min(len(fs)-1,bisect.bisect_right(starts,t)-1))
+    for n,index in enumerate(temporal["wan_to_native"]):
         shutil.copyfile(work/fs[index]["file"],sampled/f"frame_{n:06d}.png")
     w,h=m["source"]["width"],m["source"]["height"]
     cmd(["ffmpeg","-v","error","-y","-framerate","30","-i",sampled/"frame_%06d.png","-an","-c:v","libx264","-pix_fmt","yuv420p" if w%2==0 and h%2==0 else "yuv444p",work/"driving.mp4"])
@@ -81,7 +105,9 @@ def file_hash(path):
 
 
 def stage_hashes(work):
-    return {name: file_hash(Path(work)/"wan_processed"/name) for name in STAGE_FILES}
+    result={name: file_hash(Path(work)/"wan_processed"/name) for name in STAGE_FILES}
+    if (Path(work)/"target.json").exists():result["native_target"]=target_module().signature(work)
+    return result
 
 
 def verify_model_manifest(checkpoint, manifest):
@@ -185,14 +211,19 @@ def preprocess(work,wan,checkpoint):
     stage=work/"wan_processed"
     if stage.exists(): shutil.rmtree(stage)
     stage.mkdir()
-    cmd([sys.executable,wan/"wan/modules/animate/preprocess/preprocess_data.py",
-         "--ckpt_path",ck/"process_checkpoint",
-         "--video_path",work/"driving.mp4",
-         "--refer_path",work/"reference.png",
-         "--save_path",stage,"--fps","30",
-         "--resolution_area","1280","720",
-         "--iterations","3","--k","7","--w_len","1","--h_len","1",
-         "--replace_flag"],cwd=wan)
+    if (work/"target.json").exists():
+        target_module().require_review(work)
+        cmd([sys.executable,Path(__file__).with_name("wan_target.py"),"preprocess",
+             "--work",work,"--wan",wan,"--checkpoint",ck],cwd=wan)
+    else:
+        cmd([sys.executable,wan/"wan/modules/animate/preprocess/preprocess_data.py",
+             "--ckpt_path",ck/"process_checkpoint",
+             "--video_path",work/"driving.mp4",
+             "--refer_path",work/"reference.png",
+             "--save_path",stage,"--fps","30",
+             "--resolution_area","1280","720",
+             "--iterations","3","--k","7","--w_len","1","--h_len","1",
+             "--replace_flag"],cwd=wan)
     for name in ("src_pose.mp4","src_face.mp4","src_bg.mp4","src_mask.mp4","src_ref.png"):
         if not (stage/name).is_file():
             raise RuntimeError("Preprocessamento incompleto: "+name)
@@ -208,7 +239,7 @@ def preprocess(work,wan,checkpoint):
     (work/"preprocess.json").write_text(json.dumps(stage_hashes(work), indent=2))
     print("Preprocessamento validado estruturalmente; REVISE VISUALMENTE src_mask.mp4 e src_pose.mp4!")
 
-def infer(work,wan,checkpoint):
+def infer(work,wan,checkpoint,low_memory=False):
     """So gera depois de existirem os intermediarios e a mascara revisada."""
     (Path(work)/"generation.json").unlink(missing_ok=True)
     work,wan,ck=paths_for_wan(work,wan,checkpoint)
@@ -220,12 +251,16 @@ def infer(work,wan,checkpoint):
     if not review.is_file() or json.loads(review.read_text()) != stage_hashes(work):
         raise ValueError("Confirme a revisao visual da mascara atual com review-mask --confirm SIM")
     (work/"wan_generated.mp4").unlink(missing_ok=True)
+    if (work/"target.json").exists():target_module().require_review(work)
     check_checkpoints(ck)
-    cmd([sys.executable,wan/"generate.py","--task","animate-14B",
+    command=[sys.executable,wan/"generate.py","--task","animate-14B",
          "--ckpt_dir",ck,"--src_root_path",stage,"--refert_num","1",
          "--replace_flag","--use_relighting_lora",
          "--offload_model","True","--convert_model_dtype",
-         "--save_file",work/"wan_generated.mp4"],cwd=wan)
+         "--save_file",work/"wan_generated.mp4"]
+    if low_memory:command += ["--t5_cpu","--frame_num","33"]
+    (work/"memory_profile.json").write_text(json.dumps({"experimental":bool(low_memory),"t5_cpu":bool(low_memory),"clip_len":33 if low_memory else 77,"offload_model":True,"limitation":"Does not reduce initial DiT/CLIP/VAE GPU load; no T4 claim"},indent=2))
+    cmd(command,cwd=wan)
     if not (work/"wan_generated.mp4").is_file():
         raise RuntimeError("Sem MP4 gerado pelo Wan")
     expected = json.loads((work/"bridge.json").read_text())["frame_count"]
@@ -241,7 +276,7 @@ def extract_video_png(path, directory):
     directory=Path(directory)
     if directory.exists():shutil.rmtree(directory)
     directory.mkdir(parents=True)
-    cmd(["ffmpeg","-v","error","-y","-i",path,"-map","0:v:0",
+    cmd(["ffmpeg","-v","error","-xerror","-y","-i",path,"-map","0:v:0",
          "-an","-fps_mode","passthrough","-start_number","0",
          directory/"frame_%06d.png"])
     found=sorted(directory.glob("frame_*.png"))
@@ -252,9 +287,11 @@ def extract_video_png(path, directory):
 
 def generation_hashes(work):
     work = Path(work)
-    return {"generated_sha256":file_hash(work/"wan_generated.mp4"),
+    result={"generated_sha256":file_hash(work/"wan_generated.mp4"),
             "mask_sha256":file_hash(work/"wan_processed/src_mask.mp4"),
             "manifest_sha256":file_hash(work/"manifest.json")}
+    if (work/"target.json").exists():result["native_target"]=target_module().signature(work)
+    return result
 
 
 def finish(work,output):
@@ -268,6 +305,8 @@ def finish(work,output):
     receipt = work/"generation.json"
     if not receipt.is_file() or json.loads(receipt.read_text()) != generation_hashes(work):
         raise ValueError("Geracao nao concluida ou arquivos alterados; execute infer com sucesso")
+    explicit_target=(work/"target.json").exists()
+    if explicit_target:target_module().require_review(work)
     m,frames,starts,durations=read_vos(work/"original_vos.zip",work)
     if hashlib.sha256((work/"manifest.json").read_bytes()).hexdigest()!=info["manifest_sha256"]:
         raise ValueError("Manifesto modificado")
@@ -283,16 +322,20 @@ def finish(work,output):
         raise ValueError(f"Contagem Wan divergente: {len(gen_files)} gerados / {len(mask_files)} mascaras / {count} esperados")
     mask_statistics(mask_files)
     w,h=info["width"],info["height"]
-    for f,t,d in zip(frames,starts,durations):
-        i=max(0,min(count-1,int((t+d/2)*30)))
+    temporal=temporal_mapping(starts,durations,Fraction(m["selection"]["duration"]))
+    for order,(f,t,d) in enumerate(zip(frames,starts,durations)):
+        i=temporal["native_to_wan"][order]
         path=work/f["file"]
         with Image.open(path) as original,Image.open(gen_files[i]) as result,Image.open(mask_files[i]) as raw_mask:
             base=original.convert("RGB")
             if abs(result.width/result.height-w/h)>0.035:
                 raise ValueError("Proporcao do video Wan mudou; nao deformar")
             edited=result.convert("RGB").resize((w,h),Image.Resampling.LANCZOS)
-            mask=raw_mask.convert("L").resize((w,h),Image.Resampling.NEAREST).point(
-                lambda level:255 if level>=128 else 0)
+            if explicit_target:
+                mask=target_module().load_mask(target_module().mask_path(work,order),(w,h))
+            else:
+                mask=raw_mask.convert("L").resize((w,h),Image.Resampling.NEAREST).point(
+                    lambda level:255 if level>=128 else 0)
             pixels=mask.histogram()[255]
             coverage=pixels/(w*h)
             if coverage==0 or coverage>0.65:
@@ -337,6 +380,7 @@ if __name__=="__main__":
         stage.add_argument("--work",required=True)
         stage.add_argument("--wan",required=True)
         stage.add_argument("--checkpoint",required=True)
+        stage.add_argument("--low-memory",action="store_true",help="Experimental: T5 CPU e janelas 33, sem garantia de VRAM")
     p_finish=sub.add_parser("finish",help="Recompor ZIP VOS original")
     p_finish.add_argument("--work",required=True)
     p_finish.add_argument("--output",required=True)
@@ -346,5 +390,5 @@ if __name__=="__main__":
     elif a.action=="run":generate(a.work,a.wan,a.checkpoint)
     elif a.action=="review-mask":review_mask(a.work)
     elif a.action=="preprocess":preprocess(a.work,a.wan,a.checkpoint)
-    elif a.action=="infer":infer(a.work,a.wan,a.checkpoint)
+    elif a.action=="infer":infer(a.work,a.wan,a.checkpoint,a.low_memory)
     else:finish(a.work,a.output)
