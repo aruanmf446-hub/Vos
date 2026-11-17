@@ -63,3 +63,10 @@ Também foi concluído um fluxo HTTP real pela imagem de produção com o vídeo
 A rede deste ambiente de teste exige uma CA específica. O build foi executado com `--secret id=build_ca,src=/etc/ssl/certs/ca-certificates.crt`. Esse segredo de build é opcional, não é copiado para a imagem e não desabilita a verificação HTTPS. No Render e no GitHub Actions, o comando padrão usa as CAs normais da imagem.
 
 A URL Render precisa de verificação separada após conexão da conta: nenhum teste local equivale a um deploy público. Não havia conexão autorizada com uma conta Render neste ambiente.
+
+
+No fluxo HTTP completo com o vídeo real, o pico de RSS agregado observado (aplicação + subprocessos) foi **170.160.128 bytes, aproximadamente 162,3 MiB**, em 59,6 s. O Docker deste ambiente é rootless sem delegação de cgroups: embora a configuração use `--memory=512m`, o teto não foi imposto pelo kernel. Um monitor externo amostrou o RSS durante todo o fluxo e encerraria o serviço acima de 512 MiB; o teto não foi atingido. Esse resultado não garante que qualquer vídeo de até 120 s caiba nos recursos gratuitos do Render.
+
+Os resultados efetivamente observados estão em [FRAME_STUDIO_VALIDACAO.json](FRAME_STUDIO_VALIDACAO.json), incluindo relatórios das montagens completas e a distinção entre verificação local e publicação no Render.
+
+O fluxo Chromium foi repetido contra a **imagem Docker de produção**, incluindo reprodução normal, comparação e layout mobile, também sem erros. As verificações independentes no [GitHub Actions da branch](https://github.com/aruanmf446-hub/Vos/actions/runs/43986065499) e no [Pull Request](https://github.com/aruanmf446-hub/Vos/actions/runs/43986120660) concluíram com sucesso os 39 testes e o health check da produção.
