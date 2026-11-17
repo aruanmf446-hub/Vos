@@ -38,6 +38,17 @@ jobs:
           git -C /tmp/vos-wan-audit checkout --detach 1ea34ff48f87168174e12956e200b1d908b1c5ff
           docker run --rm --mount type=bind,src=/tmp/vos-wan-audit,dst=/upstream,readonly --entrypoint python vos-frame-studio:test -m frame_studio.wan_audit --wan /upstream
           docker run --rm --entrypoint python vos-frame-studio:test -m frame_studio.smoke_test --report /tmp/synthetic-smoke.json
+      - name: Auditar contratos GGUF nos fontes reais fixados (CPU, sem pesos)
+        run: |
+          mkdir -p /tmp/vos-gguf/ComfyUI/custom_nodes /tmp/vos-gguf/Wan2.2
+          git clone --filter=blob:none --no-checkout https://github.com/Comfy-Org/ComfyUI.git /tmp/vos-comfy-source
+          git -C /tmp/vos-comfy-source checkout --detach 10edeb91317107db6fe1184c16ec4a6e9608cc9e
+          cp -a /tmp/vos-comfy-source/. /tmp/vos-gguf/ComfyUI/
+          git clone --filter=blob:none --no-checkout https://github.com/kijai/ComfyUI-WanVideoWrapper.git /tmp/vos-gguf/ComfyUI/custom_nodes/ComfyUI-WanVideoWrapper
+          git -C /tmp/vos-gguf/ComfyUI/custom_nodes/ComfyUI-WanVideoWrapper checkout --detach a7439db30bed0c5b5fa437d77ae8a7bb220dfd00
+          git clone --filter=blob:none --no-checkout https://github.com/city96/ComfyUI-GGUF.git /tmp/vos-gguf/ComfyUI/custom_nodes/ComfyUI-GGUF
+          git -C /tmp/vos-gguf/ComfyUI/custom_nodes/ComfyUI-GGUF checkout --detach 6ea2651e7df66d7585f6ffee804b20e92fb38b8a
+          docker run --rm --mount type=bind,src=/tmp/vos-gguf,dst=/gguf,readonly --mount type=bind,src=/tmp/vos-wan-audit,dst=/gguf/Wan2.2,readonly --entrypoint python vos-frame-studio:test -m frame_studio.experimental.gguf_t4 --audit-root /gguf --manifest /app/colab/wan22_t4_gguf_manifest.json
       - name: Construir e verificar o serviço de produção
         run: |
           docker build --target production -t vos-frame-studio .
