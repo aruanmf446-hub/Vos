@@ -13,7 +13,7 @@ Documentação oficial: https://github.com/Wan-Video/Wan2.2 e https://github.com
 3. Execute as células na ordem. Faça upload do ZIP e de uma imagem PNG/JPG do novo personagem. A preparação não usa IA e mantém manifesto intacto.
 4. Confira o diagnóstico. Se aparecer T4 16 GB ou outro recurso insuficiente, interrompa: NÃO houve geração nem ZIP editado.
 5. Em runtime suficiente, o notebook clona o Wan oficial do GitHub e baixa os checkpoints exclusivamente do ModelScope (https://www.modelscope.cn/models/Wan-AI/Wan2.2-Animate-14B). Download de arquivos não é API externa de inferência. Não usa Hugging Face nem serviço de geração pago.
-6. As chamadas oficiais são preprocess_data.py com --replace_flag e generate.py com --task animate-14B --replace_flag. Se a geração falhar por GPU, RAM, disco ou incompatibilidade, não há substituição falsificada.
+6. Execute **preprocess** primeiro (preprocess_data.py com --replace_flag). Assista a `src_mask.mp4` e `src_pose.mp4` no notebook e confirme por escrito **SIM** que somente o personagem selecionado foi marcado. O notebook bloqueia máscaras vazias/muito grandes e frames faltantes, mas só a revisão visual identifica um ator errado. Depois execute **infer** (generate.py --task animate-14B --replace_flag). Se a geração falhar por GPU, RAM, disco ou incompatibilidade, não há substituição falsificada.
 7. Depois da geração e da conferência de contagem, será gerado VOS_EDITADO.zip. Faça download.
 8. De volta ao mesmo projeto/sessão no VOS: Importar edições > ZIP editado > Validar > Revisar > Aplicar pacote > Montar vídeo com cadência original.
 
@@ -25,4 +25,17 @@ Documentação oficial: https://github.com/Wan-Video/Wan2.2 e https://github.com
 - O Render gratuito perde seus arquivos em reinicializações. Um manifesto de outra sessão/projeto não pode ser forçado na importação.
 - Sem chamada a API de inferência externa; o download inicial de código/pesos via GitHub/ModelScope usa acesso à internet.
 
-Script de integração: frame_studio/wan_bridge.py . O ZIP desktop CineSwap_Local_Python.zip da conversa original permanece preservado separadamente e suas rotinas inspiraram o pré-processamento da nova ponte, sem substituir o VOS já implantado.
+Script de integração: `frame_studio/wan_bridge.py`. O script `finish` usa FFmpeg + Pillow em processamento quadro a quadro, evitando carregar o vídeo inteiro na RAM. O ZIP desktop CineSwap_Local_Python.zip da conversa original permanece preservado separadamente e suas rotinas inspiraram o pré-processamento da nova ponte, sem substituir o VOS já implantado.
+
+## Checklist para a validação noturna
+
+- [ ] Colab mostra a GPU, VRAM, RAM e disco disponíveis (antes de baixar pesos)
+- [ ] Se for **T4 16 GB**, o notebook interrompe por insuficiência preventiva: não interpretar como resultado de substituição
+- [ ] ZIP original tem **uma cena** e **amostragem native**; vídeo de condução toca antes da geração
+- [ ] Em hardware viável, etapa **preprocess** gera `src_mask.mp4` com a pessoa correta e `src_pose.mp4` com movimentos adequados
+- [ ] Responder **SIM** somente após ver a máscara inteira; se houver duas pessoas sobrepostas, recortar a cena ou revisar antes de inferir
+- [ ] Etapa **infer** produz `wan_generated.mp4` realmente gerado; só depois executar **finish**
+- [ ] O `VOS_EDITADO.zip` mantém manifesto inalterado, quantidade de PNGs e resolução
+- [ ] No VOS/Render, importar e aplicar no **mesmo projeto**, montar vídeo completo com FPS original e conferir cortes, duração e personagens intocados
+
+Diagnóstico: **falha de GPU no Colab gratuito não tem solução garantida que respeite ao mesmo tempo Wan 14B completo, sem GPU paga e sem outro modelo**. Neste caso, guardar logs e ZIPs e não simular geração. Nenhum novo serviço de inferência/API foi adicionado.
