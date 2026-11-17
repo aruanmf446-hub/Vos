@@ -1,0 +1,34 @@
+services:
+  - type: web
+    name: vos-frame-studio
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /healthz
+    autoDeployTrigger: commit
+    envVars:
+      - key: APP_SECRET
+        generateValue: true
+      - key: COOKIE_SECURE
+        value: "true"
+      - key: DATA_DIR
+        value: /tmp/vos-frame-studio
+      - key: MAX_VIDEO_MB
+        value: "100"
+      - key: MAX_ZIP_MB
+        value: "512"
+      - key: MAX_DURATION_SECONDS
+        value: "120"
+      - key: MAX_FRAMES
+        value: "6000"
+      - key: MAX_PIXELS
+        value: "2073600"
+      - key: MAX_PROJECT_MB
+        value: "1024"
+      - key: MAX_TOTAL_MB
+        value: "2048"
+      - key: PROJECT_TTL_SECONDS
+        value: "7200"
+      - key: JOB_TIMEOUT_SECONDS
+        value: "300"

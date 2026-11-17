@@ -1,0 +1,263 @@
+{
+  "checked_at_utc": "2026-11-17",
+  "local_tests_passed": 39,
+  "docker_tests_passed": 39,
+  "docker_user": "vos",
+  "docker_python": "3.12",
+  "docker_ffmpeg": "5.1.9",
+  "pyav": "19.0.2",
+  "browser": {
+    "browser": "Chromium",
+    "flow": "login → upload → manual cuts → scene ZIP → edit one frame → import → compare → apply → scene preview → full 60 FPS export → normal playback",
+    "scene_duration": 0.2,
+    "full_duration": 0.6,
+    "output_frames": 36,
+    "mobile_width": 390,
+    "javascript_errors": []
+  },
+  "real_video_http_flow": {
+    "source": "original video supplied in chat",
+    "source_frames": 778,
+    "source_resolution": [
+      576,
+      854
+    ],
+    "scenes": 9,
+    "cuts": [
+      39,
+      76,
+      173,
+      241,
+      272,
+      349,
+      404,
+      666
+    ],
+    "edited_files": 1,
+    "scene": {
+      "passed": true,
+      "decoded_frames": 37,
+      "expected_frames": 37,
+      "timestamps_exact": true,
+      "duration_exact": true,
+      "duration": "37/30",
+      "duration_seconds": 1.2333333333333334,
+      "resolution": [
+        576,
+        854
+      ],
+      "sample_aspect_ratio": "1",
+      "audio": true,
+      "complete_decode": true,
+      "first_frame_verified": true,
+      "last_frame_verified": true,
+      "all_frame_fingerprints_verified": true,
+      "fingerprint_max_mean_error": 1.2102864583333333,
+      "first_frame_mean_error": 1.1376953125,
+      "last_frame_mean_error": 1.1966145833333333,
+      "cuts": [],
+      "scene_counts": {
+        "scene_002": 37
+      },
+      "codec": "h264",
+      "pixel_format": "yuv420p",
+      "note": "H.264 altera pixels por compressão. As comparações visuais são assinaturas reduzidas; a ordem, a geometria e os tempos vêm do plano validado. Não são avaliação da qualidade da edição externa.",
+      "sampling": {
+        "mode": "native",
+        "input_frames": 37,
+        "output_frames": 37,
+        "discarded_frames": 0,
+        "duplicated_frames": 0,
+        "note": "Todos os quadros, com a cadência preservada."
+      },
+      "scope": "scene",
+      "source_start": "13/10",
+      "source_end": "38/15",
+      "sha256": "2c75e0f10dfb0e842fe794378925f6cb73399df9dbbc302c246b2b5b3c4565c0",
+      "bytes": 395206
+    },
+    "full": {
+      "native": {
+        "passed": true,
+        "decoded_frames": 778,
+        "expected_frames": 778,
+        "timestamps_exact": true,
+        "duration_exact": true,
+        "duration": "389/15",
+        "duration_seconds": 25.933333333333334,
+        "resolution": [
+          576,
+          854
+        ],
+        "sample_aspect_ratio": "1",
+        "audio": true,
+        "complete_decode": true,
+        "first_frame_verified": true,
+        "last_frame_verified": true,
+        "all_frame_fingerprints_verified": true,
+        "fingerprint_max_mean_error": 1.2291666666666667,
+        "first_frame_mean_error": 1.1474609375,
+        "last_frame_mean_error": 0.9361979166666666,
+        "cuts": [
+          "13/10",
+          "38/15",
+          "173/30",
+          "241/30",
+          "136/15",
+          "349/30",
+          "202/15",
+          "111/5"
+        ],
+        "scene_counts": {
+          "scene_001": 39,
+          "scene_002": 37,
+          "scene_003": 97,
+          "scene_004": 68,
+          "scene_005": 31,
+          "scene_006": 77,
+          "scene_007": 55,
+          "scene_008": 262,
+          "scene_009": 112
+        },
+        "codec": "h264",
+        "pixel_format": "yuv420p",
+        "note": "H.264 altera pixels por compressão. As comparações visuais são assinaturas reduzidas; a ordem, a geometria e os tempos vêm do plano validado. Não são avaliação da qualidade da edição externa.",
+        "sampling": {
+          "mode": "native",
+          "input_frames": 778,
+          "output_frames": 778,
+          "discarded_frames": 0,
+          "duplicated_frames": 0,
+          "note": "Todos os quadros, com a cadência preservada."
+        },
+        "scope": "full",
+        "source_start": "0",
+        "source_end": "389/15",
+        "sha256": "b954edae968fbfe902f218770126962de13aad6f5a24d700bfe0aafe4ef9d51e",
+        "bytes": 6528335
+      },
+      "60": {
+        "passed": true,
+        "decoded_frames": 1556,
+        "expected_frames": 1556,
+        "timestamps_exact": true,
+        "duration_exact": true,
+        "duration": "389/15",
+        "duration_seconds": 25.933333333333334,
+        "resolution": [
+          576,
+          854
+        ],
+        "sample_aspect_ratio": "1",
+        "audio": true,
+        "complete_decode": true,
+        "first_frame_verified": true,
+        "last_frame_verified": true,
+        "all_frame_fingerprints_verified": true,
+        "fingerprint_max_mean_error": 1.2470703125,
+        "first_frame_mean_error": 1.1474609375,
+        "last_frame_mean_error": 0.9368489583333334,
+        "cuts": [
+          "13/10",
+          "38/15",
+          "173/30",
+          "241/30",
+          "136/15",
+          "349/30",
+          "202/15",
+          "111/5"
+        ],
+        "scene_counts": {
+          "scene_001": 78,
+          "scene_002": 74,
+          "scene_003": 194,
+          "scene_004": 136,
+          "scene_005": 62,
+          "scene_006": 154,
+          "scene_007": 110,
+          "scene_008": 524,
+          "scene_009": 224
+        },
+        "codec": "h264",
+        "pixel_format": "yuv420p",
+        "note": "H.264 altera pixels por compressão. As comparações visuais são assinaturas reduzidas; a ordem, a geometria e os tempos vêm do plano validado. Não são avaliação da qualidade da edição externa.",
+        "sampling": {
+          "mode": "60",
+          "input_frames": 778,
+          "output_frames": 1556,
+          "discarded_frames": 0,
+          "duplicated_frames": 778,
+          "note": "Amostragem temporal: pode descartar ou repetir imagens; não cria movimento novo. Cortes e duração são mantidos, com intervalos fracionados quando necessário."
+        },
+        "scope": "full",
+        "source_start": "0",
+        "source_end": "389/15",
+        "sha256": "06bfd41fe9b45a09fc87dd724acc871f99687f0deb304c2c545708553e67979d",
+        "bytes": 7342434
+      }
+    },
+    "second_video": {
+      "passed": true,
+      "decoded_frames": 18,
+      "expected_frames": 18,
+      "timestamps_exact": true,
+      "duration_exact": true,
+      "duration": "3/5",
+      "duration_seconds": 0.6,
+      "resolution": [
+        160,
+        96
+      ],
+      "sample_aspect_ratio": "1",
+      "audio": false,
+      "complete_decode": true,
+      "first_frame_verified": true,
+      "last_frame_verified": true,
+      "all_frame_fingerprints_verified": true,
+      "fingerprint_max_mean_error": 2.3466796875,
+      "first_frame_mean_error": 1.1904296875,
+      "last_frame_mean_error": 2.0110677083333335,
+      "cuts": [],
+      "scene_counts": {
+        "scene_001": 18
+      },
+      "codec": "h264",
+      "pixel_format": "yuv420p",
+      "note": "H.264 altera pixels por compressão. As comparações visuais são assinaturas reduzidas; a ordem, a geometria e os tempos vêm do plano validado. Não são avaliação da qualidade da edição externa.",
+      "sampling": {
+        "mode": "native",
+        "input_frames": 18,
+        "output_frames": 18,
+        "discarded_frames": 0,
+        "duplicated_frames": 0,
+        "note": "Todos os quadros, com a cadência preservada."
+      },
+      "scope": "full",
+      "source_start": "0",
+      "source_end": "3/5",
+      "sha256": "3e45d6eedb4d3bae59523f73e532d9e4b5be9c353f9f41e641a4868e81c7c432",
+      "bytes": 12817
+    },
+    "max_observed_aggregate_rss_bytes": 170160128,
+    "memory_ceiling_monitor_bytes": 536870912,
+    "cgroup_enforced": false,
+    "memory_monitor_exceeded": [],
+    "elapsed_seconds": 59.564447705997736,
+    "memory_note": "Docker rootless deste ambiente não delega cgroups. O limite de 512 MiB foi acompanhado por monitor externo de RSS agregado da aplicação e filhos, com interrupção se excedido; não foi um limite de memória imposto pelo kernel. RSS observado não garante todo tamanho de vídeo no Render."
+  },
+  "render_public_deploy_performed": false,
+  "render_deploy_reason": "Não há conexão autorizada à conta Render.",
+  "production_browser": {
+    "browser": "Chromium",
+    "flow": "login → upload → manual cuts → scene ZIP → edit one frame → import → compare → apply → scene preview → full 60 FPS export → normal playback",
+    "scene_duration": 0.2,
+    "full_duration": 0.6,
+    "output_frames": 36,
+    "mobile_width": 390,
+    "javascript_errors": []
+  },
+  "github_actions_runs": [
+    "https://github.com/aruanmf446-hub/Vos/actions/runs/43986065499",
+    "https://github.com/aruanmf446-hub/Vos/actions/runs/43986120660"
+  ]
+}

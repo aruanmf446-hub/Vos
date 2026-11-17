@@ -1,3 +1,11 @@
+# Trabalho atual: Vos Frame Studio
+
+A missão atual é o aplicativo independente em `frame_studio/`: extrair quadros completos, transportar o manifesto e remontar sem deformação. Comece por [documentação do aplicativo](../frame_studio/README.md), [deploy no Render](RENDER_DEPLOY.md) e [contrato de frames](VOS_FRAME_STUDIO.md). Não retome automaticamente a geração/interpolação dos vídeos antigos.
+
+O registro histórico abaixo permanece como contexto dos problemas que motivaram o novo fluxo.
+
+---
+
 # Estado após a avaliação do usuário
 
 **Retomar a v2:** `media/videos/video-marvel-continuidade-v2-60fps.mp4`. Foi o rascunho avaliado pelo usuário em cerca de 75%; não é uma entrega final aprovada.

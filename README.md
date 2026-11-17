@@ -1,4 +1,23 @@
-# Vos — projeto de vídeo Marvel
+# Vos Frame Studio
+
+Aplicativo web para **extrair todos os frames, editar externamente e reconstruir cenas ou o vídeo completo**, com manifesto, validação obrigatória e montagem sem deformação ou interpolação. Frontend e backend Python no **mesmo serviço Docker gratuito do Render**.
+
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/aruanmf446-hub/Vos)
+
+- [Como usar e executar localmente](frame_studio/README.md)
+- [Configurar o Render, senha e limites](docs/RENDER_DEPLOY.md)
+- [Formato do ZIP, timestamps e montagem exata](docs/VOS_FRAME_STUDIO.md)
+- [Testes e validação](docs/FRAME_STUDIO_TESTS.md)
+
+**Fluxo:** vídeo → seleção/cortes → ZIP com PNGs + manifesto → edição externa → importação validada → MP4 H.264. O modo original preserva a cadência; 30/60 FPS usa somente seleção/repetição temporal explícita, mantendo duração e cortes. A edição com IA fica fora do aplicativo.
+
+Os projetos no Render são temporários e podem desaparecer após reinício/hibernação ou expiração. Guarde ZIPs e resultados fora do serviço. Não há dependência de banco, Redis, GitHub Pages, Supabase ou IA paga. O deploy requer conectar sua conta Render ao repositório; os arquivos não criam uma URL pública sozinhos.
+
+## Projetos de vídeo anteriores — arquivo preservado
+
+O aplicativo está isolado em `frame_studio/` e não utiliza as rotinas experimentais abaixo. O histórico e os backups anteriores permanecem preservados.
+
+# Vos — histórico do projeto de vídeo Marvel
 
 Registro do trabalho realizado nesta conversa, preservado em 16/11/2026.
 
