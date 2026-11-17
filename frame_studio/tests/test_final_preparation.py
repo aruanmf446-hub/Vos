@@ -84,3 +84,10 @@ class RecoveryTests(unittest.TestCase):
         with zipfile.ZipFile(backup,'a') as z:z.writestr('../escape.txt','fixture')
         with self.assertRaises(ValueError):restore_progress(self.work,backup)
         self.assertFalse((self.work.parent/'escape.txt').exists())
+
+
+    def test_selection_free_backup_cannot_silently_keep_existing_actor(self):
+        cfg=self.work/'target.json';saved=cfg.read_bytes();cfg.unlink()
+        archive=export_progress(self.work,self.work/'no-selection.zip');cfg.write_bytes(saved)
+        with self.assertRaisesRegex(ValueError,'alvo existente'):restore_progress(self.work,archive)
+        self.assertEqual(cfg.read_bytes(),saved)

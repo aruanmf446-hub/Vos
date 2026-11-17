@@ -112,7 +112,7 @@ class Session:
             except OSError:pass
             artifact=self.safe_bundle()
             print('Falha/interrupcao. Logs locais:',artifact,flush=True)
-            print('OOM: nao pule o diagnostico; reduza a cena e guarde o traceback. Sem recursos gratuitos suficientes, interrompa.',flush=True)
+            print('Se o log indicar OOM, nao pule o diagnostico; reduza a cena e guarde o traceback. Sem recursos gratuitos suficientes, interrompa.',flush=True)
             if self.download and artifact:
                 try:self.download(str(artifact))
                 except Exception:print('Download automatico indisponivel; baixe VOS_LOGS.zip pelo painel Arquivos.')

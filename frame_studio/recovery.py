@@ -57,7 +57,9 @@ def restore_progress(work,archive):
         if (stage/'manifest.json').read_bytes()!=(work/'manifest.json').read_bytes():raise ValueError('Backup pertence a outro manifesto. Use exatamente o ZIP original; nunca altere o manifesto.')
         info=json.loads((work/'bridge.json').read_text());progress=json.loads((stage/'progress.json').read_text())
         if progress.get('schema')!='vos-progress/1' or progress['original_zip_sha256']!=info['original_zip_sha256'] or progress['manifest_sha256']!=target.digest(work/'manifest.json'):raise ValueError('Backup nao corresponde ao ZIP original')
-        if not (stage/'target.json').exists():return 'no_selection'
+        if not (stage/'target.json').exists():
+            if (work/'target.json').exists():raise ValueError('Backup sem selecao nao substitui um alvo existente; prepare um trabalho novo.')
+            return 'no_selection'
         cfg=target.config(stage)
         # Revalidate prompt coordinates, while preserving corrected seeds.
         validation=stage/'validation';validation.mkdir();shutil.copyfile(stage/'manifest.json',validation/'manifest.json')
