@@ -36,7 +36,7 @@ def sam_points(points,size):
     return pixels,np.array([p[2] for p in points],dtype=np.int32)
 
 
-def track(work,wan,checkpoint):
+def track(work,wan,checkpoint,precision="bf16"):
     work=Path(work).resolve();target.invalidate(work);cfg=target.config(work)
     _,frames,size=target.context(work)
     if len(frames)>600:raise ValueError('Rastreamento experimental limitado a 600 quadros nativos')
@@ -48,7 +48,10 @@ def track(work,wan,checkpoint):
     with tempfile.TemporaryDirectory(prefix='sam2-frames-',dir=work) as temporary:
         for n,f in enumerate(frames):
             with Image.open(work/f['file']) as im:im.convert('RGB').save(Path(temporary)/f'{n:06d}.jpg',quality=95)
-        with torch.inference_mode(),torch.autocast('cuda',dtype=torch.bfloat16):
+        if precision=="fp16":
+            import sam2.modeling.sam.transformer as sam_attention
+            sam_attention.USE_FLASH_ATTN=False;sam_attention.MATH_KERNEL_ON=True;sam_attention.OLD_GPU=True
+        with torch.inference_mode(),torch.autocast('cuda',dtype=torch.float16 if precision=="fp16" else torch.bfloat16):
             predictor=build_sam2_video_predictor('sam2_hiera_l.yaml',str(Path(checkpoint)/'process_checkpoint/sam2/sam2_hiera_large.pt'))
             state=predictor.init_state(video_path=temporary,offload_video_to_cpu=True,offload_state_to_cpu=True)
             for key,entry in sorted(cfg['keyframes'].items(),key=lambda kv:int(kv[0])):
@@ -139,8 +142,8 @@ def prepare_selected(work,wan,checkpoint):
 
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('action',choices=['track','preprocess'])
+    parser=argparse.ArgumentParser();parser.add_argument('--precision',choices=['bf16','fp16'],default='bf16');parser.add_argument('action',choices=['track','preprocess'])
     for name in ('work','wan','checkpoint'):parser.add_argument('--'+name,required=True)
     args=parser.parse_args()
-    if args.action=='track':track(args.work,args.wan,args.checkpoint)
+    if args.action=='track':track(args.work,args.wan,args.checkpoint,args.precision)
     else:prepare_selected(args.work,args.wan,args.checkpoint)

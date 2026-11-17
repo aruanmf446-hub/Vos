@@ -36,7 +36,7 @@ class Session:
     def bundle(self):
         # Diagnostics contain sanitized bounded text only, never masks/videos/weights.
         output=self.folder/'VOS_LOGS.zip';temp=output.with_suffix('.partial');budget=2*1024**2-1024
-        candidates=[p for p in sorted(self.folder.iterdir()) if p.is_file() and (p.suffix=='.log' or (p.suffix=='.json' and (p.stem.isdecimal() or p.name in {'resources.json','versions.json','VOS_GPU_DIAGNOSTICO.json','synthetic_smoke.json'})))]
+        candidates=[p for p in sorted(self.folder.iterdir()) if p.is_file() and (p.suffix=='.log' or (p.suffix=='.json' and (p.stem.isdecimal() or p.name in {'resources.json','versions.json','VOS_GPU_DIAGNOSTICO.json','synthetic_smoke.json','low_vram_report.json'})))]
         with zipfile.ZipFile(temp,'w',compression=zipfile.ZIP_DEFLATED) as z:
             for p in candidates[-50:]:
                 with p.open('rb') as stream:
