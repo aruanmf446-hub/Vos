@@ -58,7 +58,7 @@ class NotebookTests(TestCase):
         from types import SimpleNamespace
         cuda=SimpleNamespace(is_available=lambda:False)
         source=next(s for s in self.sources if 'def check_resources' in s)
-        with mock.patch.dict('sys.modules',{'torch':SimpleNamespace(cuda=cuda),'psutil':SimpleNamespace()}):
+        with mock.patch.dict('sys.modules',{'torch':SimpleNamespace(cuda=cuda),'psutil':SimpleNamespace(virtual_memory=lambda:SimpleNamespace(available=32*2**30))}),mock.patch('shutil.disk_usage',return_value=SimpleNamespace(free=100*2**30)):
             with self.assertRaisesRegex(RuntimeError,'CUDA indisponivel'):exec(source,{})
         cuda.is_available=lambda:True
         cuda.get_device_properties=lambda _:SimpleNamespace(total_memory=16*2**30,name='T4 fixture')
