@@ -42,6 +42,18 @@ class NotebookTests(TestCase):
             self.assertGreater(e['size'],0)
             self.assertRegex(e['sha256'],r'^[0-9a-f]{64}$')
 
+
+    def test_fast_gpu_check_is_first_action_before_upload(self):
+        sources = self.sources
+        diagnosis = next(i for i, s in enumerate(sources) if 'def check_resources():' in s)
+        upload = next(i for i, s in enumerate(sources) if 'files.upload()' in s)
+        install = next(i for i, s in enumerate(sources) if 'WAN_REV=' in s)
+        self.assertLess(diagnosis, upload)
+        self.assertLess(upload, install)
+        self.assertIn('VOS_GPU_DIAGNOSTICO.json', sources[diagnosis])
+        self.assertIn('if not gpu_present:', sources[diagnosis])
+        self.assertIn('passou_bloqueio_preventivo', sources[diagnosis])
+
     def test_resource_gate_rejects_t4_and_cpu(self):
         from types import SimpleNamespace
         cuda=SimpleNamespace(is_available=lambda:False)
