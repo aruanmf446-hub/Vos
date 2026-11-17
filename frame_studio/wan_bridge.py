@@ -82,50 +82,62 @@ def generate(work,wan,checkpoint):
     cmd([sys.executable,wan/"generate.py","--task","animate-14B","--ckpt_dir",ck,"--src_root_path",stage,"--refert_num","1","--replace_flag","--use_relighting_lora","--offload_model","True","--convert_model_dtype","--save_file",work/"wan_generated.mp4"],cwd=wan)
     if not (work/"wan_generated.mp4").is_file():raise RuntimeError("Sem MP4 gerado pelo Wan")
 
-def video_frames(path):
-    import cv2
-    cap=cv2.VideoCapture(str(path));out=[]
-    if not cap.isOpened():raise ValueError("Video nao abriu: "+str(path))
-    while True:
-        ok,f=cap.read()
-        if not ok:break
-        out.append(f)
-    cap.release()
-    if not out:raise ValueError("Video vazio")
-    return out
+def extract_video_png(path, directory):
+    """Decodifica sequencialmente via FFmpeg: memoria constante, sem CV2 ou GPU."""
+    directory=Path(directory)
+    if directory.exists():shutil.rmtree(directory)
+    directory.mkdir(parents=True)
+    cmd(["ffmpeg","-v","error","-y","-i",path,"-map","0:v:0",
+         "-an","-fps_mode","passthrough","-start_number","0",
+         directory/"frame_%06d.png"])
+    found=sorted(directory.glob("frame_*.png"))
+    if not found:raise ValueError("Nenhum quadro decodificado de "+str(path))
+    if [p.name for p in found]!=[f"frame_{n:06d}.png" for n in range(len(found))]:
+        raise ValueError("Sequencia incompleta ou incorreta em "+str(path))
+    return found
 
 def finish(work,output):
-    import cv2,numpy as np
-    work=Path(work).resolve();info=json.loads((work/"bridge.json").read_text())
+    """Restaura todo quadro VOS e sobrescreve SOMENTE a regiao mascarada.
+    Usa Pillow + FFmpeg com consumo de RAM constante, preservando manifesto.
+    """
+    work=Path(work).resolve()
+    info=json.loads((work/"bridge.json").read_text())
     m,frames,starts,durations=read_vos(work/"original_vos.zip",work)
     if hashlib.sha256((work/"manifest.json").read_bytes()).hexdigest()!=info["manifest_sha256"]:
         raise ValueError("Manifesto modificado")
-    generated=video_frames(work/"wan_generated.mp4")
-    masks=video_frames(work/"wan_processed/src_mask.mp4")
+    gen_files=extract_video_png(work/"wan_generated.mp4",work/"decoded_wan")
+    mask_files=extract_video_png(work/"wan_processed/src_mask.mp4",work/"decoded_mask")
     count=info["frame_count"]
-    if len(generated)!=count or len(masks)!=count:
-        raise ValueError(f"Contagem Wan divergente: {len(generated)} gerados / {len(masks)} mascaras / {count} esperados")
+    if len(gen_files)!=count or len(mask_files)!=count:
+        raise ValueError(f"Contagem Wan divergente: {len(gen_files)} gerados / {len(mask_files)} mascaras / {count} esperados")
     w,h=info["width"],info["height"]
     for f,t,d in zip(frames,starts,durations):
-        i=max(0,min(count-1,int((t+d/2)*30)));path=work/f["file"]
-        base=cv2.imread(str(path),cv2.IMREAD_COLOR);gen=generated[i]
-        if base is None or abs(gen.shape[1]/gen.shape[0]-w/h)>0.035:raise ValueError("Resolucao ou proporcao divergente")
-        mask=cv2.resize(masks[i][:,:,0],(w,h),interpolation=cv2.INTER_NEAREST)>=128
-        fraction=float(np.mean(mask))
-        if fraction==0 or fraction>0.65:raise ValueError(f"Mascara suspeita ({fraction:.1%}); reveja o personagem")
-        gen=cv2.resize(gen,(w,h),interpolation=cv2.INTER_LANCZOS4)
-        edited=base.copy();edited[mask]=gen[mask]
-        if not np.array_equal(edited[~mask],base[~mask]):raise AssertionError("Cenario alterado fora da mascara")
-        ok,png=cv2.imencode(".png",edited)
-        if not ok:raise RuntimeError("PNG nao gerado")
-        path.write_bytes(png.tobytes())
-    output=Path(output);output.parent.mkdir(parents=True,exist_ok=True)
+        i=max(0,min(count-1,int((t+d/2)*30)))
+        path=work/f["file"]
+        with Image.open(path) as original,Image.open(gen_files[i]) as result,Image.open(mask_files[i]) as raw_mask:
+            base=original.convert("RGB")
+            if abs(result.width/result.height-w/h)>0.035:
+                raise ValueError("Proporcao do video Wan mudou; nao deformar")
+            edited=result.convert("RGB").resize((w,h),Image.Resampling.LANCZOS)
+            mask=raw_mask.convert("L").resize((w,h),Image.Resampling.NEAREST).point(
+                lambda level:255 if level>=128 else 0)
+            pixels=mask.histogram()[255]
+            coverage=pixels/(w*h)
+            if coverage==0 or coverage>0.65:
+                raise ValueError(f"Mascara suspeita ({coverage:.1%}); revise personagem selecionado")
+            # Somente pixels brancos da mascara recebem pixels gerados.
+            base.paste(edited,(0,0),mask)
+            base.save(path,format="PNG")
+    output=Path(output)
+    output.parent.mkdir(parents=True,exist_ok=True)
     with zipfile.ZipFile(output,"w",allowZip64=True) as z:
         z.write(work/"manifest.json","manifest.json",compress_type=zipfile.ZIP_DEFLATED)
-        if (work/"INSTRUCOES_EDICAO.md").is_file():z.write(work/"INSTRUCOES_EDICAO.md","INSTRUCOES_EDICAO.md",compress_type=zipfile.ZIP_DEFLATED)
+        if (work/"INSTRUCOES_EDICAO.md").is_file():
+            z.write(work/"INSTRUCOES_EDICAO.md","INSTRUCOES_EDICAO.md",compress_type=zipfile.ZIP_DEFLATED)
         for f in frames:z.write(work/f["file"],f["file"],compress_type=zipfile.ZIP_STORED)
     with zipfile.ZipFile(output) as z:
-        if z.read("manifest.json")!=(work/"manifest.json").read_bytes():raise AssertionError("Manifesto mudou")
+        if z.read("manifest.json")!=(work/"manifest.json").read_bytes():
+            raise AssertionError("Manifesto mudou")
     print("ZIP de retorno:",output)
 
 if __name__=="__main__":
