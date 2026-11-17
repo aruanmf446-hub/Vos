@@ -53,6 +53,22 @@ class SamContractTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError,'incompleto'):track(work,wan,work/'checkpoints')
             self.assertFalse((work/'target_review.json').exists())
 
+    def test_target_bbox_is_absolute_xyxy_even_when_character_is_off_center(self):
+        """Regressao: o ViTPose interpreta os ultimos dois valores como x2,y2."""
+        from frame_studio.wan_target import bbox_xyxy_from_mask
+        mask=np.zeros((90,160),dtype=bool)
+        mask[31:78,92:141]=True
+        box=bbox_xyxy_from_mask(mask).tolist()
+        self.assertEqual(box,[92.0,31.0,141.0,78.0])
+        self.assertGreater(box[2],box[0])
+        self.assertGreater(box[3],box[1])
+        with self.assertRaisesRegex(ValueError,'Mascara vazia'):
+            bbox_xyxy_from_mask(np.zeros((90,160),dtype=bool))
+        # Regression guard for the handoff to upstream ViTPose.
+        code=(Path(__file__).resolve().parents[1]/'wan_target.py').read_text()
+        self.assertIn("pose.model.preprocess(isolated,bbox)",code)
+        self.assertNotIn("xx.max()-xx.min()+1",code)
+
     def test_memory_profile_only_changes_official_flags_when_opted_in(self):
         with tempfile.TemporaryDirectory() as temporary:
             work=Path(temporary);wan=work/'wan';wan.mkdir();(wan/'generate.py').touch();(work/'wan_processed').mkdir()

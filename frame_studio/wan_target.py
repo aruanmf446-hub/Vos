@@ -59,6 +59,18 @@ def track(work,wan,checkpoint):
     print('SAM2 terminou; revise todos os quadros nativos. Alertas:',len(report['issues']))
 
 
+def bbox_xyxy_from_mask(mask):
+    """BBox [left, top, right, bottom] exigido pelo ViTPose oficial.
+    Nao usar [x, y, width, height]: bbox_from_detector trata os ultimos
+    campos como coordenadas absolutas e deslocaria a pose para outra pessoa.
+    """
+    import numpy as np
+    yy, xx = np.where(mask)
+    if len(xx) == 0:
+        raise ValueError("Mascara vazia para estimativa de pose")
+    return np.array([xx.min(), yy.min(), xx.max()+1, yy.max()+1], dtype=np.float32)
+
+
 def prepare_selected(work,wan,checkpoint):
     """Pose and face come only from pixels inside the reviewed target mask.
     Original, unmasked scene is used for src_bg. No automatic person detector.
@@ -67,7 +79,7 @@ def prepare_selected(work,wan,checkpoint):
     import cv2
     import numpy as np
     from pose2d import Pose2d
-    from pose2d_utils import AAPoseMeta,load_pose_metas_from_kp2ds_seq,bbox_from_detector,crop
+    from pose2d_utils import AAPoseMeta,load_pose_metas_from_kp2ds_seq
     from human_visualization import draw_aapose_by_meta_new
     from utils import resize_by_area,get_face_bboxes
     try:
@@ -87,14 +99,11 @@ def prepare_selected(work,wan,checkpoint):
             native=target.load_mask(target.mask_path(work,source_index),size)
             mask=np.array(native.resize((w,h),Image.Resampling.NEAREST))>0
             isolated=original*mask[:,:,None]
-            yy,xx=np.where(mask)
-            if not len(xx):raise ValueError('Mascara vazia na amostragem Wan')
-            bbox=np.array([xx.min(),yy.min(),xx.max()-xx.min()+1,yy.max()-yy.min()+1])
-            # Same crop/normalization as official ViTPose, with explicit target bbox.
-            center,scale=bbox_from_detector(bbox,(256,192),rescale=1.25)
-            image,*_=crop(cv2.cvtColor(isolated,cv2.COLOR_RGB2BGR),center,scale,(256,192))
-            tensor=((image/255.-np.array([.485,.456,.406]))/np.array([.229,.224,.225])).transpose(2,0,1).astype(np.float32)
-            kps=pose.model(tensor[None],np.array(center)[None],np.array(scale)[None])
+            bbox=bbox_xyxy_from_mask(mask)
+            # ViTPose.preprocess expects XYXY, not XYWH; use upstream
+            # crop + normalization so pose follows the selected person.
+            tensor,center,scale=pose.model.preprocess(isolated,bbox)
+            kps=pose.model(tensor[None],center[None],scale[None])
             meta=load_pose_metas_from_kp2ds_seq(kps,width=w,height=h)[0]
             x1,x2,y1,y2=get_face_bboxes(meta['keypoints_face'][:,:2],scale=1.3,image_shape=(h,w))
             if x2<=x1 or y2<=y1:raise ValueError(f'Rosto do alvo invalido no quadro Wan {n}')
