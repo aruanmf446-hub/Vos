@@ -1,5 +1,7 @@
 """Notebook contract and failure gates; no Colab, model downloads or GPU."""
 import json
+import os
+import tempfile
 from pathlib import Path
 from unittest import TestCase, mock
 
@@ -56,6 +58,8 @@ class NotebookTests(TestCase):
 
     def test_resource_gate_rejects_t4_and_cpu(self):
         from types import SimpleNamespace
+        temporary=tempfile.TemporaryDirectory();self.addCleanup(temporary.cleanup)
+        previous=os.getcwd();os.chdir(temporary.name);self.addCleanup(os.chdir,previous)
         cuda=SimpleNamespace(is_available=lambda:False)
         source=next(s for s in self.sources if 'def check_resources' in s)
         with mock.patch.dict('sys.modules',{'torch':SimpleNamespace(cuda=cuda),'psutil':SimpleNamespace(virtual_memory=lambda:SimpleNamespace(available=32*2**30))}),mock.patch('shutil.disk_usage',return_value=SimpleNamespace(free=100*2**30)):
@@ -67,3 +71,17 @@ class NotebookTests(TestCase):
             with self.assertRaisesRegex(RuntimeError,'Recursos insuficientes'):exec(source,{})
             cuda.get_device_properties=lambda _:SimpleNamespace(total_memory=32*2**30,name='V100 fixture')
             with self.assertRaisesRegex(RuntimeError,'BF16'):exec(source,{})
+
+    def test_optional_target_and_memory_modes_default_off(self):
+        combined='\n'.join(self.sources)
+        self.assertIn('USE_TARGET_SELECTION=False',combined)
+        self.assertIn('LOW_MEMORY_EXPERIMENTAL=False',combined)
+        self.assertIn("show_editor(WORK,'prompts')",combined)
+        self.assertIn("show_editor(WORK,'review')",combined)
+        self.assertIn("str(TOOLS/'wan_target.py'),'track'",combined)
+        self.assertIn('install_error_hook(SESSION,get_ipython())',combined)
+        self.assertIn('SESSION.bundle()',combined)
+        self.assertIn('VOS_PREFLIGHT_LOGS.zip',combined)
+        for source in self.sources:
+            if any(repr(step) in source for step in ('prepare','preprocess','infer','finish','track')):
+                self.assertIn('SESSION.run(',source)

@@ -55,3 +55,7 @@ Para validar este PR **antes do merge**, abra o [notebook da branch de revisão]
 - Na volta, máscaras e vídeo gerado devem ter dimensões idênticas. O ZIP é publicado por troca atômica somente após composição completa, preservando o ZIP de origem e o manifesto byte a byte.
 
 Veja o [relatório técnico e roteiro noturno](VOS_WAN22_VALIDATION.md) para evidências e limites.
+
+## Selecionar uma pessoa específica
+
+Há um modo opcional e experimental, desligado por padrão, para pontos positivos/negativos, SAM2 e correção/revisão de máscaras nativas. Veja [instruções, limites e roteiro atualizado](VOS_TARGET_SELECTION.md). O diagnóstico ainda vem antes de uploads/pesos. O fluxo automático anterior continua disponível.

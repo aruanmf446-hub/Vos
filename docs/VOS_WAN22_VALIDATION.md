@@ -76,3 +76,7 @@ Preservação exata vale para os PNGs fora da máscara usada na composição. Em
 11. **Retornar ao VOS:** no mesmo projeto/sessão original, envie `VOS_EDITADO.zip`, valide, compare os PNGs, confira quantidade/resolução e aplique somente após revisar. Se o projeto expirou, não altere o manifesto para forçar a importação: reinicie o ciclo com um novo pacote.
 12. **MP4 final:** monte o vídeo completo com FPS original e áudio preservado. Baixe MP4 e relatório. Confira decodificação completa, duração, resolução, contagem, cortes e sincronismo de áudio no relatório. Assista ao vídeo completo, especialmente às entradas/saídas da cena e a todos os personagens não selecionados. Para 60 FPS/VFR, examine os quadros intermediários por causa do mapeamento a 30 FPS.
 13. **Registrar o resultado:** use “aprovado”, “rejeitado visualmente” ou “bloqueado por recursos/instalação/inferência”, incluindo commit VOS, revisão Wan/pesos, hardware, tempos, logs e arquivos. Só marque geração real como comprovada quando houver `wan_generated.mp4` produzido pelo modelo, recibo, ZIP importado e MP4 final revisado.
+
+## Continuação: alvo específico
+
+Os resultados de 55 testes acima pertencem à primeira revisão. A continuação preserva o diagnóstico antecipado adicionado depois e implementa seleção opcional, máscaras nativas, testes 24/30/60 FPS, logs e perfil experimental. Veja [seleção explícita e roteiro atualizado](VOS_TARGET_SELECTION.md). Os checks do commit atual do PR registram a suíte ampliada; nenhum teste simulado demonstra geração real.

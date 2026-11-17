@@ -8,6 +8,7 @@ Aplicativo web para **extrair todos os frames, editar externamente e reconstruir
 - [Configurar o Render, senha e limites](docs/RENDER_DEPLOY.md)
 - [Formato do ZIP, timestamps e montagem exata](docs/VOS_FRAME_STUDIO.md)
 - [Testes e validação](docs/FRAME_STUDIO_TESTS.md)
+- [Seleção explícita de personagem e validação noturna](docs/VOS_TARGET_SELECTION.md)
 - [Wan2.2 Animate no Colab gratuito](docs/VOS_WAN22_COLAB.md) · [Verificação técnica e validação noturna](docs/VOS_WAN22_VALIDATION.md)
 
 **Fluxo:** vídeo → seleção/cortes → ZIP com PNGs + manifesto → edição externa → importação validada → MP4 H.264. O modo original preserva a cadência; 30/60 FPS usa somente seleção/repetição temporal explícita, mantendo duração e cortes. A edição com IA fica fora do aplicativo.

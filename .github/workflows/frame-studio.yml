@@ -2,10 +2,10 @@ name: Vos Frame Studio
 on:
   push:
     branches: [main, "codex/**"]
-    paths: [frame_studio/**, colab/**, docs/VOS_WAN22_COLAB.md, docs/VOS_WAN22_VALIDATION.md, Dockerfile, .dockerignore, render.yaml, .github/workflows/frame-studio.yml]
+    paths: [frame_studio/**, colab/**, docs/VOS_WAN22_COLAB.md, docs/VOS_WAN22_VALIDATION.md, docs/VOS_TARGET_SELECTION.md, Dockerfile, .dockerignore, render.yaml, .github/workflows/frame-studio.yml]
   workflow_dispatch:
   pull_request:
-    paths: [frame_studio/**, colab/**, docs/VOS_WAN22_COLAB.md, docs/VOS_WAN22_VALIDATION.md, Dockerfile, .dockerignore, render.yaml, .github/workflows/frame-studio.yml]
+    paths: [frame_studio/**, colab/**, docs/VOS_WAN22_COLAB.md, docs/VOS_WAN22_VALIDATION.md, docs/VOS_TARGET_SELECTION.md, Dockerfile, .dockerignore, render.yaml, .github/workflows/frame-studio.yml]
 concurrency:
   group: vos-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
@@ -23,6 +23,11 @@ jobs:
             colab
       - name: Validar notebook, manifesto de pesos e bloqueios sem GPU
         run: python -m unittest frame_studio.tests.test_notebook -v
+      - name: Testar editor visual em Chromium (sem modelos)
+        run: |
+          npm install --prefix /tmp/vos-browser --no-package-lock playwright@1.62.1
+          /tmp/vos-browser/node_modules/.bin/playwright install --with-deps chromium
+          NODE_PATH=/tmp/vos-browser/node_modules node frame_studio/tests/target_editor_browser.cjs
       - name: Testar o extrator, importador e montador no Docker
         run: docker build --target test -t vos-frame-studio:test .
       - name: Construir e verificar o serviço de produção
