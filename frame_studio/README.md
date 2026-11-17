@@ -45,3 +45,7 @@ Uma imagem faltando bloqueia o pacote inteiro: o aplicativo não preenche faltas
 - [Testes e reprodução das verificações](../docs/FRAME_STUDIO_TESTS.md)
 
 Os projetos antigos continuam nas próprias pastas. Este aplicativo não importa suas rotinas de deformação, interpolação, composição de personagens ou fluxo óptico.
+
+## Wan2.2 Animate Replacement via Colab
+
+Novo fluxo opcional e externo de ida e volta ZIP, sem alterações de endpoints ou montagem: [guia do VOS e Colab](../docs/VOS_WAN22_COLAB.md). O hardware do Colab gratuito pode impedir geração.
