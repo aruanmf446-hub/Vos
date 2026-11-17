@@ -46,3 +46,12 @@ Falhas produzem `VOS_LOGS.zip`, pequeno, com logs sanitizados, versões, recurso
 3. Execute pré-processamento, revise máscara/pose/rosto, tente a geração e importe o ZIP somente após sucesso. Compare personagem selecionado, rosto, outras pessoas, cenário, FPS/duração/cortes e áudio no VOS. Guarde relatório, recibo, logs e resultado visual. Uma execução finita sem OOM, no hardware documentado, e validação visual humana são necessárias para considerar viabilidade; não anunciar compatibilidade geral com T4 a partir de mocks.
 
 Pendências exclusivas da GPU: instalação/imports completos na imagem Colab, kernels reais incluindo SAM2, carregamento integral e hashes dos pesos, pico de RAM/VRAM/disco, tempo dentro da sessão gratuita, ausência de OOM/NaN, contrato real de 33 quadros e qualidade/identidade visual. Nenhum impedimento incontornável foi demonstrado por leitura de código; tampouco foi comprovada viabilidade de memória em uma T4. O teste real pode revelar um impedimento nessa configuração.
+
+## Verificações executadas nesta entrega
+
+- **93 testes Python aprovados**, incluindo 12 novos contratos GGUF/notebook/diagnóstico. Cobrem saída antiga, pesos truncados/corrompidos, kernels indisponíveis, disco/RAM insuficientes, recibo sintético recusado e dimensões erradas. Os testes existentes continuam cobrindo interrupções, duas pessoas, máscaras, ZIP/importação/MP4 e FPS 24/30/60.
+- Chromium: seleção, pontos negativos, quadros-chave, pincel, invalidação de revisão, máscara binária e cancelamento aprovados.
+- Auditoria CPU executada nos **fontes reais** dos quatro projetos fixados; auditoria oficial Wan de geometria/normalização/rosto e smoke de ida e volta 24/30/60 aprovados, sem inferência.
+- GitHub Actions [44198787675](https://github.com/aruanmf446-hub/Vos/actions/runs/44198787675): **success**, inclui testes Docker, Chromium, notebook, auditorias reais de código GGUF/Wan, smoke sintético e build/healthcheck de produção. Checagem de disponibilidade PyPI dos pacotes ComfyUI fixados também passou; não é prova de instalação CUDA.
+- Uma primeira tentativa Docker local e testes simultâneos falharam por falta de disco **do ambiente de desenvolvimento**, não por inferência: imagens antigas do VOS foram removidas e os testes Python repetidos passaram. O workflow remoto Docker completo passou.
+- Nenhum resultado sintético foi apresentado como geração. SHA-256 do notebook baseline permanece `3017dd54767683ee1b65eb176bfc965f62f820eb7ba88dd0aac24b90f3529f6c`.
