@@ -70,17 +70,64 @@ def prepare(archive,reference,work):
     (work/"bridge.json").write_text(json.dumps(info,indent=2))
     print("Preparado:",info)
 
-def generate(work,wan,checkpoint):
-    work=Path(work).resolve();wan=Path(wan).resolve();ck=Path(checkpoint).resolve()
-    if not (wan/"generate.py").is_file():raise FileNotFoundError("Wan2.2 oficial ausente")
+def paths_for_wan(work,wan,checkpoint):
+    work=Path(work).resolve()
+    wan=Path(wan).resolve()
+    ck=Path(checkpoint).resolve()
+    if not (wan/"generate.py").is_file():
+        raise FileNotFoundError("Wan2.2 oficial ausente")
+    return work,wan,ck
+
+def preprocess(work,wan,checkpoint):
+    """Roda apenas o preprocessamento oficial. Permite revisar mascara antes da IA."""
+    work,wan,ck=paths_for_wan(work,wan,checkpoint)
     for x in ("det/yolov10m.onnx","pose2d/vitpose_h_wholebody.onnx","sam2/sam2_hiera_large.pt"):
-        if not (ck/"process_checkpoint"/x).is_file():raise FileNotFoundError("Checkpoint ausente: "+x)
-    stage=work/"wan_processed";stage.mkdir(exist_ok=True)
-    cmd([sys.executable,wan/"wan/modules/animate/preprocess/preprocess_data.py","--ckpt_path",ck/"process_checkpoint","--video_path",work/"driving.mp4","--refer_path",work/"reference.png","--save_path",stage,"--fps","30","--resolution_area","1280","720","--iterations","3","--k","7","--w_len","1","--h_len","1","--replace_flag"],cwd=wan)
-    for name in ("src_pose.mp4","src_face.mp4","src_bg.mp4","src_mask.mp4"):
-        if not (stage/name).is_file():raise RuntimeError("Preprocessamento incompleto: "+name)
-    cmd([sys.executable,wan/"generate.py","--task","animate-14B","--ckpt_dir",ck,"--src_root_path",stage,"--refert_num","1","--replace_flag","--use_relighting_lora","--offload_model","True","--convert_model_dtype","--save_file",work/"wan_generated.mp4"],cwd=wan)
-    if not (work/"wan_generated.mp4").is_file():raise RuntimeError("Sem MP4 gerado pelo Wan")
+        if not (ck/"process_checkpoint"/x).is_file():
+            raise FileNotFoundError("Checkpoint ausente: "+x)
+    stage=work/"wan_processed"
+    stage.mkdir(exist_ok=True)
+    cmd([sys.executable,wan/"wan/modules/animate/preprocess/preprocess_data.py",
+         "--ckpt_path",ck/"process_checkpoint",
+         "--video_path",work/"driving.mp4",
+         "--refer_path",work/"reference.png",
+         "--save_path",stage,"--fps","30",
+         "--resolution_area","1280","720",
+         "--iterations","3","--k","7","--w_len","1","--h_len","1",
+         "--replace_flag"],cwd=wan)
+    for name in ("src_pose.mp4","src_face.mp4","src_bg.mp4","src_mask.mp4","src_ref.png"):
+        if not (stage/name).is_file():
+            raise RuntimeError("Preprocessamento incompleto: "+name)
+    expected=json.loads((work/"bridge.json").read_text())["frame_count"]
+    mask_files=extract_video_png(stage/"src_mask.mp4",work/"mask_preflight")
+    if len(mask_files)!=expected:
+        raise ValueError(f"Mask tem {len(mask_files)} quadros, esperados {expected}; nao iniciar IA")
+    # Guard-rail de dimensoes/mask para evitar edicao massiva de personagens alheios.
+    for i,mpath in enumerate(mask_files):
+        with Image.open(mpath) as im:
+            histogram=im.convert("L").point(lambda v:255 if v>=128 else 0).histogram()
+            coverage=histogram[255]/(im.width*im.height)
+        if coverage==0 or coverage>0.65:
+            raise ValueError(f"Mascara quadro {i} cobre {coverage:.1%}. Corrija a selecao antes da geracao")
+    print("Preprocessamento validado estruturalmente; REVISE VISUALMENTE src_mask.mp4 e src_pose.mp4!")
+
+def infer(work,wan,checkpoint):
+    """So gera depois de existirem os intermediarios e a mascara revisada."""
+    work,wan,ck=paths_for_wan(work,wan,checkpoint)
+    stage=work/"wan_processed"
+    for name in ("src_pose.mp4","src_face.mp4","src_bg.mp4","src_mask.mp4","src_ref.png"):
+        if not (stage/name).is_file():
+            raise FileNotFoundError("Execute preprocess e revise a mascara antes: "+name)
+    cmd([sys.executable,wan/"generate.py","--task","animate-14B",
+         "--ckpt_dir",ck,"--src_root_path",stage,"--refert_num","1",
+         "--replace_flag","--use_relighting_lora",
+         "--offload_model","True","--convert_model_dtype",
+         "--save_file",work/"wan_generated.mp4"],cwd=wan)
+    if not (work/"wan_generated.mp4").is_file():
+        raise RuntimeError("Sem MP4 gerado pelo Wan")
+
+def generate(work,wan,checkpoint):
+    preprocess(work,wan,checkpoint)
+    infer(work,wan,checkpoint)
 
 def extract_video_png(path, directory):
     """Decodifica sequencialmente via FFmpeg: memoria constante, sem CV2 ou GPU."""
@@ -146,14 +193,17 @@ if __name__=="__main__":
     p_prepare.add_argument("--zip",required=True)
     p_prepare.add_argument("--reference",required=True)
     p_prepare.add_argument("--work",required=True)
-    p_run=sub.add_parser("run",help="Executar Wan2.2 Animate Replacement")
-    p_run.add_argument("--work",required=True)
-    p_run.add_argument("--wan",required=True)
-    p_run.add_argument("--checkpoint",required=True)
+    for action in ("run","preprocess","infer"):
+        stage=sub.add_parser(action,help="Wan2.2 Animate Replacement: "+action)
+        stage.add_argument("--work",required=True)
+        stage.add_argument("--wan",required=True)
+        stage.add_argument("--checkpoint",required=True)
     p_finish=sub.add_parser("finish",help="Recompor ZIP VOS original")
     p_finish.add_argument("--work",required=True)
     p_finish.add_argument("--output",required=True)
     a=p.parse_args()
     if a.action=="prepare":prepare(a.zip,a.reference,a.work)
     elif a.action=="run":generate(a.work,a.wan,a.checkpoint)
+    elif a.action=="preprocess":preprocess(a.work,a.wan,a.checkpoint)
+    elif a.action=="infer":infer(a.work,a.wan,a.checkpoint)
     else:finish(a.work,a.output)
