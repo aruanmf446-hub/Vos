@@ -34,7 +34,11 @@ class SamContractTests(unittest.TestCase):
             class Predictor:
                 def __init__(self):self.prompts=[];self.seeds=[];self.state_options={}
                 def init_state(self,**kwargs):self.state_options=kwargs;return {'mock':True}
-                def add_new_points(self,**kwargs):self.prompts.append(kwargs)
+                def add_new_points(self,**kwargs):
+                    # Real SAM2 converts points to tensor, requiring Nx2, not (points, labels).
+                    points=np.asarray(kwargs['points'],dtype=np.float32)
+                    if points.shape!=(len(kwargs['labels']),2):raise ValueError('SAM2 points must be Nx2')
+                    self.prompts.append(kwargs)
                 def add_new_mask(self,**kwargs):self.seeds.append(kwargs)
                 def propagate_in_video(self,state):
                     for n in range(3):yield n,[1],FakeTensor((np.array(mask,dtype=np.float32)[None,None]-128))

@@ -23,13 +23,7 @@ def upstream(wan):
 
 
 def sam_points(points,size):
-    """SAM2 normalize_coords=True expects absolute XY pixel coordinates."""
-    import numpy as np
-    xy=np.array([[x*size[0],y*size[1]] for x,y,_ in points],dtype=np.float32)
-    return np.clip(xy,[0,0],[size[0]-1,size[1]-1]).astype(np.float32)
-
-
-def sam_points(points,size):
+    """Return absolute XY pixels and labels separately for SAM2 normalize_coords=True."""
     import numpy as np
     pixels=np.array([[x*size[0],y*size[1]] for x,y,_ in points],dtype=np.float32)
     pixels=np.minimum(pixels,np.array([size[0]-1,size[1]-1],dtype=np.float32))
@@ -55,8 +49,7 @@ def track(work,wan,checkpoint,precision="bf16"):
             predictor=build_sam2_video_predictor('sam2_hiera_l.yaml',str(Path(checkpoint)/'process_checkpoint/sam2/sam2_hiera_large.pt'))
             state=predictor.init_state(video_path=temporary,offload_video_to_cpu=True,offload_state_to_cpu=True)
             for key,entry in sorted(cfg['keyframes'].items(),key=lambda kv:int(kv[0])):
-                pts=sam_points(entry['points'],size)
-                labels=np.array([p[2] for p in entry['points']],dtype=np.int32)
+                pts,labels=sam_points(entry['points'],size)
                 predictor.add_new_points(inference_state=state,frame_idx=int(key),obj_id=1,points=pts,labels=labels,normalize_coords=True)
             seeds=work/'target_seeds'
             if seeds.is_dir():
