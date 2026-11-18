@@ -55,3 +55,18 @@ Pendências exclusivas da GPU: instalação/imports completos na imagem Colab, k
 - GitHub Actions [44198787675](https://github.com/aruanmf446-hub/Vos/actions/runs/44198787675): **success**, inclui testes Docker, Chromium, notebook, auditorias reais de código GGUF/Wan, smoke sintético e build/healthcheck de produção. Checagem de disponibilidade PyPI dos pacotes ComfyUI fixados também passou; não é prova de instalação CUDA.
 - Uma primeira tentativa Docker local e testes simultâneos falharam por falta de disco **do ambiente de desenvolvimento**, não por inferência: imagens antigas do VOS foram removidas e os testes Python repetidos passaram. O workflow remoto Docker completo passou.
 - Nenhum resultado sintético foi apresentado como geração. SHA-256 do notebook baseline permanece `3017dd54767683ee1b65eb176bfc965f62f820eb7ba88dd0aac24b90f3529f6c`.
+
+## Revisão do diagnóstico de atenção (18/11/2026)
+
+O probe anterior exigia **SDPA eficiente FP32**, além de FP16, indevidamente. Agora executa dois probes independentes, com resultados/erros separados em `kernel_checks`:
+
+- `dit_fp16_efficient`: somente `SDPBackend.EFFICIENT_ATTENTION`, FP16. Falha ou NaN bloqueia; **não tenta atenção matemática**.
+- `aux_fp32_math`: somente `SDPBackend.MATH`, FP32, explicitamente permitido para as etapas auxiliares isoladas. Falha ou NaN também bloqueia. Ausência de kernel **eficiente FP32** não bloqueia.
+
+Evidência nos fontes pinados: o [loader do Wrapper](https://github.com/kijai/ComfyUI-WanVideoWrapper/blob/a7439db30bed0c5b5fa437d77ae8a7bb220dfd00/nodes_model_loading.py#L1136) mapeia `fp16` para `torch.float16`; o [sampler](https://github.com/kijai/ComfyUI-WanVideoWrapper/blob/a7439db30bed0c5b5fa437d77ae8a7bb220dfd00/nodes_sampler.py#L90) lê `model['base_dtype']`; a [atenção SDPA](https://github.com/kijai/ComfyUI-WanVideoWrapper/blob/a7439db30bed0c5b5fa437d77ae8a7bb220dfd00/wanvideo/modules/attention.py#L114) usa `scaled_dot_product_attention`. O adaptador VOS seleciona `base_precision='fp16'`, `attention_mode='sdpa'` e inicia o processo `sample` com `efficient_only=True`: matemática e Flash continuam desabilitados nesse processo. Não se alterou o modelo nem o motor oficial baseline BF16.
+
+Já o [VAE](https://github.com/kijai/ComfyUI-WanVideoWrapper/blob/a7439db30bed0c5b5fa437d77ae8a7bb220dfd00/wanvideo/modules/vae.py#L251) chama SDPA sem impor backend; é carregado em FP32 pelo adaptador. O [T5 ComfyUI](https://github.com/Comfy-Org/ComfyUI/blob/10edeb91317107db6fe1184c16ec4a6e9608cc9e/comfy/text_encoders/t5.py#L164) utiliza a atenção selecionada pelo core; o processo de texto recebe `--fp32-text-enc`. Esses processos já permitiam matemática em `boot(efficient_only=False)`; não precisam de uma garantia de kernel eficiente FP32. O probe matemático explícito verifica uma rota auxiliar válida, sem afirmar cobertura de toda forma/máscara/tamanho de atenção do modelo.
+
+Os contextos `sdpa_kernel` são locais e restauram a política anterior. Cada probe sincroniza CUDA e verifica finitude; o gate exige ambos os resultados verificados, rejeitando também relatórios antigos/incompletos. VRAM/RAM/disco/NVCC, ativação explícita e probes reais continuam obrigatórios. O diagnóstico embutido e o toolkit do notebook experimental foram atualizados juntos; baseline intacto.
+
+Regressões CPU simulam ausência de eficiente FP32 com FP16 eficiente disponível, falha FP16 sem fallback, falha FP32 matemática, NaN em ambas, relatório incompleto e a política efetiva do sampler. São testes de encaminhamento/bloqueio, **não execução CUDA nem prova de T4**.

@@ -11,7 +11,7 @@ def diagnose(root='/content',min_disk_gib=33,torch_module=None,ram_bytes=None,pr
         'timestamp_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),
         'gpu':None,'vram_gib':0,'free_vram_gib':0,'available_ram_gib':0,'disk_free_gib':0,
         'bf16_required':False,'generator_precision':'fp16','text_precision':'fp32 (separate process)',
-        'attention':'PyTorch EFFICIENT_ATTENTION SDPA, FlashAttention disabled','kernel_probe_performed':False,'nvcc_available':bool(shutil.which('nvcc') or Path('/usr/local/cuda/bin/nvcc').is_file()),'failures':[]}
+        'attention':'DiT FP16: EFFICIENT_ATTENTION only; isolated FP32: MATH permitted; FlashAttention disabled','kernel_checks':{},'kernel_probe_performed':False,'nvcc_available':bool(shutil.which('nvcc') or Path('/usr/local/cuda/bin/nvcc').is_file()),'failures':[]}
     if ram_bytes is None:
         try:
             import psutil
@@ -28,7 +28,10 @@ def diagnose(root='/content',min_disk_gib=33,torch_module=None,ram_bytes=None,pr
         report['vram_gib']=p.total_memory/2**30;report['free_vram_gib']=t.cuda.mem_get_info(0)[0]/2**30
         if capability<(7,5):report['failures'].append('GPU abaixo de capability 7.5')
         if probe:
-            probe_kernels(t);report['kernel_probe_performed']=True
+            report['kernel_checks']=probe_kernels(t)
+            report['kernel_probe_performed']=True
+            for name,check in report['kernel_checks'].items():
+                if not check['verified']:report['failures'].append(name+': '+check['error'])
         else:report['failures'].append('Probe de kernels nao executado; apenas simulacao/inspecao')
     except Exception as error:report['failures'].append('GPU/CUDA/SDPA: '+str(error)[:500])
     if not report['nvcc_available']:report['failures'].append('Compilador NVCC ausente; SAM2 fixado exige extensao CUDA. Nao baixar pesos.')
@@ -41,18 +44,33 @@ def diagnose(root='/content',min_disk_gib=33,torch_module=None,ram_bytes=None,pr
 
 
 def probe_kernels(t):
-    # No model/weights: actual installed Turing kernels, not a GPU-name claim.
+    # Match the isolated engine phases, not an unnecessary FP32 efficient kernel.
+    # DiT may NEVER fall back to MATH; FP32 VAE/T5 already permit MATH in boot().
     from torch.nn.attention import sdpa_kernel,SDPBackend
-    with t.inference_mode(),sdpa_kernel(SDPBackend.EFFICIENT_ATTENTION):
-        for dtype in (t.float16,t.float32):
-            q=t.randn(1,4,32,128,device='cuda',dtype=dtype)
-            result=t.nn.functional.scaled_dot_product_attention(q,q,q)
-            if not t.isfinite(result).all().item():raise RuntimeError('SDPA produziu nao-finitos')
-        del q,result
-    t.cuda.synchronize();t.cuda.empty_cache()
+    checks={}
+    for name,dtype,backend in (
+        ('dit_fp16_efficient',t.float16,SDPBackend.EFFICIENT_ATTENTION),
+        ('aux_fp32_math',t.float32,SDPBackend.MATH),
+    ):
+        q=result=None
+        try:
+            with t.inference_mode(),sdpa_kernel(backend):
+                q=t.randn(1,4,32,128,device='cuda',dtype=dtype)
+                result=t.nn.functional.scaled_dot_product_attention(q,q,q)
+                if not t.isfinite(result).all().item():raise RuntimeError('SDPA produziu nao-finitos')
+                t.cuda.synchronize()
+            checks[name]={'verified':True,'backend':backend.name,'error':None}
+        except Exception as error:
+            checks[name]={'verified':False,'backend':backend.name,'error':str(error)[:500]}
+        finally:
+            del q,result
+            t.cuda.empty_cache()
+    return checks
 
 
 def require_attempt(report,enabled=False):
     if not enabled:raise ValueError('Perfil experimental desligado. Leia o diagnostico antes de ativar conscientemente.')
-    if not report.get('eligible_for_experimental_attempt') or not report.get('kernel_probe_performed'):
+    checks=report.get('kernel_checks',{})
+    if (not report.get('eligible_for_experimental_attempt') or not report.get('kernel_probe_performed')
+        or any(not checks.get(name,{}).get('verified') for name in ('dit_fp16_efficient','aux_fp32_math'))):
         raise ValueError('Diagnostico GGUF bloqueado: '+ '; '.join(report.get('failures',[])))
