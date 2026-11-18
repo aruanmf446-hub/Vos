@@ -39,3 +39,27 @@ Script de integração: `frame_studio/wan_bridge.py`. O script `finish` usa FFmp
 - [ ] No VOS/Render, importar e aplicar no **mesmo projeto**, montar vídeo completo com FPS original e conferir cortes, duração e personagens intocados
 
 Diagnóstico: **falha de GPU no Colab gratuito não tem solução garantida que respeite ao mesmo tempo Wan 14B completo, sem GPU paga e sem outro modelo**. Neste caso, guardar logs e ZIPs e não simular geração. Nenhum novo serviço de inferência/API foi adicionado.
+
+## Revisão técnica desta integração
+
+Para validar este PR **antes do merge**, abra o [notebook da branch de revisão](https://colab.research.google.com/github/aruanmf446-hub/Vos/blob/codex/finalize-wan22-validation/colab/VOS_Wan22_Animate_Replacement.ipynb). A variável `VOS_REF` aponta para essa mesma branch; não misture o notebook novo com a ponte antiga da `main`. Depois do merge, a branch continua sendo uma referência válida enquanto existir; para usar `main`, mude explicitamente `VOS_REF='main'` em uma cópia do notebook.
+
+- Código Wan fixado em `1ea34ff48f87168174e12956e200b1d908b1c5ff`. Pesos ModelScope fixados na revisão `4cfe61a9`, com 413 arquivos selecionados (~53,65 GiB) e hashes publicados pelo ModelScope em `colab/wan22_modelscope_manifest.json`. O download evita cópias extras de modelos que não são usadas em Replacement. Cada arquivo é conferido por tamanho e SHA-256 antes do pré-processamento.
+- Instalação inclui `requirements_animate.txt`, SAM2 na revisão oficial, `moviepy==1.0.3` e `diffusers==0.35.1`, que oferece `FluxKontextPipeline` importado pelo preprocessador. A compatibilidade completa com a imagem CUDA oferecida pelo Colab ainda exige o teste real.
+- O caminho `pose2d/vitpose_h_wholebody.onnx` oficial é uma **pasta**, contendo `end2end.onnx` e centenas de partes externas. A ponte aceita esse formato. Não renomeie nem copie somente o arquivo `.onnx`.
+- `HF_HUB_OFFLINE=1`, `TRANSFORMERS_OFFLINE=1` e `HF_DATASETS_OFFLINE=1` bloqueiam downloads implícitos pelo Hub. Transformers/Diffusers são bibliotecas locais exigidas pelo Wan oficial; os pesos/tokenizadores vêm exclusivamente do ModelScope. Nenhuma API de inferência é chamada.
+- RAM medida passa a ser **disponível**, não RAM total. GPUs sem suporte BF16 também são bloqueadas. O bloqueio de recursos é reexecutado na célula de instalação para evitar downloads após uma célula anterior falhar.
+- Pré-processamento bem-sucedido registra hashes dos intermediários e `mask_report.json` com cobertura e bounding box por quadro. Máscaras vazias, acima de 65% do quadro, com contagem/FPS/geometria inválidos ou salto de centro maior que 0,35 da escala normalizada são bloqueadas. Este último é um detector conservador de saltos grosseiros; pode rejeitar movimentos rápidos legítimos e não comprova identidade nem estabilidade fina.
+- Após responder **SIM**, `review-mask --confirm SIM` vincula a revisão aos intermediários atuais. Alterá-los exige repetir `preprocess` e a revisão. O comando antigo `run` agora termina após preprocessamento e pede revisão, em vez de iniciar IA automaticamente.
+- `infer` apaga o recibo anterior antes de tentar gerar. O MP4 anterior é removido antes da chamada ao modelo. Só uma execução bem-sucedida, com vídeo decodificável e contagem/30 FPS/timestamps corretos, grava `generation.json`. `finish` exige esse recibo e os hashes correspondentes; não usa saída antiga de uma tentativa que falhou.
+- Na volta, máscaras e vídeo gerado devem ter dimensões idênticas. O ZIP é publicado por troca atômica somente após composição completa, preservando o ZIP de origem e o manifesto byte a byte.
+
+Veja o [relatório técnico e roteiro noturno](VOS_WAN22_VALIDATION.md) para evidências e limites.
+
+## Selecionar uma pessoa específica
+
+Há um modo opcional e experimental, desligado por padrão, para pontos positivos/negativos, SAM2 e correção/revisão de máscaras nativas. Veja [instruções, limites e roteiro atualizado](VOS_TARGET_SELECTION.md). O diagnóstico ainda vem antes de uploads/pesos. O fluxo automático anterior continua disponível.
+
+## Preparação final do primeiro teste real
+
+A ordem atual instala/audita e executa o smoke antes de uploads reais e usa referências imutáveis, controlador de etapas e recuperação de pontos/máscaras. As instruções atuais e três passos iniciais estão em [VOS_FIRST_REAL_TEST.md](VOS_FIRST_REAL_TEST.md); essa ordem substitui os roteiros anteriores de uploads antes da instalação.

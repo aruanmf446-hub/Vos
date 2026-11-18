@@ -1,0 +1,30 @@
+{
+  "source": "https://modelscope.cn/models/QuantStack/Wan2.2-Animate-14B-GGUF/resolve/4020c310ae43831554cd15244da52226d19cddc9/Wan2.2-Animate-14B-Q3_K_M.gguf",
+  "range_bytes": 2097152,
+  "full_file_downloaded": false,
+  "full_sha256_verified": false,
+  "metadata": {
+    "general.architecture": "wan",
+    "general.quantization_version": 2,
+    "general.file_type": 12
+  },
+  "tensor_count": 1441,
+  "header_bytes": 93645,
+  "quant_types": {
+    "0": 929,
+    "11": 384,
+    "13": 2,
+    "12": 118,
+    "30": 8
+  },
+  "animate_keys": [
+    "face_adapter.fuser_blocks.0.k_norm.weight",
+    "face_adapter.fuser_blocks.0.linear1_kv.bias",
+    "face_adapter.fuser_blocks.0.linear1_kv.weight",
+    "face_adapter.fuser_blocks.0.linear1_q.bias",
+    "face_adapter.fuser_blocks.0.linear1_q.weight",
+    "face_adapter.fuser_blocks.0.linear2.bias",
+    "face_adapter.fuser_blocks.0.linear2.weight",
+    "face_adapter.fuser_blocks.0.q_norm.weight"
+  ]
+}
